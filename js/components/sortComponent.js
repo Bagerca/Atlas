@@ -11,8 +11,8 @@ window.SortComponent = (() => {
                 <div class="sort-popover" id="sort-popover">
                     <div class="sort-group">
                         <button class="sort-btn param-btn ${config.by === 'title' ? 'active' : ''}" data-by="title" title="По алфавиту">${window.Icons.text || 'T'}</button>
-                        <button class="sort-btn param-btn ${config.by === 'date' ? 'active' : ''}" data-by="date" title="По дате завершения">${window.Icons.calendar || '📅'}</button>
-                        <button class="sort-btn param-btn ${config.by === 'score' ? 'active' : ''}" data-by="score" title="По оценке">${window.Icons.star || '⭐'}</button>
+                        <button class="sort-btn param-btn ${config.by === 'score' ? 'active' : ''}" data-by="score" title="По рейтингу">${window.Icons.sortRating || '⭐'}</button>
+                        <button class="sort-btn param-btn ${config.by === 'date' ? 'active' : ''}" data-by="date" title="По времени">${window.Icons.sortTime || '📅'}</button>
                     </div>
                     <div class="sort-group">
                         <button class="sort-btn dir-btn ${config.dir === 'desc' ? 'active' : ''}" data-dir="desc">
@@ -39,7 +39,7 @@ window.SortComponent = (() => {
                 return;
             }
 
-            // Выбор параметра сортировки (Текст, Дата, Оценка)
+            // Выбор параметра сортировки (Алфавит, Оценка, Дата)
             const paramBtn = e.target.closest('.param-btn');
             if (paramBtn) {
                 const newBy = paramBtn.dataset.by;
