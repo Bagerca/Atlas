@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlas | Personal Media Vault</title>
+    <!-- Заглушка, чтобы не было ошибки favicon 404 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+    
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/tierlist.css">
+    <link rel="stylesheet" href="css/item.css">
+    <!-- Стили для админки -->
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
     <div id="app">
@@ -29,6 +35,9 @@
     <script src="js/views/headerView.js"></script>
     <script src="js/views/catalogView.js"></script>
     <script src="js/views/tierlistView.js"></script>
+    <script src="js/views/itemView.js"></script>
+    <!-- Новый View для галереи иконок -->
+    <script src="js/views/iconsView.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

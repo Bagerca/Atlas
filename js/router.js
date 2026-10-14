@@ -42,11 +42,20 @@ window.Router = (() => {
         const route = parseUrl();
         console.log(`[Router] Навигация: ${route.path}`, route.params);
         
-        // Синхронизируем строку поиска из URL со Store
-        window.Store.setState({ 
+        const updates = { 
             route, 
             searchQuery: route.params.q ? route.params.q.toLowerCase() : '' 
-        });
+        };
+
+        // Запоминаем контекст каталога для Умной кнопки "Назад"
+        // Игнорируем URL с открытыми окнами (modal), чтобы не вернуться в форму
+        if (route.path === '/' || route.path === '/tierlist') {
+            if (!route.params.modal) {
+                updates.lastCatalogRoute = window.location.hash || '#/';
+            }
+        }
+
+        window.Store.setState(updates);
     };
 
     const init = () => {

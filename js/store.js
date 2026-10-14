@@ -3,7 +3,10 @@ window.Store = (() => {
         items: [],
         isAdmin: false,
         route: { path: '/', params: {} },
-        searchQuery: ''
+        searchQuery: '',
+        lastCatalogRoute: '#/', 
+        // Добавлен дефолтный конфиг сортировки
+        sortConfig: { by: 'title', dir: 'asc' }
     };
 
     const listeners = [];
@@ -38,7 +41,7 @@ window.Store = (() => {
 
     const subscribe = (listener) => {
         listeners.push(listener);
-        listener(state); // Вызов для initial render
+        listener(state); 
     };
 
     const exportData = () => {

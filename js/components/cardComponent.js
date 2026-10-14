@@ -1,36 +1,44 @@
 window.CardComponent = (() => {
-    const formatDate = (dateStr) => {
-        if (!dateStr) return '';
-        const d = new Date(dateStr);
-        return d.toLocaleDateString('ru-RU');
-    };
-
     const render = (item, isAdmin) => {
-        const { escapeHtml, getStatusDict } = window.Helpers;
-        const statusDict = getStatusDict(item.type);
+        const { escapeHtml, getStatusVisuals } = window.Helpers;
 
-        let progressText = '';
+        // Формируем бейдж прогресса для постера
+        let progressBadge = '';
         if (item.meta && (item.meta.currentProgress || item.meta.totalProgress)) {
             const current = item.meta.currentProgress || '?';
             const total = item.meta.totalProgress || '?';
-            const label = item.type === 'literature' ? 'Главы/Стр:' : 'Серии:';
-            progressText = `<span>📊 ${label} ${current} / ${total}</span>`;
+            progressBadge = `
+                <div class="card-progress-badge" title="Прогресс">
+                    ${window.Icons.chart}
+                    <span>${current} / ${total}</span>
+                </div>`;
         }
 
-        const dateText = item.completedAt ? `<span>📅 Пройдено: ${formatDate(item.completedAt)}</span>` : '';
-        
-        // Индикатор наличия рецензии
-        const reviewBadge = item.review && item.review.trim() !== '' 
-            ? `<span title="Есть рецензия">${window.Icons.document}</span>` 
+        const statusesHtml = (item.statuses || []).map(st => {
+            const visual = getStatusVisuals(st, item.type);
+            if (!visual) return '';
+            return `
+                <div class="status-icon ${visual.colorClass}" title="${visual.title}">
+                    ${visual.svg}
+                </div>
+            `;
+        }).join('');
+
+        const reviewIcon = (item.review && item.review.trim() !== '') 
+            ? `<div class="status-icon color-warning" title="Есть заметка/рецензия">${window.Icons.document}</div>` 
             : '';
 
         return `
-        <article class="card">
+        <a href="#/item?id=${item.id}" class="card">
             <div class="card-poster-wrapper">
                 <img src="${escapeHtml(item.poster)}" alt="${escapeHtml(item.title)}" class="card-poster" onerror="this.style.display='none'">
+                
                 <div class="card-score tier-${item.tier}">
                     ${item.tier ? item.tier : (item.score ? item.score + '/10' : '-')}
                 </div>
+                
+                ${progressBadge}
+
                 ${isAdmin ? `
                     <div class="card-admin-actions">
                         <button class="btn-icon edit-btn" data-id="${item.id}" title="Редактировать">${window.Icons.edit}</button>
@@ -40,20 +48,14 @@ window.CardComponent = (() => {
             </div>
             <div class="card-info">
                 <h3 class="card-title" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</h3>
-                
-                ${(dateText || progressText || reviewBadge) ? `
-                    <div class="card-meta-info">
-                        ${progressText}
-                        ${dateText}
-                        ${reviewBadge}
-                    </div>
-                ` : ''}
 
-                <div class="card-statuses">
-                    ${(item.statuses || []).map(st => `<span class="status-badge">${escapeHtml(statusDict[st] || st)}</span>`).join('')}
+                <div class="card-icons-row">
+                    ${statusesHtml}
+                    <div style="flex: 1;"></div>
+                    ${reviewIcon}
                 </div>
             </div>
-        </article>
+        </a>
         `;
     };
 

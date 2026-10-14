@@ -1,0 +1,119 @@
+/* ================= ADMIN ICONS GALLERY ================= */
+.admin-page-header {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.admin-page-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.admin-page-header p {
+    color: var(--text-secondary);
+    margin-top: 8px;
+}
+
+/* Стили для категорий */
+.icons-category {
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn var(--transition-base);
+}
+
+.icons-category-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.05);
+}
+
+.icons-category-title span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+}
+
+/* Сетка иконок */
+.icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.icon-card {
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg) var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.icon-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.icon-svg-wrapper {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-svg-wrapper svg {
+    width: 32px;
+    height: 32px;
+}
+
+.icon-name {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-family: monospace;
+    text-align: center;
+    word-break: break-all;
+}
+
+.icon-card:active {
+    transform: scale(0.95);
+}
+
+/* Всплывающее уведомление о копировании */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--success-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: var(--radius-xl);
+    font-weight: 700;
+    box-shadow: 0 5px 20px rgba(29, 209, 161, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

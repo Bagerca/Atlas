@@ -1,0 +1,282 @@
+/* ================= ITEM DETAIL PAGE ================= */
+.item-page {
+    animation: fadeIn var(--transition-base);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.item-header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.item-container {
+    display: flex;
+    gap: var(--spacing-xl);
+    background: var(--glass-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.item-poster-wrap {
+    flex-shrink: 0;
+    width: 320px;
+    aspect-ratio: 2 / 3;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+    position: relative;
+    background: #000;
+}
+
+.item-poster-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Верхняя мета-строка (Тип + Дата) */
+.item-top-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.item-type-pill {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    border-radius: var(--radius-xl);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--glass-border);
+}
+
+.item-date-info {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+
+.item-date-info svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Заголовок и Тир */
+.item-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: var(--spacing-md);
+}
+
+.item-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-primary);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.item-tier-badge {
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 10px 20px;
+    border-radius: var(--radius-lg);
+    border: 2px solid;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}
+
+.item-tier-badge.tier-S { color: var(--tier-s); border-color: var(--tier-s); text-shadow: 0 0 15px var(--tier-s); box-shadow: inset 0 0 20px rgba(255, 211, 42, 0.2), 0 0 15px rgba(255, 211, 42, 0.3); }
+.item-tier-badge.tier-A { color: var(--tier-a); border-color: var(--tier-a); text-shadow: 0 0 15px var(--tier-a); box-shadow: inset 0 0 20px rgba(255, 82, 82, 0.2), 0 0 15px rgba(255, 82, 82, 0.3); }
+.item-tier-badge.tier-B { color: var(--tier-b); border-color: var(--tier-b); text-shadow: 0 0 15px var(--tier-b); box-shadow: inset 0 0 20px rgba(52, 172, 224, 0.2), 0 0 15px rgba(52, 172, 224, 0.3); }
+.item-tier-badge.tier-C { color: var(--tier-c); border-color: var(--tier-c); text-shadow: 0 0 15px var(--tier-c); box-shadow: inset 0 0 20px rgba(51, 217, 178, 0.2), 0 0 15px rgba(51, 217, 178, 0.3); }
+.item-tier-badge.tier-D { color: var(--tier-d); border-color: var(--tier-d); text-shadow: 0 0 15px var(--tier-d); box-shadow: inset 0 0 20px rgba(128, 142, 155, 0.2); }
+
+/* Дашборд (Оценка, Прогресс) */
+.item-dashboard {
+    display: flex;
+    gap: 16px;
+    margin: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+}
+
+.stat-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+/* Карточка прогресса (с полосой) */
+.stat-card-progress {
+    flex: 2;
+    min-width: 280px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 12px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--accent-glow);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Раздел статусов */
+.item-section-title {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 8px;
+}
+
+.item-status-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: var(--spacing-xl);
+}
+
+.status-badge-detailed {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+}
+
+.status-badge-detailed:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--glass-border-highlight);
+}
+
+.status-badge-detailed svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Обзор */
+.item-review-box {
+    background: rgba(0, 0, 0, 0.2);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--glass-border-highlight);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-top: auto;
+    position: relative;
+}
+
+.item-review-box p {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.item-review-box p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .item-container { flex-direction: column; padding: var(--spacing-md); }
+    .item-poster-wrap { width: 100%; max-width: 320px; margin: 0 auto; }
+    .item-title { font-size: 2.2rem; }
+    .item-title-row { flex-direction: column; gap: 12px; }
+    .item-tier-badge { align-self: flex-start; padding: 6px 16px; font-size: 1.5rem; }
+    .stat-card { min-width: 100%; }
+}

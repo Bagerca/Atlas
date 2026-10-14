@@ -1,4 +1,4 @@
-/* ================= COLLECTIONS GROUPING (Steam Style) ================= */
+/* ================= COLLECTIONS GROUPING ================= */
 .collection-group {
     margin-bottom: var(--spacing-xl);
     animation: fadeIn var(--transition-base);
@@ -47,6 +47,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: var(--glass-shadow);
+    cursor: pointer;
 }
 
 .card:hover {
@@ -96,6 +97,32 @@
 .card-score.tier-C { border-color: var(--tier-c); box-shadow: 0 0 15px rgba(51, 217, 178, 0.3); }
 .card-score.tier-D { border-color: var(--tier-d); }
 
+/* Новый бейдж прогресса наностся поверх постера справа снизу */
+.card-progress-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(15, 20, 30, 0.75);
+    backdrop-filter: blur(8px);
+    color: var(--text-primary);
+    font-weight: 800;
+    padding: 6px 10px;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-progress-badge svg {
+    width: 14px;
+    height: 14px;
+    color: var(--accent-color);
+    display: block;
+}
+
 .card-admin-actions {
     position: absolute;
     top: 12px;
@@ -112,6 +139,12 @@
     transform: translateX(0);
 }
 
+.card-admin-actions .btn-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
 .card-info {
     padding: var(--spacing-lg);
     flex: 1;
@@ -124,53 +157,48 @@
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: var(--spacing-xs);
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-.card-meta-info {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-sm);
+/* ================= STATUS ICONS ================= */
+.card-icons-row {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    gap: 12px;
+    margin-top: auto;
+    align-items: center;
 }
 
-.card-meta-info span {
+.status-icon {
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    cursor: help;
+    transition: transform var(--transition-fast);
 }
 
-.card-statuses {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: auto;
+.status-icon svg {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    display: block;
 }
 
-.status-badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--text-secondary);
-    padding: 4px 10px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(4px);
-    transition: var(--transition-fast);
+.status-icon:hover {
+    transform: scale(1.15);
 }
 
-.card:hover .status-badge {
-    background: rgba(255, 255, 255, 0.15);
-    color: var(--text-primary);
-}
+.color-success { color: var(--success-color); }
+.color-danger { color: var(--danger-color); }
+.color-warning { color: var(--tier-s); }
+.color-info { color: var(--tier-b); }
+.color-muted { color: var(--text-muted); }
+.color-primary { color: var(--text-primary); }
+.color-youtube { color: #ff0000; }
 
-/* ================= EMPTY STATE (Ничего не найдено) ================= */
+/* ================= EMPTY STATE ================= */
 .empty-state {
     display: flex;
     flex-direction: column;
@@ -192,6 +220,11 @@
     margin-bottom: 24px;
     opacity: 0.8;
     filter: drop-shadow(0 0 15px var(--accent-glow));
+}
+
+.empty-state-icon svg {
+    width: 64px;
+    height: 64px;
 }
 
 .empty-state h2 {
