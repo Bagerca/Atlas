@@ -1,0 +1,1525 @@
+============================================================
+ATLAS PROJECT CONTEXT (PURE FRONTEND)
+============================================================
+
+
+============================================================
+FILE: ./index.html
+============================================================
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas | Personal Media Vault</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Компонентные стили вместо одного большого components.css -->
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <div id="app">
+        <header id="app-header" class="header"></header>
+        <main id="app-main" class="main-content"></main>
+        
+        <div id="app-modal"></div>
+    </div>
+
+    <script src="data/catalog.js"></script>
+    <script src="js/utils/icons.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/views/headerView.js"></script>
+    <script src="js/views/catalogView.js"></script>
+    <script src="js/views/modalView.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
+============================================================
+FILE: ./css/card.css
+============================================================
+
+/* ================= COLLECTIONS GROUPING (Steam Style) ================= */
+.collection-group {
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn var(--transition-base);
+}
+
+.collection-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--glass-border);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.collection-title span {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+/* ================= MEDIA CARD ================= */
+.card {
+    background: var(--glass-surface);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--glass-shadow);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--glass-border-highlight);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
+    z-index: 10;
+}
+
+.card-poster-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-poster {
+    transform: scale(1.05);
+}
+
+.card-score {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(15, 20, 30, 0.7);
+    backdrop-filter: blur(8px);
+    color: var(--text-primary);
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-left: 4px solid var(--accent-color);
+}
+
+.card-score.tier-S { border-color: var(--tier-s); box-shadow: 0 0 15px rgba(255, 211, 42, 0.3); }
+.card-score.tier-A { border-color: var(--tier-a); box-shadow: 0 0 15px rgba(255, 82, 82, 0.3); }
+.card-score.tier-B { border-color: var(--tier-b); box-shadow: 0 0 15px rgba(52, 172, 224, 0.3); }
+.card-score.tier-C { border-color: var(--tier-c); box-shadow: 0 0 15px rgba(51, 217, 178, 0.3); }
+.card-score.tier-D { border-color: var(--tier-d); }
+
+.card-admin-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 6px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: var(--transition-base);
+}
+
+.card:hover .card-admin-actions {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card-info {
+    padding: var(--spacing-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.card-meta-info {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-meta-info span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-statuses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(4px);
+    transition: var(--transition-fast);
+}
+
+.card:hover .status-badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+}
+
+/* ================= EMPTY STATE (Ничего не найдено) ================= */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    background: var(--glass-surface);
+    backdrop-filter: blur(10px);
+    border: 1px dashed var(--glass-border-highlight);
+    border-radius: var(--radius-xl);
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn var(--transition-base);
+}
+
+.empty-state-icon {
+    color: var(--accent-color);
+    margin-bottom: 24px;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 15px var(--accent-glow));
+}
+
+.empty-state h2 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 400px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+}
+
+============================================================
+FILE: ./css/header.css
+============================================================
+
+/* ================= HEADER (Стеклянная панель) ================= */
+.header {
+    background: var(--glass-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.brand span {
+    color: var(--accent-color);
+    text-shadow: 0 0 15px var(--accent-glow);
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 6px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--glass-border);
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a.active {
+    color: #fff;
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box svg {
+    position: absolute;
+    left: 14px;
+    color: var(--text-secondary);
+}
+
+.search-box input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 10px 16px 10px 42px;
+    border-radius: var(--radius-xl);
+    outline: none;
+    transition: var(--transition-base);
+    width: 280px;
+    font-size: 0.95rem;
+    backdrop-filter: blur(4px);
+}
+
+.search-box input:focus {
+    border-color: var(--accent-color);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.admin-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--success-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 8px 14px;
+    background: rgba(29, 209, 161, 0.15);
+    border: 1px solid rgba(29, 209, 161, 0.3);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 0 10px rgba(29, 209, 161, 0.1);
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    transition: var(--transition-base);
+}
+
+.btn-icon:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn-icon.danger:hover {
+    background: var(--danger-color);
+    border-color: var(--danger-color);
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+}
+
+@media (max-width: 768px) {
+    .header { flex-direction: column; align-items: stretch; padding: var(--spacing-sm); }
+    .nav-links { overflow-x: auto; white-space: nowrap; }
+    .search-box input { width: 100%; }
+}
+
+============================================================
+FILE: ./css/main.css
+============================================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-base);
+    /* Сложный градиентный фон для эффекта глубины */
+    background-image: 
+        radial-gradient(circle at 15% 10%, rgba(20, 75, 125, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(62, 167, 255, 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+/* Каркас приложения */
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: var(--spacing-lg);
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+============================================================
+FILE: ./css/modal.css
+============================================================
+
+/* ================= MODAL & FORMS ================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 15, 22, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container {
+    background: rgba(25, 33, 48, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.05);
+    width: 100%;
+    max-width: 650px;
+    border-radius: var(--radius-xl);
+    transform: translateY(30px) scale(0.95);
+    transition: var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0) scale(1);
+}
+
+.modal-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.modal-header h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.modal-body {
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+/* Формы */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Чекбоксы (Стеклянная сетка) */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.checkbox-label:hover {
+    color: var(--text-primary);
+}
+
+.checkbox-label input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--glass-border-highlight);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition-fast);
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+    content: "✔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 12px;
+}
+
+/* Кнопки */
+.btn {
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: var(--transition-fast);
+    letter-spacing: 0.5px;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+@media (max-width: 768px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .checkbox-grid { grid-template-columns: 1fr; }
+    .modal-container { margin: var(--spacing-sm); width: auto; max-height: 95vh; }
+}
+
+============================================================
+FILE: ./css/variables.css
+============================================================
+
+:root {
+    /* Фоновые цвета (Modern Steam Style) */
+    --bg-base: #0f141e; /* Глубокий темный сине-серый */
+    
+    /* Стекло (Glassmorphism) */
+    --glass-surface: rgba(30, 41, 59, 0.45);
+    --glass-surface-hover: rgba(45, 61, 85, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border-highlight: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    
+    /* Текст */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #475569;
+    
+    /* Акценты (Насыщенный голубой/кибер-синий) */
+    --accent-color: #3ea7ff; 
+    --accent-hover: #1a9fff;
+    --accent-glow: rgba(62, 167, 255, 0.4);
+    
+    --danger-color: #ff4757;
+    --success-color: #1dd1a1;
+    
+    /* Тир-листы (Сделали цвета более "неоновыми") */
+    --tier-s: #ffd32a;
+    --tier-a: #ff5252;
+    --tier-b: #34ace0;
+    --tier-c: #33d9b2;
+    --tier-d: #808e9b;
+
+    /* Типографика */
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Размеры и отступы */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* Скругления (Сделали более плавными) */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+    
+    /* Анимации */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+============================================================
+FILE: ./data/catalog.js
+============================================================
+
+window.__ATLAS_INITIAL_DATA__ = {
+    metadata: {
+        lastUpdated: new Date().toISOString(),
+        version: "1.4"
+    },
+    items: [
+        /* ================= ИГРЫ ================= */
+        {
+            id: "1700000000001",
+            title: "Beholder",
+            type: "games",
+            collections: ["Инди", "Антиутопия"],
+            statuses: ["played_self", "completed"],
+            score: 8,
+            tier: "A",
+            poster: "assets/beholder.jpg",
+            review: "Отличный симулятор стукача."
+        },
+        {
+            id: "1700000000002",
+            title: "Бенди и темное возрождение",
+            type: "games",
+            collections: ["Хорроры", "Франшиза Bendy"],
+            statuses: ["played_self"],
+            score: 9,
+            tier: "A",
+            poster: "assets/bendy.jpg"
+        },
+        {
+            id: "1700000000003",
+            title: "Valorant",
+            type: "games",
+            collections: ["Шутеры", "Мультиплеер"],
+            statuses: ["played_self", "in_progress"],
+            score: 7,
+            tier: "B",
+            poster: "assets/valorant.jpg"
+        },
+        {
+            id: "1700000000004",
+            title: "Marvel Rivals",
+            type: "games",
+            collections: ["Шутеры", "Мультиплеер"],
+            statuses: ["planned"],
+            score: null,
+            tier: "",
+            poster: "assets/marvel_rivals.jpg"
+        },
+        {
+            id: "1700000000005",
+            title: "Helltaker",
+            type: "games",
+            collections: ["Головоломки", "Инди"],
+            statuses: ["played_self", "completed"],
+            score: 9,
+            tier: "S",
+            poster: "assets/helltaker.jpg"
+        },
+        {
+            id: "1700000000006",
+            title: "Привет Сосед",
+            type: "games",
+            collections: ["Хорроры", "Инди"],
+            statuses: ["watched_youtube"],
+            score: 6,
+            tier: "C",
+            poster: "assets/hello_neighbor.jpg"
+        },
+        {
+            id: "1700000000007",
+            title: "Atomic Heart",
+            type: "games",
+            collections: ["Шутеры", "Сюжетные"],
+            statuses: ["played_self", "completed"],
+            score: 8,
+            tier: "A",
+            poster: "assets/atomic_heart.jpg",
+            completedAt: "2023-03-15"
+        },
+
+        /* ================= ЛИТЕРАТУРА ================= */
+        {
+            id: "1700000000008",
+            title: "Человек-бензопила",
+            type: "literature",
+            collections: ["Манга", "Сёнен"],
+            statuses: ["completed"],
+            score: 10,
+            tier: "S",
+            poster: "assets/chainsaw_man_manga.jpg",
+            meta: { currentProgress: 97, totalProgress: 97 }
+        },
+        {
+            id: "1700000000009",
+            title: "Человек-бензопила 2",
+            type: "literature",
+            collections: ["Манга", "Сёнен"],
+            statuses: ["in_progress"],
+            score: 9,
+            tier: "A",
+            poster: "assets/chainsaw_man_manga_2.jpg",
+            meta: { currentProgress: 45, totalProgress: null }
+        },
+        {
+            id: "1700000000010",
+            title: "Под дубом",
+            type: "literature",
+            collections: ["Манхва", "Романтика"],
+            statuses: ["in_progress"],
+            score: 8,
+            tier: "B",
+            poster: "assets/under_the_oak_tree.jpg",
+            meta: { currentProgress: 60, totalProgress: 120 }
+        },
+        {
+            id: "1700000000011",
+            title: "Мечты оживают",
+            type: "literature",
+            collections: ["Книги", "Франшиза Bendy"],
+            statuses: ["planned"],
+            score: null,
+            tier: "",
+            poster: "assets/dreams_come_to_life.jpg"
+        },
+        {
+            id: "1700000000012",
+            title: "Потерянные",
+            type: "literature",
+            collections: ["Книги", "Франшиза Bendy"],
+            statuses: ["planned"],
+            score: null,
+            tier: "",
+            poster: "assets/the_lost_ones.jpg"
+        },
+
+        /* ================= СЕРИАЛЫ / АНИМЕ ================= */
+        {
+            id: "1700000000013",
+            title: "Человек-бензопила",
+            type: "series",
+            collections: ["Аниме", "Сёнен"],
+            statuses: ["completed"],
+            score: 9,
+            tier: "A",
+            poster: "assets/chainsaw_man_anime.jpg",
+            completedAt: "2023-01-10",
+            meta: { currentProgress: 12, totalProgress: 12 }
+        }
+    ]
+};
+
+============================================================
+FILE: ./js/app.js
+============================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Atlas | Инициализация интерфейса...");
+
+    // 1. Инициализируем хранилище и события модулей
+    window.Store.init();
+    window.HeaderView.init();
+    window.CatalogView.init();
+    window.ModalView.init(); // Добавили инициализацию модалки
+
+    const headerContainer = document.getElementById('app-header');
+    const mainContainer = document.getElementById('app-main');
+
+    let lastRouteHash = null;
+    let lastAdminState = null;
+
+    // 2. Подписываемся на изменения Store
+    window.Store.subscribe((state) => {
+        const currentRouteHash = state.route.path + JSON.stringify(state.route.params);
+        
+        // Перерисовываем Header только если изменился путь или режим админа
+        if (lastRouteHash !== currentRouteHash || lastAdminState !== state.isAdmin) {
+            headerContainer.innerHTML = window.HeaderView.render(state);
+            lastRouteHash = currentRouteHash;
+            lastAdminState = state.isAdmin;
+        }
+
+        // Каталог перерисовываем при любом изменении
+        mainContainer.innerHTML = window.CatalogView.render(state);
+    });
+
+    // 3. Глобальный шорткат для входа в режим Админа
+    document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.shiftKey && e.code === 'KeyA') {
+            e.preventDefault();
+            const currentState = window.Store.getState().isAdmin;
+            window.Store.setState({ isAdmin: !currentState });
+        }
+    });
+
+    // 4. Запуск роутера
+    window.Router.init();
+});
+
+============================================================
+FILE: ./js/router.js
+============================================================
+
+window.Router = (() => {
+    const parseUrl = () => {
+        const hash = window.location.hash.slice(1) || '/';
+        const [path, queryString] = hash.split('?');
+        
+        const params = {};
+        if (queryString) {
+            const urlParams = new URLSearchParams(queryString);
+            for (const [key, value] of urlParams) {
+                params[key] = value;
+            }
+        }
+        return { path, params };
+    };
+
+    const handleRouteChange = () => {
+        const route = parseUrl();
+        window.Store.setState({ route });
+    };
+
+    const init = () => {
+        window.addEventListener('hashchange', handleRouteChange);
+        // Триггерим первый раз при загрузке
+        handleRouteChange();
+    };
+
+    return { init };
+})();
+
+============================================================
+FILE: ./js/store.js
+============================================================
+
+window.Store = (() => {
+    let state = {
+        items: [],
+        isAdmin: false,
+        route: { path: '/', params: {} },
+        searchQuery: ''
+    };
+
+    const listeners = [];
+
+    // Инициализация данных: приоритет у LocalStorage, если пусто - берем из файла
+    const init = () => {
+        try {
+            const localData = localStorage.getItem('atlas_data');
+            if (localData) {
+                state.items = JSON.parse(localData).items;
+            } else if (window.__ATLAS_INITIAL_DATA__) {
+                state.items = window.__ATLAS_INITIAL_DATA__.items;
+            }
+        } catch (error) {
+            console.error("Ошибка загрузки данных в Store:", error);
+            state.items = [];
+        }
+    };
+
+    const getState = () => state;
+
+    const setState = (updates) => {
+        state = { ...state, ...updates };
+        
+        // Если обновились items, сохраняем в localStorage
+        if (updates.items) {
+            localStorage.setItem('atlas_data', JSON.stringify({ items: state.items }));
+        }
+
+        // Оповещаем подписчиков
+        listeners.forEach(listener => listener(state));
+    };
+
+    const subscribe = (listener) => {
+        listeners.push(listener);
+        // Сразу вызываем для первоначальной отрисовки
+        listener(state);
+    };
+
+    // Экспорт базы в файл
+    const exportData = () => {
+        const dataStr = `window.__ATLAS_INITIAL_DATA__ = ${JSON.stringify({
+            metadata: { lastUpdated: new Date().toISOString(), version: "1.0" },
+            items: state.items
+        }, null, 4)};`;
+        
+        const blob = new Blob([dataStr], { type: "text/javascript" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'catalog.js';
+        a.click();
+        URL.revokeObjectURL(url);
+    };
+
+    return { init, getState, setState, subscribe, exportData };
+})();
+
+============================================================
+FILE: ./js/utils/icons.js
+============================================================
+
+window.Icons = {
+    search: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`,
+    lock: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`,
+    unlock: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path></svg>`,
+    plus: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
+    edit: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>`,
+    trash: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>`,
+    download: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`,
+    emptyBox: `<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>`
+};
+
+============================================================
+FILE: ./js/views/catalogView.js
+============================================================
+
+window.CatalogView = (() => {
+    const statusLabels = {
+        'played_self': 'Играл(а) / Читал(а) сам(а)',
+        'watched_youtube': 'Смотрел(а) на YouTube',
+        'watched_reaction': 'Смотрел(а) реакцию',
+        'completed': 'Пройдено/Просмотрено',
+        'in_progress': 'В процессе',
+        'dropped': 'Брошено',
+        'planned': 'В планах'
+    };
+
+    const formatDate = (dateStr) => {
+        if (!dateStr) return '';
+        const d = new Date(dateStr);
+        return d.toLocaleDateString('ru-RU');
+    };
+
+    const renderCard = (item, isAdmin) => {
+        let progressText = '';
+        if (item.meta && (item.meta.currentProgress || item.meta.totalProgress)) {
+            const current = item.meta.currentProgress || '?';
+            const total = item.meta.totalProgress || '?';
+            const label = item.type === 'literature' ? 'Главы/Стр:' : 'Серии:';
+            progressText = `<span>📊 ${label} ${current} / ${total}</span>`;
+        }
+
+        const dateText = item.completedAt ? `<span>📅 Пройдено: ${formatDate(item.completedAt)}</span>` : '';
+
+        return `
+        <div class="card">
+            <div class="card-poster-wrapper">
+                <img src="${item.poster}" alt="${item.title}" class="card-poster" onerror="this.style.display='none'">
+                <div class="card-score tier-${item.tier}">
+                    ${item.tier ? item.tier : (item.score ? item.score + '/10' : '-')}
+                </div>
+                ${isAdmin ? `
+                    <div class="card-admin-actions">
+                        <button class="btn-icon edit-btn" data-id="${item.id}">${window.Icons.edit}</button>
+                        <button class="btn-icon danger delete-btn" data-id="${item.id}">${window.Icons.trash}</button>
+                    </div>
+                ` : ''}
+            </div>
+            <div class="card-info">
+                <h3 class="card-title" title="${item.title}">${item.title}</h3>
+                
+                ${(dateText || progressText) ? `
+                    <div class="card-meta-info">
+                        ${progressText}
+                        ${dateText}
+                    </div>
+                ` : ''}
+
+                <div class="card-statuses">
+                    ${(item.statuses || []).map(st => `<span class="status-badge">${statusLabels[st] || st}</span>`).join('')}
+                </div>
+            </div>
+        </div>
+        `;
+    };
+
+    const render = (state) => {
+        const { items, route, searchQuery, isAdmin } = state;
+        const currentType = route.params.type || 'all';
+        
+        let filteredItems = items.filter(item => {
+            const matchType = currentType === 'all' || item.type === currentType;
+            const matchSearch = item.title.toLowerCase().includes(searchQuery);
+            return matchType && matchSearch;
+        });
+
+        if (route.path === '/tierlist') {
+            return `<div class="empty-state">
+                        <div class="empty-state-icon">${window.Icons.emptyBox}</div>
+                        <h2>Раздел в разработке</h2>
+                        <p>Тир-листы появятся в следующем обновлении.</p>
+                    </div>`;
+        }
+
+        // Красивое состояние "Ничего не найдено"
+        if (filteredItems.length === 0) {
+            return `
+                <div class="empty-state">
+                    <div class="empty-state-icon">${window.Icons.emptyBox}</div>
+                    <h2>Ничего не найдено</h2>
+                    <p>Здесь пока пусто. Попробуйте изменить поисковый запрос или добавьте новую карточку через панель администратора.</p>
+                </div>
+            `;
+        }
+
+        const grouped = {};
+        filteredItems.forEach(item => {
+            const colls = (item.collections && item.collections.length > 0) ? item.collections : ['Без категории'];
+            colls.forEach(c => {
+                if (!grouped[c]) grouped[c] = [];
+                grouped[c].push(item);
+            });
+        });
+
+        const sortedCategories = Object.keys(grouped).sort((a, b) => {
+            if (a === 'Без категории') return 1;
+            if (b === 'Без категории') return -1;
+            return a.localeCompare(b);
+        });
+
+        return sortedCategories.map(category => `
+            <div class="collection-group">
+                <h2 class="collection-title">
+                    ${category} <span>${grouped[category].length}</span>
+                </h2>
+                <div class="grid">
+                    ${grouped[category].map(item => renderCard(item, isAdmin)).join('')}
+                </div>
+            </div>
+        `).join('');
+    };
+
+    const init = () => {
+        const main = document.getElementById('app-main');
+        
+        main.addEventListener('click', (e) => {
+            const deleteBtn = e.target.closest('.delete-btn');
+            if (deleteBtn) {
+                const id = deleteBtn.dataset.id;
+                if (confirm('Вы уверены, что хотите удалить эту запись?')) {
+                    const newItems = window.Store.getState().items.filter(i => i.id !== id);
+                    window.Store.setState({ items: newItems });
+                }
+            }
+
+            const editBtn = e.target.closest('.edit-btn');
+            if (editBtn) {
+                const id = editBtn.dataset.id;
+                const itemToEdit = window.Store.getState().items.find(i => i.id === id);
+                if (itemToEdit) {
+                    window.ModalView.open(itemToEdit);
+                }
+            }
+        });
+    };
+
+    return { render, init };
+})();
+
+============================================================
+FILE: ./js/views/headerView.js
+============================================================
+
+window.HeaderView = (() => {
+    const render = (state) => {
+        const { route, isAdmin, searchQuery } = state;
+        const currentType = route.params.type || 'all';
+
+        return `
+            <div class="brand">
+                <a href="#/">ATLAS<span>.</span></a>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#/" class="${currentType === 'all' && route.path === '/' ? 'active' : ''}">Все</a>
+                <a href="#/?type=games" class="${currentType === 'games' ? 'active' : ''}">Игры</a>
+                <a href="#/?type=features" class="${currentType === 'features' ? 'active' : ''}">Полнометражки</a>
+                <a href="#/?type=series" class="${currentType === 'series' ? 'active' : ''}">Сериалы</a>
+                <a href="#/?type=literature" class="${currentType === 'literature' ? 'active' : ''}">Литература</a>
+                <a href="#/tierlist" class="${route.path === '/tierlist' ? 'active' : ''}">Тир-листы</a>
+            </nav>
+
+            <div class="header-controls">
+                <div class="search-box">
+                    ${window.Icons.search}
+                    <input type="text" id="search-input" placeholder="Поиск по названию..." value="${searchQuery}" autocomplete="off">
+                </div>
+                
+                ${isAdmin ? `
+                    <div class="admin-badge">
+                        ${window.Icons.unlock} Админ
+                    </div>
+                    <button class="btn-icon" id="add-btn" title="Добавить запись">
+                        ${window.Icons.plus}
+                    </button>
+                    <button class="btn-icon" id="export-btn" title="Экспорт базы (catalog.js)">
+                        ${window.Icons.download}
+                    </button>
+                ` : `
+                    <div class="admin-badge" style="color: var(--text-secondary); background: none;" title="Ctrl+Shift+A для входа">
+                        ${window.Icons.lock}
+                    </div>
+                `}
+            </div>
+        `;
+    };
+
+    const init = () => {
+        const header = document.getElementById('app-header');
+        
+        header.addEventListener('input', (e) => {
+            if (e.target.id === 'search-input') {
+                window.Store.setState({ searchQuery: e.target.value.toLowerCase() });
+            }
+        });
+
+        header.addEventListener('click', (e) => {
+            if (e.target.closest('#export-btn')) {
+                window.Store.exportData();
+            }
+            if (e.target.closest('#add-btn')) {
+                window.ModalView.open();
+            }
+        });
+    };
+
+    return { render, init };
+})();
+
+============================================================
+FILE: ./js/views/modalView.js
+============================================================
+
+window.ModalView = (() => {
+    let currentItem = null;
+
+    const render = (item) => {
+        const isEdit = !!item;
+        currentItem = item || {};
+
+        const title = currentItem.title || '';
+        const type = currentItem.type || 'games';
+        const score = currentItem.score || '';
+        const tier = currentItem.tier || '';
+        const poster = currentItem.poster || 'assets/test.jpg';
+        const review = currentItem.review || '';
+        const collections = currentItem.collections ? currentItem.collections.join(', ') : '';
+        const completedAt = currentItem.completedAt || '';
+        
+        // Мета-данные прогресса
+        const currentProgress = currentItem.meta?.currentProgress || '';
+        const totalProgress = currentItem.meta?.totalProgress || '';
+        
+        let statuses = currentItem.statuses || [];
+        if (typeof currentItem.status === 'string' && statuses.length === 0) {
+            statuses = [currentItem.status];
+        }
+
+        const isChecked = (val) => statuses.includes(val) ? 'checked' : '';
+        
+        // Определяем, нужно ли показывать поля прогресса при открытии
+        const showProgress = type === 'series' || type === 'literature';
+
+        return `
+            <div class="modal-overlay active" id="modal-overlay">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <h2>${isEdit ? 'Редактировать запись' : 'Добавить в Atlas'}</h2>
+                        <button type="button" class="btn-icon" id="close-modal">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+                    
+                    <form id="atlas-form">
+                        <div class="modal-body">
+                            <div class="form-group full-width">
+                                <label class="form-label">Название</label>
+                                <input type="text" class="form-control" name="title" value="${title}" required placeholder="Например: Cyberpunk 2077">
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">Тип медиа</label>
+                                    <select class="form-control" name="type" id="type-select">
+                                        <option value="games" ${type === 'games' ? 'selected' : ''}>Игры</option>
+                                        <option value="features" ${type === 'features' ? 'selected' : ''}>Полнометражки</option>
+                                        <option value="series" ${type === 'series' ? 'selected' : ''}>Сериалы</option>
+                                        <option value="literature" ${type === 'literature' ? 'selected' : ''}>Литература (Манга, Книги)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Оценка (1-10)</label>
+                                    <input type="number" class="form-control" name="score" min="1" max="10" value="${score}">
+                                </div>
+                            </div>
+                            
+                            <!-- Блок прогресса (скрыт для Игр и Полнометражек) -->
+                            <div class="form-grid" id="progress-fields" style="display: ${showProgress ? 'grid' : 'none'}; background: rgba(0,0,0,0.15); padding: 12px; border-radius: 8px; border: 1px dashed rgba(255,255,255,0.1); margin-bottom: 16px;">
+                                <div class="form-group" style="margin-bottom:0;">
+                                    <label class="form-label">Текущий прогресс (сер./гл.)</label>
+                                    <input type="number" class="form-control" name="currentProgress" value="${currentProgress}">
+                                </div>
+                                <div class="form-group" style="margin-bottom:0;">
+                                    <label class="form-label">Всего (сер./гл.)</label>
+                                    <input type="number" class="form-control" name="totalProgress" value="${totalProgress}">
+                                </div>
+                            </div>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">Дата прохождения/окончания</label>
+                                    <input type="date" class="form-control" name="completedAt" value="${completedAt}">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Коллекции (через запятую)</label>
+                                    <input type="text" class="form-control" name="collections" value="${collections}" placeholder="Любимое, Дарк фэнтези...">
+                                </div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label">Статусы (можно выбрать несколько)</label>
+                                <div class="checkbox-grid">
+                                    <label class="checkbox-label"><input type="checkbox" name="statuses" value="played_self" ${isChecked('played_self')}> Играл(а) / Читал(а) сам(а)</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="statuses" value="watched_youtube" ${isChecked('watched_youtube')}> Смотрел(а) на YouTube</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="statuses" value="watched_reaction" ${isChecked('watched_reaction')}> Смотрел(а) реакцию</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="statuses" value="completed" ${isChecked('completed')}> Полностью пройдено/просмотрено</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="statuses" value="in_progress" ${isChecked('in_progress')}> В процессе</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="statuses" value="dropped" ${isChecked('dropped')}> Брошено</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="statuses" value="planned" ${isChecked('planned')}> В планах</label>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">Tier (S, A, B, C, D)</label>
+                                    <select class="form-control" name="tier">
+                                        <option value="">Без тира</option>
+                                        <option value="S" ${tier === 'S' ? 'selected' : ''}>S - Шедевр</option>
+                                        <option value="A" ${tier === 'A' ? 'selected' : ''}>A - Отлично</option>
+                                        <option value="B" ${tier === 'B' ? 'selected' : ''}>B - Хорошо</option>
+                                        <option value="C" ${tier === 'C' ? 'selected' : ''}>C - Средне</option>
+                                        <option value="D" ${tier === 'D' ? 'selected' : ''}>D - Плохо</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Постер (путь к файлу)</label>
+                                    <input type="text" class="form-control" name="poster" value="${poster}" placeholder="assets/image.jpg">
+                                </div>
+                            </div>
+
+                            <div class="form-group full-width" style="margin-bottom: 0;">
+                                <label class="form-label">Отзыв / Заметка</label>
+                                <textarea class="form-control" name="review" placeholder="Личные впечатления...">${review}</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id="cancel-modal">Отмена</button>
+                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        `;
+    };
+
+    const open = (item = null) => {
+        const modalContainer = document.getElementById('app-modal');
+        modalContainer.innerHTML = render(item);
+        
+        // Добавляем слушатель для переключения видимости полей прогресса
+        const typeSelect = document.getElementById('type-select');
+        const progressFields = document.getElementById('progress-fields');
+        if (typeSelect && progressFields) {
+            typeSelect.addEventListener('change', (e) => {
+                if (e.target.value === 'series' || e.target.value === 'literature') {
+                    progressFields.style.display = 'grid';
+                } else {
+                    progressFields.style.display = 'none';
+                    // Очищаем значения при скрытии
+                    document.querySelector('input[name="currentProgress"]').value = '';
+                    document.querySelector('input[name="totalProgress"]').value = '';
+                }
+            });
+        }
+    };
+
+    const close = () => {
+        const modalContainer = document.getElementById('app-modal');
+        modalContainer.innerHTML = '';
+        currentItem = null;
+    };
+
+    const init = () => {
+        const modalContainer = document.getElementById('app-modal');
+
+        modalContainer.addEventListener('click', (e) => {
+            if (e.target.closest('#close-modal') || 
+                e.target.closest('#cancel-modal') || 
+                e.target.id === 'modal-overlay') {
+                close();
+            }
+        });
+
+        modalContainer.addEventListener('submit', (e) => {
+            if (e.target.id === 'atlas-form') {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                
+                const selectedStatuses = formData.getAll('statuses');
+                
+                const collectionsStr = formData.get('collections');
+                const parsedCollections = collectionsStr
+                    .split(',')
+                    .map(c => c.trim())
+                    .filter(c => c.length > 0);
+
+                // Собираем мета-данные
+                const currentP = formData.get('currentProgress');
+                const totalP = formData.get('totalProgress');
+                let metaData = {};
+                if (currentP || totalP) {
+                    metaData = {
+                        currentProgress: currentP ? Number(currentP) : null,
+                        totalProgress: totalP ? Number(totalP) : null
+                    };
+                }
+
+                const newItem = {
+                    id: currentItem?.id || Date.now().toString(),
+                    title: formData.get('title'),
+                    type: formData.get('type'),
+                    collections: parsedCollections,
+                    statuses: selectedStatuses,
+                    score: Number(formData.get('score')) || null,
+                    tier: formData.get('tier') || null,
+                    poster: formData.get('poster'),
+                    completedAt: formData.get('completedAt') || null,
+                    review: formData.get('review')
+                };
+
+                // Добавляем meta только если там есть данные
+                if (Object.keys(metaData).length > 0) {
+                    newItem.meta = metaData;
+                }
+
+                const currentItems = window.Store.getState().items;
+                let newItemsList;
+
+                if (currentItem?.id) {
+                    newItemsList = currentItems.map(i => i.id === currentItem.id ? newItem : i);
+                } else {
+                    newItemsList = [newItem, ...currentItems];
+                }
+
+                window.Store.setState({ items: newItemsList });
+                close();
+            }
+        });
+    };
+
+    return { open, close, init };
+})();

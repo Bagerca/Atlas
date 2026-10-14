@@ -1,0 +1,51 @@
+:root {
+    /* Фоновые цвета (Modern Steam Style) */
+    --bg-base: #0f141e; /* Глубокий темный сине-серый */
+    
+    /* Стекло (Glassmorphism) */
+    --glass-surface: rgba(30, 41, 59, 0.45);
+    --glass-surface-hover: rgba(45, 61, 85, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border-highlight: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    
+    /* Текст */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #475569;
+    
+    /* Акценты (Насыщенный голубой/кибер-синий) */
+    --accent-color: #3ea7ff; 
+    --accent-hover: #1a9fff;
+    --accent-glow: rgba(62, 167, 255, 0.4);
+    
+    --danger-color: #ff4757;
+    --success-color: #1dd1a1;
+    
+    /* Тир-листы (Сделали цвета более "неоновыми") */
+    --tier-s: #ffd32a;
+    --tier-a: #ff5252;
+    --tier-b: #34ace0;
+    --tier-c: #33d9b2;
+    --tier-d: #808e9b;
+
+    /* Типографика */
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Размеры и отступы */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* Скругления (Сделали более плавными) */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+    
+    /* Анимации */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
