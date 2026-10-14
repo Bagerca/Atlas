@@ -18,6 +18,11 @@ body {
     min-height: 100vh;
 }
 
+/* Блокировка скролла для модальных окон */
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* Кастомный скроллбар */
 ::-webkit-scrollbar {
     width: 10px;

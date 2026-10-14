@@ -13,17 +13,19 @@ FILE: ./index.html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlas | Personal Media Vault</title>
-    <!-- Заглушка, чтобы не было ошибки favicon 404 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
     
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
+    <!-- Новые стили компонентов хедера -->
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/sort.css">
+    
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/tierlist.css">
     <link rel="stylesheet" href="css/item.css">
-    <!-- Стили для админки -->
     <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
@@ -39,14 +41,21 @@ FILE: ./index.html
     <script src="js/utils/helpers.js"></script>
     <script src="js/store.js"></script>
     <script src="js/router.js"></script>
+    
+    <!-- Компоненты -->
     <script src="js/components/cardComponent.js"></script>
     <script src="js/components/modalComponent.js"></script>
+    <script src="js/components/searchComponent.js"></script>
+    <script src="js/components/sortComponent.js"></script>
+    
+    <!-- Виды (Страницы) -->
     <script src="js/views/headerView.js"></script>
     <script src="js/views/catalogView.js"></script>
     <script src="js/views/tierlistView.js"></script>
     <script src="js/views/itemView.js"></script>
-    <!-- Новый View для галереи иконок -->
     <script src="js/views/iconsView.js"></script>
+    
+    <!-- Инициализация -->
     <script src="js/app.js"></script>
 </body>
 </html>
@@ -179,10 +188,15 @@ FILE: ./css/admin.css
 FILE: ./css/card.css
 ============================================================
 
-/* ================= COLLECTIONS GROUPING ================= */
+/* ================= COLLECTIONS GROUPING (ОПТИМИЗАЦИЯ РЕНДЕРА) ================= */
 .collection-group {
     margin-bottom: var(--spacing-xl);
     animation: fadeIn var(--transition-base);
+    
+    /* ОПТИМИЗАЦИЯ: Браузер не рендерит то, что вне экрана */
+    content-visibility: auto;
+    /* Указываем примерную высоту, чтобы скроллбар не прыгал, когда блоки появляются */
+    contain-intrinsic-size: 500px; 
 }
 
 .collection-title {
@@ -213,6 +227,7 @@ FILE: ./css/card.css
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: var(--spacing-xl);
+    align-items: stretch;
 }
 
 /* ================= MEDIA CARD ================= */
@@ -229,27 +244,58 @@ FILE: ./css/card.css
     flex-direction: column;
     box-shadow: var(--glass-shadow);
     cursor: pointer;
+    height: 100%;
+    
+    /* ОПТИМИЗАЦИЯ: Выносим карточку в отдельный слой для GPU, чтобы hover не тормозил страницу */
+    will-change: transform, box-shadow;
+    transform: translateZ(0); 
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px) scale(1.02) translateZ(0);
     border-color: var(--glass-border-highlight);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
     z-index: 10;
 }
 
+/* ЖЕЛЕЗОБЕТОННАЯ ФИКСАЦИЯ ПРОПОРЦИЙ ПОСТЕРА 2:3 */
 .card-poster-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 2 / 3;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 150%; 
+    background-color: rgba(15, 20, 30, 0.8);
+    flex-shrink: 0; 
+    overflow: hidden;
+}
+
+/* СКЕЛЕТНАЯ АНИМАЦИЯ (Пока грузится картинка) */
+.skeleton-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
 }
 
 .card-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    z-index: 2; /* Поверх скелета */
 }
 
 .card:hover .card-poster {
@@ -270,6 +316,7 @@ FILE: ./css/card.css
     border: 1px solid var(--glass-border);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     border-left: 4px solid var(--accent-color);
+    z-index: 3;
 }
 
 .card-score.tier-S { border-color: var(--tier-s); box-shadow: 0 0 15px rgba(255, 211, 42, 0.3); }
@@ -278,7 +325,6 @@ FILE: ./css/card.css
 .card-score.tier-C { border-color: var(--tier-c); box-shadow: 0 0 15px rgba(51, 217, 178, 0.3); }
 .card-score.tier-D { border-color: var(--tier-d); }
 
-/* Новый бейдж прогресса наностся поверх постера справа снизу */
 .card-progress-badge {
     position: absolute;
     bottom: 12px;
@@ -295,6 +341,7 @@ FILE: ./css/card.css
     display: flex;
     align-items: center;
     gap: 6px;
+    z-index: 3;
 }
 
 .card-progress-badge svg {
@@ -313,6 +360,7 @@ FILE: ./css/card.css
     opacity: 0;
     transform: translateX(10px);
     transition: var(--transition-base);
+    z-index: 3;
 }
 
 .card:hover .card-admin-actions {
@@ -497,42 +545,10 @@ FILE: ./css/header.css
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
-}
-
-.search-box {
     position: relative;
-    display: flex;
-    align-items: center;
 }
 
-.search-box svg {
-    position: absolute;
-    left: 14px;
-    color: var(--text-secondary);
-    width: 20px;
-    height: 20px;
-    display: block;
-}
-
-.search-box input {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--glass-border);
-    color: var(--text-primary);
-    padding: 10px 16px 10px 42px;
-    border-radius: var(--radius-xl);
-    outline: none;
-    transition: var(--transition-base);
-    width: 280px;
-    font-size: 0.95rem;
-    backdrop-filter: blur(4px);
-}
-
-.search-box input:focus {
-    border-color: var(--accent-color);
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 0 3px var(--accent-glow);
-}
-
+/* ================= ADMIN & BUTTONS ================= */
 .admin-badge {
     display: flex;
     align-items: center;
@@ -563,32 +579,25 @@ FILE: ./css/header.css
     border: 1px solid var(--glass-border);
     color: var(--text-primary);
     transition: var(--transition-base);
+    position: relative;
 }
 
-/* Жесткий размер для всех иконок-кнопок, чтобы избежать "пустых кругов" */
 .btn-icon svg {
     width: 22px;
     height: 22px;
     display: block;
 }
 
-.btn-icon:hover {
+.btn-icon:hover, .btn-icon.active {
     background: var(--accent-color);
     border-color: var(--accent-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px var(--accent-glow);
 }
 
-.btn-icon.danger:hover {
-    background: var(--danger-color);
-    border-color: var(--danger-color);
-    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
-}
-
 @media (max-width: 768px) {
     .header { flex-direction: column; align-items: stretch; padding: var(--spacing-sm); }
     .nav-links { overflow-x: auto; white-space: nowrap; }
-    .search-box input { width: 100%; }
 }
 
 ============================================================
@@ -597,19 +606,43 @@ FILE: ./css/item.css
 
 /* ================= ITEM DETAIL PAGE ================= */
 .item-page {
-    animation: fadeIn var(--transition-base);
+    /* Убрали анимацию отсюда, чтобы не ломать position: fixed у детей */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; 
+    position: relative;
 }
 
-.item-header-nav {
+/* ================= ПЛАВАЮЩИЙ ТУЛБАР (Левый угол экрана) ================= */
+.item-floating-nav {
+    position: fixed; 
+    top: 100px;      
+    left: 24px;      
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--spacing-lg);
+    flex-direction: column; 
+    gap: 16px;
+    z-index: 100;
+    /* Анимация применяется отдельно сюда */
+    animation: fadeIn var(--transition-base);
 }
 
+.item-floating-nav .btn-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: rgba(20, 26, 38, 0.85); 
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
+}
+
+.item-floating-nav .btn-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ================= ОСНОВНОЙ КОНТЕНТ ================= */
 .item-container {
+    /* Анимация применяется отдельно сюда */
+    animation: fadeIn var(--transition-base);
     display: flex;
     gap: var(--spacing-xl);
     background: var(--glass-surface);
@@ -876,6 +909,7 @@ FILE: ./css/item.css
     .item-title-row { flex-direction: column; gap: 12px; }
     .item-tier-badge { align-self: flex-start; padding: 6px 16px; font-size: 1.5rem; }
     .stat-card { min-width: 100%; }
+    .item-floating-nav { bottom: 20px; left: 20px; top: auto; flex-direction: column-reverse; }
 }
 
 ============================================================
@@ -900,6 +934,11 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
+}
+
+/* Блокировка скролла для модальных окон */
+body.no-scroll {
+    overflow: hidden;
 }
 
 /* Кастомный скроллбар */
@@ -1244,6 +1283,208 @@ textarea.form-control {
 }
 
 ============================================================
+FILE: ./css/search.css
+============================================================
+
+/* ================= КОМПОНЕНТ ПОИСКА ================= */
+.search-wrapper {
+    position: relative;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box svg {
+    position: absolute;
+    left: 14px;
+    color: var(--text-secondary);
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: var(--transition-base);
+}
+
+.search-box:focus-within svg {
+    color: var(--accent-color);
+    filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
+.search-box input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 10px 16px 10px 42px;
+    border-radius: var(--radius-xl);
+    outline: none;
+    transition: var(--transition-base);
+    width: 280px;
+    font-size: 0.95rem;
+    backdrop-filter: blur(4px);
+}
+
+.search-box input:focus {
+    border-color: var(--accent-color);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.search-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: rgba(15, 20, 30, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border-highlight);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition-base);
+    z-index: 1000;
+}
+
+.search-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.search-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--glass-border);
+    transition: var(--transition-fast);
+}
+
+.search-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.search-dropdown-item:hover {
+    background: rgba(62, 167, 255, 0.15);
+}
+
+.search-dropdown-poster {
+    width: 32px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #000;
+}
+
+.search-dropdown-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.search-dropdown-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-dropdown-type {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .search-box input { width: 100%; }
+}
+
+============================================================
+FILE: ./css/sort.css
+============================================================
+
+/* ================= КОМПОНЕНТ СОРТИРОВКИ ================= */
+.sort-popover {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    background: rgba(20, 26, 38, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border-highlight);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    width: 260px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(62, 167, 255, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition-fast);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sort-popover.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sort-group {
+    display: flex;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.sort-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition-fast);
+    border-right: 1px solid var(--glass-border);
+}
+
+.sort-btn:last-child {
+    border-right: none;
+}
+
+.sort-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.sort-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.sort-btn.active {
+    background: rgba(62, 167, 255, 0.15);
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .sort-popover { right: 50%; transform: translateX(50%) translateY(-10px); }
+    .sort-popover.active { transform: translateX(50%) translateY(0); }
+}
+
+============================================================
 FILE: ./css/tierlist.css
 ============================================================
 
@@ -1426,7 +1667,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/beholder_games.jpg",
+            "poster": "assets/beholder_games.webp",
             "review": "Отличный симулятор стукача.\n\nСмотрел(а) на YouTube: #ViteCPlay",
             "completedAt": null
         },
@@ -1879,7 +2120,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/beholder_2_games.jpg",
+            "poster": "assets/beholder_2_games.webp",
             "completedAt": null
         },
         {
@@ -1890,7 +2131,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/beholder_3_games.jpg",
+            "poster": "assets/beholder_3_games.webp",
             "completedAt": null
         },
         {
@@ -2068,7 +2309,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/hollow_knight_games.jpg",
+            "poster": "assets/hollow_knight_games.webp",
             "completedAt": null
         },
         {
@@ -2079,7 +2320,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/hollow_knight_silksong_games.jpg",
+            "poster": "assets/hollow_knight_silksong_games.webp",
             "completedAt": null
         },
         {
@@ -2833,36 +3074,78 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("[App] Инициализация интерфейса Atlas...");
 
     window.Store.init();
-    
     window.HeaderView.init();
     window.CatalogView.init(); 
     window.ModalComponent.init();
-    window.IconsView.init(); // Инициализация нового View
+    window.IconsView.init();
 
     const headerContainer = document.getElementById('app-header');
     const mainContainer = document.getElementById('app-main');
 
     let lastRouteHash = null;
+    let lastRoutePath = null;
     let lastAdminState = null;
+    
+    // Кэш скролла для каждой страницы (по пути, например: '/' или '/item')
+    const scrollCache = {};
 
     window.Store.subscribe((state) => {
         const currentRouteHash = state.route.path + JSON.stringify(state.route.params);
-        
-        if (lastRouteHash !== currentRouteHash || lastAdminState !== state.isAdmin) {
-            headerContainer.innerHTML = window.HeaderView.render(state);
-            lastRouteHash = currentRouteHash;
-            lastAdminState = state.isAdmin;
+        const currentRoutePath = state.route.path;
+        const isModalOpen = !!state.route.params.modal;
+
+        // 1. Блокировка скролла фона (с компенсацией ширины скроллбара против дерганья экрана)
+        if (isModalOpen) {
+            if (!document.body.classList.contains('no-scroll')) {
+                const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+                document.body.style.paddingRight = `${scrollBarWidth}px`;
+                document.body.classList.add('no-scroll');
+            }
+        } else {
+            document.body.style.paddingRight = '';
+            document.body.classList.remove('no-scroll');
         }
 
-        // Центральный роутинг экранов
-        if (state.route.path === '/tierlist') {
-            mainContainer.innerHTML = window.TierlistView.render(state);
-        } else if (state.route.path === '/item') {
-            mainContainer.innerHTML = window.ItemView.render(state);
-        } else if (state.route.path === '/icons') {
-            mainContainer.innerHTML = window.IconsView.render(state);
-        } else {
-            mainContainer.innerHTML = window.CatalogView.render(state);
+        // 2. Центральный роутинг экранов и восстановление скролла
+        if (lastRouteHash !== currentRouteHash || lastAdminState !== state.isAdmin) {
+            // Флаг смены именно страницы (а не просто открытия модалки/смены фильтра)
+            const isPathChanged = lastRoutePath && (lastRoutePath !== currentRoutePath);
+            
+            // Запоминаем скролл ПРЕДЫДУЩЕЙ страницы перед тем, как ее уничтожить
+            if (isPathChanged) {
+                scrollCache[lastRoutePath] = window.scrollY;
+            }
+
+            // Запоминаем текущий скролл для случаев, когда страница остается той же 
+            // (чтобы при ререндере Каталога от изменения поиска нас не кидало наверх)
+            const currentScrollY = window.scrollY;
+
+            headerContainer.innerHTML = window.HeaderView.render(state);
+
+            if (currentRoutePath === '/tierlist') {
+                mainContainer.innerHTML = window.TierlistView.render(state);
+            } else if (currentRoutePath === '/item') {
+                mainContainer.innerHTML = window.ItemView.render(state);
+            } else if (currentRoutePath === '/icons') {
+                mainContainer.innerHTML = window.IconsView.render(state);
+            } else {
+                mainContainer.innerHTML = window.CatalogView.render(state);
+            }
+
+            // Восстановление позиции скролла (setTimeout 0 нужен, чтобы DOM успел отрендериться и получить высоту)
+            setTimeout(() => {
+                if (isPathChanged) {
+                    // Перешли на другую страницу (например, назад из Записи в Каталог)
+                    window.scrollTo(0, scrollCache[currentRoutePath] || 0);
+                } else {
+                    // Страница та же (например, открыли модалку или ввели букву в поиск)
+                    window.scrollTo(0, currentScrollY);
+                }
+            }, 0);
+
+            lastRouteHash = currentRouteHash;
+            lastRoutePath = currentRoutePath;
+            lastAdminState = state.isAdmin;
         }
     });
 
@@ -2960,7 +3243,9 @@ window.Store = (() => {
         isAdmin: false,
         route: { path: '/', params: {} },
         searchQuery: '',
-        lastCatalogRoute: '#/' // Храним последнюю категорию/поиск для кнопки возврата
+        lastCatalogRoute: '#/', 
+        // Добавлен дефолтный конфиг сортировки
+        sortConfig: { by: 'title', dir: 'asc' }
     };
 
     const listeners = [];
@@ -2995,7 +3280,7 @@ window.Store = (() => {
 
     const subscribe = (listener) => {
         listeners.push(listener);
-        listener(state); // Вызов для initial render
+        listener(state); 
     };
 
     const exportData = () => {
@@ -3024,7 +3309,7 @@ window.CardComponent = (() => {
     const render = (item, isAdmin) => {
         const { escapeHtml, getStatusVisuals } = window.Helpers;
 
-        // Формируем бейдж прогресса для постера
+        // Формируем бейдж прогресса
         let progressBadge = '';
         if (item.meta && (item.meta.currentProgress || item.meta.totalProgress)) {
             const current = item.meta.currentProgress || '?';
@@ -3050,10 +3335,19 @@ window.CardComponent = (() => {
             ? `<div class="status-icon color-warning" title="Есть заметка/рецензия">${window.Icons.document}</div>` 
             : '';
 
+        // ОПТИМИЗАЦИЯ: loading="lazy" и decoding="async" для разгрузки сети и главного потока
         return `
         <a href="#/item?id=${item.id}" class="card">
-            <div class="card-poster-wrapper">
-                <img src="${escapeHtml(item.poster)}" alt="${escapeHtml(item.title)}" class="card-poster" onerror="this.style.display='none'">
+            <div class="card-poster-wrapper skeleton-bg">
+                <img 
+                    src="${escapeHtml(item.poster)}" 
+                    alt="${escapeHtml(item.title)}" 
+                    class="card-poster" 
+                    loading="lazy" 
+                    decoding="async" 
+                    onload="this.parentElement.classList.remove('skeleton-bg')"
+                    onerror="this.style.display='none'; this.parentElement.classList.remove('skeleton-bg');"
+                >
                 
                 <div class="card-score tier-${item.tier}">
                     ${item.tier ? item.tier : (item.score ? item.score + '/10' : '-')}
@@ -3353,6 +3647,174 @@ window.ModalComponent = (() => {
 })();
 
 ============================================================
+FILE: ./js/components/searchComponent.js
+============================================================
+
+window.SearchComponent = (() => {
+    const render = (state) => {
+        return `
+            <div class="search-wrapper" id="search-wrapper">
+                <div class="search-box">
+                    ${window.Icons.search || '🔍'}
+                    <input type="text" id="search-input" placeholder="Поиск по базе..." autocomplete="off">
+                </div>
+                <div class="search-dropdown" id="search-dropdown"></div>
+            </div>
+        `;
+    };
+
+    const init = () => {
+        const header = document.getElementById('app-header');
+        
+        // Обработка ввода (Фильтрация и показ дропдауна)
+        header.addEventListener('input', (e) => {
+            if (e.target.id === 'search-input') {
+                const val = e.target.value.toLowerCase().trim();
+                const dropdown = document.getElementById('search-dropdown');
+                
+                // Обновляем фильтр каталога (через Store) без ререндера хедера
+                window.Store.setState({ searchQuery: val });
+
+                if (!val) {
+                    dropdown.innerHTML = '';
+                    dropdown.classList.remove('active');
+                    return;
+                }
+
+                const state = window.Store.getState();
+                const matches = state.items
+                    .filter(i => i.title.toLowerCase().includes(val))
+                    .slice(0, 5); // Топ 5 совпадений
+
+                if (matches.length > 0) {
+                    dropdown.innerHTML = matches.map(item => `
+                        <div class="search-dropdown-item" data-id="${item.id}">
+                            <img src="${window.Helpers.escapeHtml(item.poster)}" class="search-dropdown-poster" onerror="this.style.display='none'">
+                            <div class="search-dropdown-info">
+                                <span class="search-dropdown-title">${window.Helpers.escapeHtml(item.title)}</span>
+                                <span class="search-dropdown-type">${item.type}</span>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    dropdown.innerHTML = `
+                        <div class="search-dropdown-item">
+                            <span style="color: var(--text-muted); font-size: 0.85rem;">Ничего не найдено</span>
+                        </div>
+                    `;
+                }
+                
+                dropdown.classList.add('active');
+            }
+        });
+
+        // Обработка клика по элементу выпадающего списка
+        header.addEventListener('click', (e) => {
+            const searchItem = e.target.closest('.search-dropdown-item');
+            if (searchItem && searchItem.dataset.id) {
+                window.location.hash = `#/item?id=${searchItem.dataset.id}`;
+                document.getElementById('search-input').value = '';
+                document.getElementById('search-dropdown').classList.remove('active');
+            }
+        });
+
+        // Закрытие списка при клике вне компонента
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-wrapper')) {
+                const dropdown = document.getElementById('search-dropdown');
+                if (dropdown) dropdown.classList.remove('active');
+            }
+        });
+    };
+
+    return { render, init };
+})();
+
+============================================================
+FILE: ./js/components/sortComponent.js
+============================================================
+
+window.SortComponent = (() => {
+    const render = (state) => {
+        const config = state.sortConfig || { by: 'title', dir: 'asc' };
+
+        return `
+            <div style="position: relative;">
+                <button class="btn-icon" id="sort-toggle-btn" title="Сортировка">
+                    ${window.Icons.sliders || '🎛'}
+                </button>
+                
+                <div class="sort-popover" id="sort-popover">
+                    <div class="sort-group">
+                        <button class="sort-btn param-btn ${config.by === 'title' ? 'active' : ''}" data-by="title" title="По алфавиту">${window.Icons.text || 'T'}</button>
+                        <button class="sort-btn param-btn ${config.by === 'date' ? 'active' : ''}" data-by="date" title="По дате завершения">${window.Icons.calendar || '📅'}</button>
+                        <button class="sort-btn param-btn ${config.by === 'score' ? 'active' : ''}" data-by="score" title="По оценке">${window.Icons.star || '⭐'}</button>
+                    </div>
+                    <div class="sort-group">
+                        <button class="sort-btn dir-btn ${config.dir === 'desc' ? 'active' : ''}" data-dir="desc">
+                            ${window.Icons.arrowDown || '↓'} Убывание
+                        </button>
+                        <button class="sort-btn dir-btn ${config.dir === 'asc' ? 'active' : ''}" data-dir="asc">
+                            ${window.Icons.arrowUp || '↑'} Возрастание
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    };
+
+    const init = () => {
+        const header = document.getElementById('app-header');
+
+        header.addEventListener('click', (e) => {
+            // Открытие/закрытие Popover'а
+            const sortToggle = e.target.closest('#sort-toggle-btn');
+            if (sortToggle) {
+                sortToggle.classList.toggle('active');
+                document.getElementById('sort-popover').classList.toggle('active');
+                return;
+            }
+
+            // Выбор параметра сортировки (Текст, Дата, Оценка)
+            const paramBtn = e.target.closest('.param-btn');
+            if (paramBtn) {
+                const newBy = paramBtn.dataset.by;
+                const currentConfig = window.Store.getState().sortConfig;
+                window.Store.setState({ sortConfig: { ...currentConfig, by: newBy } });
+                
+                document.querySelectorAll('.param-btn').forEach(btn => btn.classList.remove('active'));
+                paramBtn.classList.add('active');
+                return;
+            }
+
+            // Выбор направления сортировки
+            const dirBtn = e.target.closest('.dir-btn');
+            if (dirBtn) {
+                const newDir = dirBtn.dataset.dir;
+                const currentConfig = window.Store.getState().sortConfig;
+                window.Store.setState({ sortConfig: { ...currentConfig, dir: newDir } });
+                
+                document.querySelectorAll('.dir-btn').forEach(btn => btn.classList.remove('active'));
+                dirBtn.classList.add('active');
+                return;
+            }
+        });
+
+        // Закрытие поповера при клике вне его зоны
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#sort-toggle-btn') && !e.target.closest('#sort-popover')) {
+                const popover = document.getElementById('sort-popover');
+                const toggle = document.getElementById('sort-toggle-btn');
+                if (popover) popover.classList.remove('active');
+                if (toggle) toggle.classList.remove('active');
+            }
+        });
+    };
+
+    return { render, init };
+})();
+
+============================================================
 FILE: ./js/utils/helpers.js
 ============================================================
 
@@ -3581,13 +4043,11 @@ FILE: ./js/views/catalogView.js
 
 window.CatalogView = (() => {
     const render = (state) => {
-        const { items, route, searchQuery, isAdmin } = state;
+        const { items, route, isAdmin, sortConfig } = state;
         const currentType = route.params.type || 'all';
         
         let filteredItems = items.filter(item => {
-            const matchType = currentType === 'all' || item.type === currentType;
-            const matchSearch = item.title.toLowerCase().includes(searchQuery);
-            return matchType && matchSearch;
+            return currentType === 'all' || item.type === currentType;
         });
 
         if (filteredItems.length === 0) {
@@ -3609,10 +4069,35 @@ window.CatalogView = (() => {
             });
         });
 
+        // Сортировка названия коллекций по алфавиту
         const sortedCategories = Object.keys(grouped).sort((a, b) => {
             if (a === 'Без категории') return 1;
             if (b === 'Без категории') return -1;
             return a.localeCompare(b);
+        });
+
+        // Применение алгоритма сортировки ВНУТРИ коллекций
+        sortedCategories.forEach(category => {
+            grouped[category].sort((a, b) => {
+                let valA, valB;
+                
+                if (sortConfig.by === 'title') {
+                    valA = a.title.toLowerCase();
+                    valB = b.title.toLowerCase();
+                } else if (sortConfig.by === 'date') {
+                    valA = a.completedAt ? new Date(a.completedAt).getTime() : 0;
+                    valB = b.completedAt ? new Date(b.completedAt).getTime() : 0;
+                } else if (sortConfig.by === 'score') {
+                    valA = a.score || 0;
+                    valB = b.score || 0;
+                }
+
+                if (valA < valB) return sortConfig.dir === 'asc' ? -1 : 1;
+                if (valA > valB) return sortConfig.dir === 'asc' ? 1 : -1;
+                
+                // Вторичная сортировка по алфавиту, если значения равны
+                return a.title.localeCompare(b.title);
+            });
         });
 
         return sortedCategories.map(category => `
@@ -3634,7 +4119,7 @@ window.CatalogView = (() => {
             // Обработка кнопки удаления
             const deleteBtn = e.target.closest('.delete-btn');
             if (deleteBtn) {
-                e.preventDefault(); // Блокируем переход по ссылке карточки
+                e.preventDefault(); 
                 
                 const id = deleteBtn.dataset.id;
                 if (confirm('Вы уверены, что хотите удалить эту запись?')) {
@@ -3650,7 +4135,7 @@ window.CatalogView = (() => {
             // Обработка кнопки редактирования
             const editBtn = e.target.closest('.edit-btn');
             if (editBtn) {
-                e.preventDefault(); // Блокируем переход по ссылке карточки
+                e.preventDefault(); 
                 
                 const id = editBtn.dataset.id;
                 window.Router.setQueryParams({ modal: 'edit', id: id });
@@ -3668,7 +4153,7 @@ FILE: ./js/views/headerView.js
 
 window.HeaderView = (() => {
     const render = (state) => {
-        const { route, isAdmin, searchQuery } = state;
+        const { route, isAdmin } = state;
         const currentType = route.params.type || 'all';
         const isTierlist = route.path === '/tierlist';
         const isIconsPage = route.path === '/icons';
@@ -3688,10 +4173,12 @@ window.HeaderView = (() => {
             </nav>
 
             <div class="header-controls">
-                <div class="search-box">
-                    ${window.Icons.search || '🔍'}
-                    <input type="text" id="search-input" placeholder="Поиск по названию..." value="${window.Helpers.escapeHtml(searchQuery)}" autocomplete="off">
-                </div>
+                
+                <!-- Внедряем Компонент Поиска -->
+                ${window.SearchComponent.render(state)}
+
+                <!-- Внедряем Компонент Сортировки -->
+                ${window.SortComponent.render(state)}
                 
                 ${isAdmin ? `
                     <div class="admin-badge">
@@ -3718,21 +4205,13 @@ window.HeaderView = (() => {
     };
 
     const init = () => {
+        // Инициализируем дочерние компоненты
+        window.SearchComponent.init();
+        window.SortComponent.init();
+
         const header = document.getElementById('app-header');
         
-        let searchTimeout;
-        header.addEventListener('input', (e) => {
-            if (e.target.id === 'search-input') {
-                const val = e.target.value;
-                window.Store.setState({ searchQuery: val.toLowerCase() });
-                
-                clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(() => {
-                    window.Router.setQueryParams({ q: val || null }, true);
-                }, 500);
-            }
-        });
-
+        // Глобальные события самого хедера (Админка)
         header.addEventListener('click', (e) => {
             if (e.target.closest('#export-btn')) {
                 window.Store.exportData();
@@ -3954,14 +4433,28 @@ window.ItemView = (() => {
             ? item.review.split('\n').filter(p => p.trim()).map(p => `<p>${escapeHtml(p)}</p>`).join('')
             : '<p class="color-muted" style="font-style: italic;">Описание или отзыв отсутствуют...</p>';
 
+        // Иконка стрелочки назад
+        const backIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>`;
+
         return `
             <div class="item-page">
-                <div class="item-header-nav">
-                    <!-- Теперь кнопка ссылается на сохраненный роут -->
-                    <a href="${lastCatalogRoute || '#/'}" class="btn btn-secondary">← Назад</a>
-                    ${isAdmin ? `<button class="btn btn-primary edit-btn" data-id="${item.id}">${window.Icons.edit} Редактировать</button>` : ''}
+                
+                <!-- ПЛАВАЮЩИЙ ТУЛБАР СЛЕВА (Фиксированный) -->
+                <div class="item-floating-nav">
+                    <a href="${lastCatalogRoute || '#/'}" class="btn-icon" title="Вернуться назад">
+                        ${backIcon}
+                    </a>
+                    ${isAdmin ? `
+                        <button class="btn-icon edit-btn" data-id="${item.id}" title="Редактировать запись">
+                            ${window.Icons.edit}
+                        </button>
+                        <button class="btn-icon danger delete-btn" data-id="${item.id}" title="Удалить запись">
+                            ${window.Icons.trash}
+                        </button>
+                    ` : ''}
                 </div>
 
+                <!-- ОСНОВНАЯ КАРТОЧКА (Постер + Инфа) -->
                 <div class="item-container">
                     <div class="item-poster-wrap">
                         <img src="${escapeHtml(item.poster)}" alt="${escapeHtml(item.title)}" onerror="this.style.display='none'">
@@ -4006,6 +4499,7 @@ window.ItemView = (() => {
                         </div>
                     </div>
                 </div>
+
             </div>
         `;
     };

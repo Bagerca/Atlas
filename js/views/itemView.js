@@ -91,14 +91,28 @@ window.ItemView = (() => {
             ? item.review.split('\n').filter(p => p.trim()).map(p => `<p>${escapeHtml(p)}</p>`).join('')
             : '<p class="color-muted" style="font-style: italic;">Описание или отзыв отсутствуют...</p>';
 
+        // Иконка стрелочки назад
+        const backIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>`;
+
         return `
             <div class="item-page">
-                <div class="item-header-nav">
-                    <!-- Теперь кнопка ссылается на сохраненный роут -->
-                    <a href="${lastCatalogRoute || '#/'}" class="btn btn-secondary">← Назад</a>
-                    ${isAdmin ? `<button class="btn btn-primary edit-btn" data-id="${item.id}">${window.Icons.edit} Редактировать</button>` : ''}
+                
+                <!-- ПЛАВАЮЩИЙ ТУЛБАР СЛЕВА (Фиксированный) -->
+                <div class="item-floating-nav">
+                    <a href="${lastCatalogRoute || '#/'}" class="btn-icon" title="Вернуться назад">
+                        ${backIcon}
+                    </a>
+                    ${isAdmin ? `
+                        <button class="btn-icon edit-btn" data-id="${item.id}" title="Редактировать запись">
+                            ${window.Icons.edit}
+                        </button>
+                        <button class="btn-icon danger delete-btn" data-id="${item.id}" title="Удалить запись">
+                            ${window.Icons.trash}
+                        </button>
+                    ` : ''}
                 </div>
 
+                <!-- ОСНОВНАЯ КАРТОЧКА (Постер + Инфа) -->
                 <div class="item-container">
                     <div class="item-poster-wrap">
                         <img src="${escapeHtml(item.poster)}" alt="${escapeHtml(item.title)}" onerror="this.style.display='none'">
@@ -143,6 +157,7 @@ window.ItemView = (() => {
                         </div>
                     </div>
                 </div>
+
             </div>
         `;
     };

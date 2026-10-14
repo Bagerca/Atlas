@@ -32,6 +32,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: var(--spacing-xl);
+    align-items: stretch;
 }
 
 /* ================= MEDIA CARD ================= */
@@ -48,27 +49,58 @@
     flex-direction: column;
     box-shadow: var(--glass-shadow);
     cursor: pointer;
+    height: 100%;
+    
+    /* ОПТИМИЗАЦИЯ: Выносим карточку в отдельный слой для GPU, чтобы hover не тормозил страницу */
+    will-change: transform, box-shadow;
+    transform: translateZ(0); 
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px) scale(1.02) translateZ(0);
     border-color: var(--glass-border-highlight);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
     z-index: 10;
 }
 
+/* ЖЕЛЕЗОБЕТОННАЯ ФИКСАЦИЯ ПРОПОРЦИЙ ПОСТЕРА 2:3 */
 .card-poster-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 2 / 3;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 150%; 
+    background-color: rgba(15, 20, 30, 0.8);
+    flex-shrink: 0; 
+    overflow: hidden;
+}
+
+/* СКЕЛЕТНАЯ АНИМАЦИЯ (Пока грузится картинка) */
+.skeleton-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
 }
 
 .card-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    z-index: 2; /* Поверх скелета */
 }
 
 .card:hover .card-poster {
@@ -89,6 +121,7 @@
     border: 1px solid var(--glass-border);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     border-left: 4px solid var(--accent-color);
+    z-index: 3;
 }
 
 .card-score.tier-S { border-color: var(--tier-s); box-shadow: 0 0 15px rgba(255, 211, 42, 0.3); }
@@ -97,7 +130,6 @@
 .card-score.tier-C { border-color: var(--tier-c); box-shadow: 0 0 15px rgba(51, 217, 178, 0.3); }
 .card-score.tier-D { border-color: var(--tier-d); }
 
-/* Новый бейдж прогресса наностся поверх постера справа снизу */
 .card-progress-badge {
     position: absolute;
     bottom: 12px;
@@ -114,6 +146,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    z-index: 3;
 }
 
 .card-progress-badge svg {
@@ -132,6 +165,7 @@
     opacity: 0;
     transform: translateX(10px);
     transition: var(--transition-base);
+    z-index: 3;
 }
 
 .card:hover .card-admin-actions {

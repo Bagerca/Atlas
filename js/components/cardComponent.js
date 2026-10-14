@@ -2,7 +2,7 @@ window.CardComponent = (() => {
     const render = (item, isAdmin) => {
         const { escapeHtml, getStatusVisuals } = window.Helpers;
 
-        // Формируем бейдж прогресса для постера
+        // Формируем бейдж прогресса
         let progressBadge = '';
         if (item.meta && (item.meta.currentProgress || item.meta.totalProgress)) {
             const current = item.meta.currentProgress || '?';
@@ -28,10 +28,19 @@ window.CardComponent = (() => {
             ? `<div class="status-icon color-warning" title="Есть заметка/рецензия">${window.Icons.document}</div>` 
             : '';
 
+        // ОПТИМИЗАЦИЯ: loading="lazy" и decoding="async" для разгрузки сети и главного потока
         return `
         <a href="#/item?id=${item.id}" class="card">
-            <div class="card-poster-wrapper">
-                <img src="${escapeHtml(item.poster)}" alt="${escapeHtml(item.title)}" class="card-poster" onerror="this.style.display='none'">
+            <div class="card-poster-wrapper skeleton-bg">
+                <img 
+                    src="${escapeHtml(item.poster)}" 
+                    alt="${escapeHtml(item.title)}" 
+                    class="card-poster" 
+                    loading="lazy" 
+                    decoding="async" 
+                    onload="this.parentElement.classList.remove('skeleton-bg')"
+                    onerror="this.style.display='none'; this.parentElement.classList.remove('skeleton-bg');"
+                >
                 
                 <div class="card-score tier-${item.tier}">
                     ${item.tier ? item.tier : (item.score ? item.score + '/10' : '-')}

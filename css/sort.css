@@ -1,0 +1,73 @@
+/* ================= КОМПОНЕНТ СОРТИРОВКИ ================= */
+.sort-popover {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    background: rgba(20, 26, 38, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border-highlight);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    width: 260px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(62, 167, 255, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition-fast);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sort-popover.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sort-group {
+    display: flex;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.sort-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition-fast);
+    border-right: 1px solid var(--glass-border);
+}
+
+.sort-btn:last-child {
+    border-right: none;
+}
+
+.sort-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.sort-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.sort-btn.active {
+    background: rgba(62, 167, 255, 0.15);
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .sort-popover { right: 50%; transform: translateX(50%) translateY(-10px); }
+    .sort-popover.active { transform: translateX(50%) translateY(0); }
+}

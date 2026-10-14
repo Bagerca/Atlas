@@ -1,18 +1,42 @@
 /* ================= ITEM DETAIL PAGE ================= */
 .item-page {
-    animation: fadeIn var(--transition-base);
+    /* Убрали анимацию отсюда, чтобы не ломать position: fixed у детей */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; 
+    position: relative;
 }
 
-.item-header-nav {
+/* ================= ПЛАВАЮЩИЙ ТУЛБАР (Левый угол экрана) ================= */
+.item-floating-nav {
+    position: fixed; 
+    top: 100px;      
+    left: 24px;      
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--spacing-lg);
+    flex-direction: column; 
+    gap: 16px;
+    z-index: 100;
+    /* Анимация применяется отдельно сюда */
+    animation: fadeIn var(--transition-base);
 }
 
+.item-floating-nav .btn-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: rgba(20, 26, 38, 0.85); 
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
+}
+
+.item-floating-nav .btn-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ================= ОСНОВНОЙ КОНТЕНТ ================= */
 .item-container {
+    /* Анимация применяется отдельно сюда */
+    animation: fadeIn var(--transition-base);
     display: flex;
     gap: var(--spacing-xl);
     background: var(--glass-surface);
@@ -279,4 +303,5 @@
     .item-title-row { flex-direction: column; gap: 12px; }
     .item-tier-badge { align-self: flex-start; padding: 6px 16px; font-size: 1.5rem; }
     .stat-card { min-width: 100%; }
+    .item-floating-nav { bottom: 20px; left: 20px; top: auto; flex-direction: column-reverse; }
 }

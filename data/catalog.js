@@ -35,7 +35,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/valorant_games.jpg",
+            "poster": "assets/valorant_games.webp",
             "collections": [],
             "completedAt": null
         },
@@ -306,7 +306,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/cyberpunk_2077_games.jpg",
+            "poster": "assets/cyberpunk_2077_games.webp",
             "collections": [],
             "completedAt": null
         },
@@ -654,7 +654,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/hollow_knight_games.jpg",
+            "poster": "assets/hollow_knight_games.webp",
             "completedAt": null
         },
         {
@@ -665,7 +665,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/hollow_knight_silksong_games.jpg",
+            "poster": "assets/hollow_knight_silksong_games.webp",
             "completedAt": null
         },
         {
