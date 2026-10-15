@@ -7,7 +7,13 @@ window.HeaderView = (() => {
 
         return `
             <div class="brand">
-                <a href="#/">ATLAS<span>.</span></a>
+                <a href="#/">
+                    <span class="brand-name">ATLAS</span><span class="brand-dot">.</span>
+                    <span class="brand-author-wrap">
+                        <span class="brand-separator">//</span>
+                        <span class="brand-author">BAGERca</span>
+                    </span>
+                </a>
             </div>
             
             <nav class="nav-links">
@@ -52,13 +58,11 @@ window.HeaderView = (() => {
     };
 
     const init = () => {
-        // Инициализируем дочерние компоненты
         window.SearchComponent.init();
         window.SortComponent.init();
 
         const header = document.getElementById('app-header');
         
-        // Глобальные события самого хедера (Админка)
         header.addEventListener('click', (e) => {
             if (e.target.closest('#export-btn')) {
                 window.Store.exportData();

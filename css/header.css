@@ -15,20 +15,77 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
-.brand {
+/* ================= ЛОГОТИП (BRAND) ================= */
+.brand a {
+    display: flex;
+    align-items: baseline;
+    transition: transform var(--transition-fast);
+}
+
+.brand a:active {
+    transform: scale(0.98);
+}
+
+.brand-name {
     font-size: 1.8rem;
-    font-weight: 800;
+    font-weight: 900;
     color: var(--text-primary);
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
-.brand span {
+.brand-dot {
+    font-size: 1.8rem;
+    font-weight: 900;
     color: var(--accent-color);
     text-shadow: 0 0 15px var(--accent-glow);
 }
 
+/* Стилизация приписки BAGERca */
+.brand-author-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-left: 12px;
+    opacity: 0.8;
+    transition: var(--transition-base);
+}
+
+.brand-separator {
+    color: var(--glass-border-highlight);
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.brand-author {
+    font-family: monospace, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: var(--transition-base);
+}
+
+/* Эффект наведения на весь логотип */
+.brand a:hover .brand-author-wrap {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.brand a:hover .brand-separator {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+.brand a:hover .brand-author {
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* ================= НАВИГАЦИЯ ================= */
 .nav-links {
     display: flex;
     gap: var(--spacing-sm);
@@ -57,6 +114,7 @@
     box-shadow: 0 0 15px var(--accent-glow);
 }
 
+/* ================= КОНТРОЛЫ ================= */
 .header-controls {
     display: flex;
     align-items: center;
@@ -64,7 +122,6 @@
     position: relative;
 }
 
-/* ================= ADMIN & BUTTONS ================= */
 .admin-badge {
     display: flex;
     align-items: center;
@@ -113,5 +170,6 @@
 
 @media (max-width: 768px) {
     .header { flex-direction: column; align-items: stretch; padding: var(--spacing-sm); }
+    .brand a { justify-content: center; }
     .nav-links { overflow-x: auto; white-space: nowrap; }
 }

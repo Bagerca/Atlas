@@ -23,7 +23,7 @@ window.ItemView = (() => {
                     <div class="empty-state-icon">${window.Icons.emptyBox}</div>
                     <h2>Запись не найдена</h2>
                     <p>Возможно, она была удалена.</p>
-                    <a href="${lastCatalogRoute || '#/'}" class="btn btn-primary" style="margin-top: 20px;">Вернуться назад</a>
+                    <button id="back-btn" class="btn btn-primary" style="margin-top: 20px;">Вернуться назад</button>
                 </div>
             `;
         }
@@ -99,9 +99,10 @@ window.ItemView = (() => {
                 
                 <!-- ПЛАВАЮЩИЙ ТУЛБАР СЛЕВА (Фиксированный) -->
                 <div class="item-floating-nav">
-                    <a href="${lastCatalogRoute || '#/'}" class="btn-icon" title="Вернуться назад">
+                    <!-- Заменили a href на button с id="back-btn" для перехвата в app.js -->
+                    <button id="back-btn" class="btn-icon" title="Вернуться назад">
                         ${backIcon}
-                    </a>
+                    </button>
                     ${isAdmin ? `
                         <button class="btn-icon edit-btn" data-id="${item.id}" title="Редактировать запись">
                             ${window.Icons.edit}

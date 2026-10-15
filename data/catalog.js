@@ -1,9 +1,650 @@
 window.__ATLAS_INITIAL_DATA__ = {
     "metadata": {
-        "lastUpdated": "2026-10-14T20:50:08.230Z",
+        "lastUpdated": "2026-10-15T09:09:02.586Z",
         "version": "1.5"
     },
     "items": [
+        {
+            "id": "1792055342076",
+            "title": "Коллекция «Разрушительных комиксов»",
+            "type": "literature",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/crack_up_comics_collection_literature.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1792055342077",
+            "title": "Справочник сотрудников Студии Джоуи Дрю",
+            "type": "literature",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/joey_drew_studios_employee_handbook_literature.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1792055342078",
+            "title": "Иллюзия жизни",
+            "type": "literature",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/the_illusion_of_living_literature.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1792055342079",
+            "title": "Угаснуть в Черноте",
+            "type": "literature",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/fade_to_black_literature.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1792055342080",
+            "title": "Crysis",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/crysis_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342081",
+            "title": "Crysis 2",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/crysis_2_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342082",
+            "title": "Crysis 3",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/crysis_3_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342083",
+            "title": "Plants vs. Zombies",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/plants_vs_zombies_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342084",
+            "title": "Plants vs. Zombies 2",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/plants_vs_zombies_2_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342085",
+            "title": "Face The Abyss",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/face_the_abyss_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342086",
+            "title": "Minecraft",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/minecraft_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342087",
+            "title": "League of Legends",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/league_of_legends_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342088",
+            "title": "PILGRIM",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/pilgrim_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342089",
+            "title": "SpiderHeck",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/spiderheck_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342090",
+            "title": "Unplagued",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/unplagued_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342091",
+            "title": "Overwatch",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/overwatch_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342092",
+            "title": "Bloons TD 6",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/bloons_td_6_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342093",
+            "title": "Cat Bait",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/cat_bait_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342094",
+            "title": "Crossout",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/crossout_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342095",
+            "title": "Geometry Dash",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/geometry_dash_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342096",
+            "title": "Once Human",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/once_human_games.webp",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342097",
+            "title": "Pumpkin Jack",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/pumpkin_jack_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342098",
+            "title": "Raft",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/raft_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342099",
+            "title": "RoboCop: Rogue City",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/robocop_rogue_city_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342100",
+            "title": "Hytale",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/hytale_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342101",
+            "title": "SIGame",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/sigame_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342102",
+            "title": "Aperture Desk Job",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/aperture_desk_job_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342103",
+            "title": "Happy Game",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/happy_game_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342104",
+            "title": "Warhammer 40,000: Space Marine 2",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/warhammer_40000_space_marine_2_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342105",
+            "title": "Dead as Disco",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/dead_as_disco_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342106",
+            "title": "Baldur's Gate 3",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/baldurs_gate_3_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342107",
+            "title": "Scrap Mechanic",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/scrap_mechanic_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342108",
+            "title": "Kindergarten",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/kindergarten_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342109",
+            "title": "Kindergarten 2",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/kindergarten_2_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342110",
+            "title": "Kindergarten 3",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/kindergarten_3_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342111",
+            "title": "Webbed",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/webbed_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342112",
+            "title": "OneShot",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/oneshot_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342113",
+            "title": "Subliminal",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/subliminal_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342114",
+            "title": "Swords & Souls Legacy Collection",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/swords_and_souls_legacy_collection_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342115",
+            "title": "That's not my Neighbor",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/thats_not_my_neighbor_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342116",
+            "title": "Neighbours from Hell",
+            "type": "games",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/neighbours_from_hell_games.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {}
+        },
+        {
+            "id": "1792055342117",
+            "title": "Великий Человек-паук",
+            "type": "series",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/ultimate_spider_man_series.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1792055342118",
+            "title": "Призрак в доспехах",
+            "type": "series",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/ghost_in_the_shell_series.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1792055342119",
+            "title": "Marvel Zombies",
+            "type": "series",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/marvel_zombies_series.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1792055342120",
+            "title": "Гости из прошлого",
+            "type": "series",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/gosti_iz_proshlogo_series.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1792055342121",
+            "title": "Локи",
+            "type": "series",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/loki_series.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1792055342122",
+            "title": "Время приключений",
+            "type": "series",
+            "collections": [],
+            "statuses": [],
+            "score": null,
+            "tier": "",
+            "poster": "assets/adventure_time_series.jpg",
+            "review": "",
+            "completedAt": null,
+            "meta": {
+                "currentProgress": null,
+                "totalProgress": null
+            }
+        },
         {
             "id": "1792011002802",
             "title": "Megabonk",
@@ -47,14 +688,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002799",
             "title": "Atomic Heart 2",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/atomic_heart_2_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Atomic Heart"
+            ]
         },
         {
             "id": "1792011002798",
@@ -73,14 +715,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002797",
             "title": "The CUBE",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/the_cube_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Atomic Heart"
+            ]
         },
         {
             "id": "1792011002796",
@@ -116,7 +759,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/the_stanley_parable_ultra_deluxe_games.jpg",
+            "poster": "assets/the_stanley_parable_ultra_deluxe_games.webp",
             "review": "",
             "completedAt": null,
             "meta": {}
@@ -255,40 +898,43 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002782",
             "title": "Subnautica 2",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/subnautica_2_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Subnautica"
+            ]
         },
         {
             "id": "1792011002781",
             "title": "Ghostrunner 2",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/ghostrunner_2_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Ghostrunner"
+            ]
         },
         {
             "id": "1792011002780",
             "title": "Ghostrunner",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/ghostrunner_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Ghostrunner"
+            ]
         },
         {
             "id": "1792011002779",
@@ -346,14 +992,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002775",
             "title": "PROJECT: PLAYTIME",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/project_playtime_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Poppy Playtime"
+            ]
         },
         {
             "id": "1792011002774",
@@ -389,7 +1036,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/broforce_games.jpg",
+            "poster": "assets/broforce_games.webp",
             "review": "",
             "completedAt": null,
             "meta": {}
@@ -398,14 +1045,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002771",
             "title": "Wall World 2",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/wall_world_2_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Wall World"
+            ]
         },
         {
             "id": "1792011002770",
@@ -428,7 +1076,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/ace_combat_7_skies_unknown_games.jpg",
+            "poster": "assets/ace_combat_7_skies_unknown_games.webp",
             "review": "",
             "completedAt": null,
             "meta": {}
@@ -441,7 +1089,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/dead_cells_games.jpg",
+            "poster": "assets/dead_cells_games.webp",
             "review": "",
             "completedAt": null,
             "meta": {}
@@ -558,7 +1206,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/battlefield_2042_games.jpg",
+            "poster": "assets/battlefield_2042_games.webp",
             "review": "",
             "completedAt": null,
             "meta": {}
@@ -671,118 +1319,133 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002750",
             "title": "Bendy and the Ink Factory",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/bendy_and_the_ink_factory_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Bendy"
+            ]
         },
         {
             "id": "1792011002749",
             "title": "Bendy: The Cage",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/bendy_the_cage_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Bendy"
+            ]
         },
         {
             "id": "1792011002748",
             "title": "Boris and the Dark Survival",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/boris_and_the_dark_survival_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Bendy"
+            ]
         },
         {
             "id": "1792011002747",
             "title": "Bendy: Lone Wolf",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/bendy_lone_wolf_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": "",
+            "collections": [
+                "Bendy"
+            ]
         },
         {
             "id": "1792011002746",
             "title": "Геймовёрс",
             "type": "series",
-            "collections": [],
             "statuses": [
                 "in_progress"
             ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/gameoverse_series.jpg",
-            "review": "Оригинальное название: Gameoverse",
             "completedAt": null,
+            "review": "Оригинальное название: Gameoverse",
+            "collections": [
+                "Glitch Productions"
+            ],
             "meta": {
-                "currentProgress": 1
+                "currentProgress": 1,
+                "totalProgress": null
             }
         },
         {
             "id": "1792011002745",
             "title": "Ослепительный район",
             "type": "series",
-            "collections": [],
             "statuses": [
                 "in_progress"
             ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/the_gaslight_district_series.jpg",
-            "review": "Оригинальное название: The Gaslight District",
             "completedAt": null,
+            "review": "Оригинальное название: The Gaslight District",
+            "collections": [
+                "Glitch Productions"
+            ],
             "meta": {
-                "currentProgress": 1
+                "currentProgress": 1,
+                "totalProgress": null
             }
         },
         {
             "id": "1792011002744",
             "title": "Рыцари Гвиневры",
             "type": "series",
-            "collections": [],
             "statuses": [
                 "in_progress"
             ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/knights_of_guinevere_series.jpg",
-            "review": "Оригинальное название: Knights of Guinevere\n\nВ процессе (вышло 2 серии)",
             "completedAt": null,
+            "review": "Оригинальное название: Knights of Guinevere\n\nВ процессе (вышло 2 серии)",
+            "collections": [
+                "Glitch Productions"
+            ],
             "meta": {
-                "currentProgress": 2
+                "currentProgress": 2,
+                "totalProgress": null
             }
         },
         {
             "id": "1792011002743",
             "title": "Удивительный цифровой цирк",
             "type": "series",
-            "collections": [],
             "statuses": [
                 "completed"
             ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/the_amazing_digital_circus_series.jpg",
-            "review": "Оригинальное название: The Amazing Digital Circus\n\nМой вердикт: 1 сезон (9 эпизодов)",
             "completedAt": null,
+            "review": "Оригинальное название: The Amazing Digital Circus\n\nМой вердикт: 1 сезон (9 эпизодов)",
+            "collections": [
+                "Glitch Productions"
+            ],
             "meta": {
                 "currentProgress": 9,
                 "totalProgress": 9
@@ -792,25 +1455,29 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000001",
             "title": "Beholder",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/beholder_games.webp",
+            "completedAt": null,
             "review": "Отличный симулятор стукача.\n\nСмотрел(а) на YouTube: #ViteCPlay",
-            "completedAt": null
+            "collections": [
+                "Beholder"
+            ]
         },
         {
             "id": "1700000000002",
             "title": "Bendy and the Dark Revival",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/bendy_and_the_dark_revival_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #GMD13 #Lex #Ksusha__Sher",
-            "completedAt": null
+            "collections": [
+                "Bendy"
+            ]
         },
         {
             "id": "1700000000003",
@@ -830,7 +1497,7 @@ window.__ATLAS_INITIAL_DATA__ = {
             "statuses": [],
             "score": null,
             "tier": "",
-            "poster": "assets/marvel_rivals_games.jpg",
+            "poster": "assets/marvel_rivals_games.webp",
             "collections": [],
             "completedAt": null
         },
@@ -849,12 +1516,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000006",
             "title": "Hello Neighbor",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/hello_neighbor_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Hello Neighbor"
+            ]
         },
         {
             "id": "1700000000007",
@@ -862,11 +1532,13 @@ window.__ATLAS_INITIAL_DATA__ = {
             "type": "games",
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/atomic_heart_games.jpg",
             "completedAt": null,
             "review": "Смотрел(а) на YouTube: #KuplinovPlay #windy31 #5opka-",
-            "collections": []
+            "collections": [
+                "Atomic Heart"
+            ]
         },
         {
             "id": "1700000000014",
@@ -896,25 +1568,29 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000016",
             "title": "Bendy and the Ink Machine",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/bendy_and_the_ink_machine_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #KuplinovPlay #bratishkinoff #КотЛеонард #Ksusha__Sher #Deepins",
-            "completedAt": null
+            "collections": [
+                "Bendy"
+            ]
         },
         {
             "id": "1700000000017",
             "title": "Bendy: Secrets of the Machine",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/bendy_secrets_of_the_machine_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #GMD13 #Lex",
-            "completedAt": null
+            "collections": [
+                "Bendy"
+            ]
         },
         {
             "id": "1700000000018",
@@ -944,13 +1620,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000020",
             "title": "Hello Neighbor 2",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/hello_neighbor_2_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #Lex",
-            "completedAt": null
+            "collections": [
+                "Hello Neighbor"
+            ]
         },
         {
             "id": "1700000000021",
@@ -968,36 +1646,43 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000022",
             "title": "BioShock Remastered",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/bioshock_remastered_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #KuplinovPlay",
-            "completedAt": null
+            "collections": [
+                "BioShock"
+            ]
         },
         {
             "id": "1700000000023",
             "title": "BioShock 2 Remastered",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/bioshock_2_remastered_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "BioShock"
+            ]
         },
         {
             "id": "1700000000024",
             "title": "BioShock Infinite",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/bioshock_infinite_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #KuplinovPlay",
-            "completedAt": null
+            "collections": [
+                "BioShock"
+            ]
         },
         {
             "id": "1700000000025",
@@ -1015,25 +1700,29 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000026",
             "title": "Subnautica",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/subnautica_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #KuplinovPlay",
-            "completedAt": null
+            "collections": [
+                "Subnautica"
+            ]
         },
         {
             "id": "1700000000027",
             "title": "Subnautica: Below Zero",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/subnautica_below_zero_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #KuplinovPlay",
-            "completedAt": null
+            "collections": [
+                "Subnautica"
+            ]
         },
         {
             "id": "1700000000028",
@@ -1111,10 +1800,13 @@ window.__ATLAS_INITIAL_DATA__ = {
             "type": "games",
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/poppy_playtime_games.jpg",
-            "collections": [],
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Poppy Playtime"
+            ]
         },
         {
             "id": "1700000000035",
@@ -1133,11 +1825,13 @@ window.__ATLAS_INITIAL_DATA__ = {
             "type": "games",
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/wall_world_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #ViteCPlay #ObsidianTime",
-            "collections": [],
-            "completedAt": null
+            "collections": [
+                "Wall World"
+            ]
         },
         {
             "id": "1700000000037",
@@ -1166,23 +1860,29 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000039",
             "title": "God of War",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/god_of_war_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "God of War"
+            ]
         },
         {
             "id": "1700000000040",
             "title": "God of War: Ragnarök",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/god_of_war_ragnarok_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "God of War"
+            ]
         },
         {
             "id": "1700000000041",
@@ -1211,23 +1911,29 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000043",
             "title": "Portal",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/portal_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Portal"
+            ]
         },
         {
             "id": "1700000000044",
             "title": "Portal 2",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/portal_2_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Portal"
+            ]
         },
         {
             "id": "1700000000045",
@@ -1245,178 +1951,225 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000046",
             "title": "Beholder 2",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/beholder_2_games.webp",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Beholder"
+            ]
         },
         {
             "id": "1700000000047",
             "title": "Beholder 3",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/beholder_3_games.webp",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Beholder"
+            ]
         },
         {
             "id": "1700000000048",
             "title": "Beholder: Conductor",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/beholder_conductor_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Beholder"
+            ]
         },
         {
             "id": "1700000000049",
             "title": "Five Nights at Freddy’s",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000050",
             "title": "Five Nights at Freddy’s 2",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_2_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000051",
             "title": "Five Nights at Freddy’s 3",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_3_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000052",
             "title": "Five Nights at Freddy’s 4",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_4_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000053",
             "title": "Five Nights at Freddy's: Sister Location",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_sister_location_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000054",
             "title": "Freddy Fazbear’s Pizzeria Simulator",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/freddy_fazbears_pizzeria_simulator_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000055",
             "title": "Ultimate Custom Night",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/ultimate_custom_night_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000056",
             "title": "Five Nights at Freddy’s World",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_world_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000057",
             "title": "Five Nights at Freddy's: Help Wanted",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_help_wanted_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000058",
             "title": "Five Nights at Freddy’s: Security Breach",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_security_breach_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000059",
             "title": "Five Nights at Freddy's: Help Wanted 2",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_help_wanted_2_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000060",
             "title": "Five Nights at Freddy's: Into the Pit",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_into_the_pit_games.jpg",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000061",
             "title": "Five Nights at Freddy’s: Secret of the Mimic",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/five_nights_at_freddys_secret_of_the_mimic_games.jpg",
+            "completedAt": null,
             "review": "Смотрел(а) на YouTube: #KuplinovPlay #Lex",
-            "completedAt": null
+            "collections": [
+                "Five Nights at Freddy's"
+            ]
         },
         {
             "id": "1700000000062",
@@ -1434,23 +2187,29 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000063",
             "title": "Hollow Knight",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/hollow_knight_games.webp",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Hollow Knight"
+            ]
         },
         {
             "id": "1700000000064",
             "title": "Hollow Knight: Silksong",
             "type": "games",
-            "collections": [],
             "statuses": [],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/hollow_knight_silksong_games.webp",
-            "completedAt": null
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Hollow Knight"
+            ]
         },
         {
             "id": "1700000000101",
@@ -1610,12 +2369,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000114",
             "title": "Адский босс",
             "type": "series",
-            "collections": [],
             "statuses": [],
-            "tier": "",
-            "poster": "assets/helluva_boss_series.jpg",
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/helluva_boss_series.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Hellaverse"
+            ]
         },
         {
             "id": "1700000000115",
@@ -1644,25 +2406,29 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000117",
             "title": "Дофус - Сокровища Керуба",
             "type": "series",
-            "collections": [],
             "statuses": [],
-            "tier": "",
-            "poster": "assets/dofus_aux_tresors_de_kerubim_series.jpg",
-            "review": "Оригинальное название: Dofus aux trésors de Kérubim\nОзвучка: Мультимания\nПросмотрено: Первый сезон, Фильм\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/dofus_aux_tresors_de_kerubim_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Dofus aux trésors de Kérubim\nОзвучка: Мультимания\nПросмотрено: Первый сезон, Фильм\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "Wakfu"
+            ]
         },
         {
             "id": "1700000000118",
             "title": "Вакфу",
             "type": "series",
-            "collections": [],
             "statuses": [],
-            "tier": "",
-            "poster": "assets/wakfu_series.jpg",
-            "review": "Оригинальное название: Wakfu\nОзвучка: Мультимания\nПросмотрено: Часовщик Ноксимилиан | Первый | Второй | Третий | Четвертый | Голтар | Легенда об Огресте | В поисках шести дофусов\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/wakfu_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Wakfu\nОзвучка: Мультимания\nПросмотрено: Часовщик Ноксимилиан | Первый | Второй | Третий | Четвертый | Голтар | Легенда об Огресте | В поисках шести дофусов\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "Wakfu"
+            ]
         },
         {
             "id": "1700000000119",
@@ -1692,25 +2458,29 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000121",
             "title": "Рыцари Нексо",
             "type": "series",
-            "collections": [],
             "statuses": [],
-            "tier": "",
-            "poster": "assets/nexo_knights_series.jpg",
-            "review": "Просмотрено в 20??",
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/nexo_knights_series.jpg",
+            "completedAt": null,
+            "review": "Просмотрено в 20??",
+            "collections": [
+                "LEGO"
+            ]
         },
         {
             "id": "1700000000122",
             "title": "Ниндзяго: Восстание драконов",
             "type": "series",
-            "collections": [],
             "statuses": [],
-            "tier": "",
-            "poster": "assets/ninjago_dragons_rising_series.jpg",
-            "review": "Просмотрено в 202?",
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/ninjago_dragons_rising_series.jpg",
+            "completedAt": null,
+            "review": "Просмотрено в 202?",
+            "collections": [
+                "LEGO"
+            ]
         },
         {
             "id": "1700000000123",
@@ -1740,13 +2510,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000125",
             "title": "Дроны-Убийцы",
             "type": "series",
-            "collections": [],
             "statuses": [],
-            "tier": "",
-            "poster": "assets/murder_drones_series.jpg",
-            "review": "Оригинальное название: Murder Drones\nОзвучка: NDR Production\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Последняя серия лучшая.",
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/murder_drones_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Murder Drones\nОзвучка: NDR Production\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Последняя серия лучшая.",
+            "collections": [
+                "Glitch Productions"
+            ]
         },
         {
             "id": "1700000000126",
@@ -1776,13 +2548,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000128",
             "title": "Ниндзяго: Мастера Кружитцу",
             "type": "series",
-            "collections": [],
             "statuses": [],
-            "tier": "",
-            "poster": "assets/ninjago_masters_of_spinjitzu_series.jpg",
-            "review": "Оригинальное название: Ninjago: Masters of Spinjitzu\nОзвучка: Дубляж\nПросмотрено: 1 - 15 сезон, Спецвыпуски 1 - 2\nГод: 20??\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Мультик из детства",
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/ninjago_masters_of_spinjitzu_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Ninjago: Masters of Spinjitzu\nОзвучка: Дубляж\nПросмотрено: 1 - 15 сезон, Спецвыпуски 1 - 2\nГод: 20??\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Мультик из детства",
+            "collections": [
+                "LEGO"
+            ]
         },
         {
             "id": "1700000000129",
@@ -1896,13 +2670,15 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000138",
             "title": "Отель Хазбин (Отель Днища)",
             "type": "series",
-            "collections": [],
             "statuses": [],
-            "tier": "",
-            "poster": "assets/hazbin_hotel_series.jpg",
-            "review": "Оригинальное название: Hazbin Hotel\nОзвучка: NDR Production\nПросмотрено: Пилот | Первый | Второй\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Ждал около 7 лет с выхода пилота",
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/hazbin_hotel_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Hazbin Hotel\nОзвучка: NDR Production\nПросмотрено: Пилот | Первый | Второй\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Ждал около 7 лет с выхода пилота",
+            "collections": [
+                "Hellaverse"
+            ]
         },
         {
             "id": "1700000000139",

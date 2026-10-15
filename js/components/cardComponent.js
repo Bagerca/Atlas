@@ -1,8 +1,8 @@
 window.CardComponent = (() => {
+    // Убрали delayIndex. Карточка рендерится скрытой (.card-hidden)
     const render = (item, isAdmin) => {
         const { escapeHtml, getStatusVisuals } = window.Helpers;
 
-        // Формируем бейдж прогресса
         let progressBadge = '';
         if (item.meta && (item.meta.currentProgress || item.meta.totalProgress)) {
             const current = item.meta.currentProgress || '?';
@@ -28,9 +28,8 @@ window.CardComponent = (() => {
             ? `<div class="status-icon color-warning" title="Есть заметка/рецензия">${window.Icons.document}</div>` 
             : '';
 
-        // ОПТИМИЗАЦИЯ: loading="lazy" и decoding="async" для разгрузки сети и главного потока
         return `
-        <a href="#/item?id=${item.id}" class="card">
+        <a href="#/item?id=${item.id}" class="card card-hidden">
             <div class="card-poster-wrapper skeleton-bg">
                 <img 
                     src="${escapeHtml(item.poster)}" 

@@ -1,10 +1,12 @@
 window.CatalogView = (() => {
     const render = (state) => {
-        const { items, route, isAdmin, sortConfig } = state;
+        const { items, route, isAdmin, sortConfig, searchQuery } = state;
         const currentType = route.params.type || 'all';
         
         let filteredItems = items.filter(item => {
-            return currentType === 'all' || item.type === currentType;
+            const matchesType = currentType === 'all' || item.type === currentType;
+            const matchesSearch = searchQuery ? item.title.toLowerCase().includes(searchQuery.toLowerCase()) : true;
+            return matchesType && matchesSearch;
         });
 
         if (filteredItems.length === 0) {
@@ -26,34 +28,40 @@ window.CatalogView = (() => {
             });
         });
 
-        // Сортировка названия коллекций по алфавиту
         const sortedCategories = Object.keys(grouped).sort((a, b) => {
             if (a === 'Без категории') return 1;
             if (b === 'Без категории') return -1;
             return a.localeCompare(b);
         });
 
-        // Применение алгоритма сортировки ВНУТРИ коллекций
         sortedCategories.forEach(category => {
             grouped[category].sort((a, b) => {
                 let valA, valB;
                 
                 if (sortConfig.by === 'title') {
-                    valA = a.title.toLowerCase();
-                    valB = b.title.toLowerCase();
+                    valA = (a.title || '').toLowerCase();
+                    valB = (b.title || '').toLowerCase();
                 } else if (sortConfig.by === 'date') {
-                    valA = a.completedAt ? new Date(a.completedAt).getTime() : 0;
-                    valB = b.completedAt ? new Date(b.completedAt).getTime() : 0;
+                    const dateA = a.completedAt ? new Date(a.completedAt).getTime() : 0;
+                    const dateB = b.completedAt ? new Date(b.completedAt).getTime() : 0;
+                    valA = isNaN(dateA) ? 0 : dateA;
+                    valB = isNaN(dateB) ? 0 : dateB;
                 } else if (sortConfig.by === 'score') {
                     valA = a.score || 0;
                     valB = b.score || 0;
                 }
 
-                if (valA < valB) return sortConfig.dir === 'asc' ? -1 : 1;
-                if (valA > valB) return sortConfig.dir === 'asc' ? 1 : -1;
+                let compareResult = 0;
+                if (valA < valB) compareResult = -1;
+                else if (valA > valB) compareResult = 1;
                 
-                // Вторичная сортировка по алфавиту, если значения равны
-                return a.title.localeCompare(b.title);
+                if (sortConfig.dir === 'desc') compareResult *= -1;
+
+                if (compareResult === 0) {
+                    return (a.title || '').localeCompare(b.title || '');
+                }
+                
+                return compareResult;
             });
         });
 
@@ -69,30 +77,59 @@ window.CatalogView = (() => {
         `).join('');
     };
 
+    // Вызывается из app.js сразу ПОСЛЕ вставки HTML в DOM
+    const onMount = () => {
+        const cards = document.querySelectorAll('.card-hidden');
+        if (cards.length === 0) return;
+
+        // Настраиваем ленивую анимацию через Observer
+        const observer = new IntersectionObserver((entries) => {
+            let delayIndex = 0;
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const card = entry.target;
+                    // Создаем волну с задержкой 40мс для карточек в одной зоне видимости
+                    card.style.animationDelay = `${delayIndex * 40}ms`;
+                    card.classList.remove('card-hidden');
+                    card.classList.add('card-visible');
+                    
+                    // Перестаем следить за карточкой после того, как она появилась
+                    observer.unobserve(card);
+                    delayIndex++;
+                }
+            });
+        }, { 
+            rootMargin: '50px', // Начинаем грузить чуть раньше, чем доскроллим
+            threshold: 0.1
+        });
+
+        cards.forEach(card => observer.observe(card));
+    };
+
     const init = () => {
         const main = document.getElementById('app-main');
         
         main.addEventListener('click', (e) => {
-            // Обработка кнопки удаления
             const deleteBtn = e.target.closest('.delete-btn');
             if (deleteBtn) {
                 e.preventDefault(); 
+                e.stopPropagation();
                 
                 const id = deleteBtn.dataset.id;
                 if (confirm('Вы уверены, что хотите удалить эту запись?')) {
                     const newItems = window.Store.getState().items.filter(i => i.id !== id);
                     window.Store.setState({ items: newItems });
-                    if (window.location.hash.includes(`id=${id}`)) {
+                    if (window.Router.parseUrl().params.id === id) {
                         window.location.hash = '#/';
                     }
                 }
                 return;
             }
 
-            // Обработка кнопки редактирования
             const editBtn = e.target.closest('.edit-btn');
             if (editBtn) {
                 e.preventDefault(); 
+                e.stopPropagation();
                 
                 const id = editBtn.dataset.id;
                 window.Router.setQueryParams({ modal: 'edit', id: id });
@@ -101,5 +138,5 @@ window.CatalogView = (() => {
         });
     };
 
-    return { render, init };
+    return { render, init, onMount };
 })();
