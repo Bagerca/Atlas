@@ -1,167 +1,183 @@
-window.ItemView = (() => {
-    const typeTranslations = {
-        'games': 'Игра',
-        'features': 'Полнометражное кино',
-        'series': 'Сериал / Аниме',
-        'literature': 'Литература'
-    };
-
-    const formatDate = (dateStr) => {
-        if (!dateStr) return '';
-        const d = new Date(dateStr);
-        return d.toLocaleDateString('ru-RU');
-    };
+window.TierlistView = (() => {
+    const tiers = ['S', 'A', 'B', 'C', 'D'];
 
     const render = (state) => {
-        const { items, route, isAdmin, lastCatalogRoute } = state;
-        const itemId = route.params.id;
-        const item = items.find(i => i.id === itemId);
+        const { items, route, searchQuery, isAdmin } = state;
+        const filterType = route.params.filter || 'all'; 
+        
+        let targetItems = items.filter(i => {
+            const matchesType = filterType === 'all' || i.type === filterType;
+            const matchesSearch = searchQuery ? i.title.toLowerCase().includes(searchQuery) : true;
+            return matchesType && matchesSearch;
+        });
 
-        if (!item) {
-            return `
-                <div class="empty-state">
-                    <div class="empty-state-icon">${window.Icons.emptyBox}</div>
-                    <h2>Запись не найдена</h2>
-                    <p>Возможно, она была удалена.</p>
-                    <button id="back-btn" class="btn btn-primary" style="margin-top: 20px;">Вернуться назад</button>
-                </div>
-            `;
-        }
-
-        const { escapeHtml, getStatusVisuals } = window.Helpers;
-
-        // Дашборд: Оценка
-        let scoreCard = '';
-        if (item.score) {
-            scoreCard = `
-                <div class="stat-card">
-                    <div class="stat-icon">${window.Icons.star}</div>
-                    <div class="stat-info">
-                        <span class="stat-label">Оценка</span>
-                        <span class="stat-value">${item.score} <span style="font-size: 1rem; color: var(--text-muted);">/ 10</span></span>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Дашборд: Прогресс (с полосой)
-        let progressCard = '';
-        if (item.meta && (item.meta.currentProgress || item.meta.totalProgress)) {
-            const current = item.meta.currentProgress || 0;
-            const total = item.meta.totalProgress || 0;
-            const label = item.type === 'literature' ? 'Прочитано глав' : 'Просмотрено серий';
-            
-            let percent = 0;
-            if (total > 0 && current > 0) {
-                percent = Math.min(Math.round((current / total) * 100), 100);
-            } else if (current > 0 && !total) {
-                percent = 100;
+        // Группируем по тирам. unassigned - для элементов без тира
+        const grouped = { S: [], A: [], B: [], C: [], D: [], unassigned: [] };
+        
+        targetItems.forEach(item => {
+            if (item.tier && tiers.includes(item.tier)) {
+                grouped[item.tier].push(item);
+            } else {
+                grouped.unassigned.push(item);
             }
-
-            progressCard = `
-                <div class="stat-card stat-card-progress">
-                    <div class="progress-header">
-                        <div class="stat-info">
-                            <span class="stat-label">${label}</span>
-                            <span class="stat-value">${current} ${total ? `<span style="font-size: 1rem; color: var(--text-muted);">/ ${total}</span>` : ''}</span>
-                        </div>
-                        ${total ? `<span class="stat-value" style="font-size: 1.2rem;">${percent}%</span>` : ''}
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-fill" style="width: ${total ? percent : 100}%;"></div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Статусы (Теги)
-        const statusesHtml = (item.statuses || []).map(st => {
-            const visual = getStatusVisuals(st, item.type);
-            if (!visual) return '';
-            return `
-                <div class="status-badge-detailed ${visual.colorClass}">
-                    ${visual.svg}
-                    <span>${escapeHtml(visual.title)}</span>
-                </div>
-            `;
-        }).join('');
-
-        // Форматирование обзора
-        const reviewHtml = item.review && item.review.trim() !== ''
-            ? item.review.split('\n').filter(p => p.trim()).map(p => `<p>${escapeHtml(p)}</p>`).join('')
-            : '<p class="color-muted" style="font-style: italic;">Описание или отзыв отсутствуют...</p>';
-
-        // Иконка стрелочки назад
-        const backIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>`;
+        });
 
         return `
-            <div class="item-page">
-                
-                <!-- ПЛАВАЮЩИЙ ТУЛБАР СЛЕВА (Фиксированный) -->
-                <div class="item-floating-nav">
-                    <!-- Заменили a href на button с id="back-btn" для перехвата в app.js -->
-                    <button id="back-btn" class="btn-icon" title="Вернуться назад">
-                        ${backIcon}
-                    </button>
-                    ${isAdmin ? `
-                        <button class="btn-icon edit-btn" data-id="${item.id}" title="Редактировать запись">
-                            ${window.Icons.edit}
-                        </button>
-                        <button class="btn-icon danger delete-btn" data-id="${item.id}" title="Удалить запись">
-                            ${window.Icons.trash}
-                        </button>
-                    ` : ''}
-                </div>
-
-                <!-- ОСНОВНАЯ КАРТОЧКА (Постер + Инфа) -->
-                <div class="item-container">
-                    <div class="item-poster-wrap">
-                        <img src="${escapeHtml(item.poster)}" alt="${escapeHtml(item.title)}" onerror="this.style.display='none'">
-                    </div>
-
-                    <div class="item-details">
-                        <div class="item-top-meta">
-                            <span class="item-type-pill">${typeTranslations[item.type] || 'Неизвестно'}</span>
-                            ${item.completedAt ? `
-                                <div class="item-date-info">
-                                    ${window.Icons.calendar} Завершено: ${formatDate(item.completedAt)}
-                                </div>
-                            ` : ''}
-                        </div>
-                        
-                        <div class="item-title-row">
-                            <h1 class="item-title">${escapeHtml(item.title)}</h1>
-                            ${item.tier ? `<div class="item-tier-badge tier-${item.tier}">${item.tier}</div>` : ''}
-                        </div>
-
-                        ${(scoreCard || progressCard) ? `
-                            <div class="item-dashboard">
-                                ${scoreCard}
-                                ${progressCard}
-                            </div>
-                        ` : ''}
-
-                        ${statusesHtml ? `
-                            <div class="item-tags-section">
-                                <div class="item-section-title">Теги и статусы</div>
-                                <div class="item-status-list">
-                                    ${statusesHtml}
-                                </div>
-                            </div>
-                        ` : ''}
-
-                        <div class="item-review-section">
-                            <div class="item-section-title">Заметки и обзор</div>
-                            <div class="item-review-box">
-                                ${reviewHtml}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div style="margin-bottom: var(--spacing-lg); display: flex; flex-wrap: wrap; gap: 10px;">
+                <a href="#/tierlist?filter=all" class="btn ${filterType === 'all' ? 'btn-primary' : 'btn-secondary'}">Все</a>
+                <a href="#/tierlist?filter=games" class="btn ${filterType === 'games' ? 'btn-primary' : 'btn-secondary'}">Игры</a>
+                <a href="#/tierlist?filter=features" class="btn ${filterType === 'features' ? 'btn-primary' : 'btn-secondary'}">Полнометражки</a>
+                <a href="#/tierlist?filter=series" class="btn ${filterType === 'series' ? 'btn-primary' : 'btn-secondary'}">Аниме/Сериалы</a>
+                <a href="#/tierlist?filter=literature" class="btn ${filterType === 'literature' ? 'btn-primary' : 'btn-secondary'}">Литература</a>
             </div>
+
+            <div class="tier-board">
+                ${tiers.map(tier => `
+                    <div class="tier-row" data-tier="${tier}">
+                        <div class="tier-label tier-${tier}">${tier}</div>
+                        <div class="tier-items drop-zone">
+                            ${grouped[tier].map(item => `
+                                <a href="#/item?id=${item.id}" class="tier-item-card" data-id="${item.id}" draggable="${isAdmin}">
+                                    <img src="${window.Helpers.escapeHtml(item.poster)}" alt="${window.Helpers.escapeHtml(item.title)}" onerror="this.style.display='none'">
+                                    <div class="tier-item-tooltip">${window.Helpers.escapeHtml(item.title)}</div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+
+            <!-- Пул нераспределенных (Только для Админа) -->
+            ${isAdmin ? `
+                <div class="tier-pool drop-zone" data-tier="unassigned">
+                    <div class="tier-pool-title">
+                        ${window.Icons.grid || ''} Нераспределенные произведения (${grouped.unassigned.length})
+                    </div>
+                    <div class="tier-items" style="min-height: 80px;">
+                        ${grouped.unassigned.map(item => `
+                            <a href="#/item?id=${item.id}" class="tier-item-card" data-id="${item.id}" draggable="true">
+                                <img src="${window.Helpers.escapeHtml(item.poster)}" alt="${window.Helpers.escapeHtml(item.title)}" onerror="this.style.display='none'">
+                                <div class="tier-item-tooltip">${window.Helpers.escapeHtml(item.title)}</div>
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
+            ` : ''}
         `;
     };
 
-    return { render };
+    // Логика перетаскивания инициализируется после вставки HTML
+    const onMount = () => {
+        const state = window.Store.getState();
+        if (!state.isAdmin) return; // Обычным юзерам Drag&Drop не нужен
+
+        const draggables = document.querySelectorAll('.tier-item-card');
+        const dropZones = document.querySelectorAll('.drop-zone');
+        
+        let draggedItem = null;
+        let placeholder = document.createElement('div');
+        placeholder.classList.add('tier-placeholder');
+
+        // Вычисляет, после какого элемента вставлять placeholder
+        const getDragAfterElement = (container, x) => {
+            // Ищем все карточки в зоне, кроме той, что сейчас тащим, и кроме плейсхолдера
+            const draggableElements = [...container.querySelectorAll('.tier-item-card:not(.dragging)')];
+
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = x - box.left - box.width / 2; // Смотрим по X (горизонтальная сетка)
+                
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        };
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', (e) => {
+                // Предотвращаем дефолтное перетаскивание ссылок (url) в браузере
+                e.dataTransfer.setData('text/plain', draggable.dataset.id);
+                e.dataTransfer.effectAllowed = 'move';
+                
+                draggedItem = draggable;
+                setTimeout(() => draggable.classList.add('dragging'), 0);
+            });
+
+            draggable.addEventListener('dragend', () => {
+                draggable.classList.remove('dragging');
+                if (placeholder.parentNode) {
+                    placeholder.parentNode.removeChild(placeholder);
+                }
+                
+                document.querySelectorAll('.drag-over').forEach(zone => {
+                    zone.classList.remove('drag-over');
+                });
+                draggedItem = null;
+            });
+            
+            // Блокируем переход по ссылке, если мы её тащим
+            draggable.addEventListener('click', (e) => {
+                if (draggable.classList.contains('dragging')) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        dropZones.forEach(zone => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault(); // Разрешаем drop
+                
+                // Добавляем класс для подсветки активной зоны
+                const row = zone.closest('.tier-row') || zone.closest('.tier-pool');
+                if (row) row.classList.add('drag-over');
+
+                const afterElement = getDragAfterElement(zone, e.clientX);
+                
+                // Находим реальный контейнер карточек (для пула это вложенный div.tier-items)
+                const itemsContainer = zone.classList.contains('tier-items') ? zone : zone.querySelector('.tier-items');
+
+                if (afterElement == null) {
+                    itemsContainer.appendChild(placeholder);
+                } else {
+                    itemsContainer.insertBefore(placeholder, afterElement);
+                }
+            });
+
+            zone.addEventListener('dragleave', (e) => {
+                // Убираем подсветку зоны
+                const row = zone.closest('.tier-row') || zone.closest('.tier-pool');
+                if (row && !row.contains(e.relatedTarget)) {
+                    row.classList.remove('drag-over');
+                }
+            });
+
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                if (!draggedItem) return;
+
+                const itemId = draggedItem.dataset.id;
+                // Ищем data-tier либо у самой зоны, либо у родительской строки
+                const targetZone = zone.closest('[data-tier]');
+                if (!targetZone) return;
+
+                let newTier = targetZone.dataset.tier;
+                if (newTier === 'unassigned') newTier = ''; // Сбрасываем тир
+
+                // Обновляем данные в Store (Сохранится в localStorage и перерисует UI)
+                const currentItems = window.Store.getState().items;
+                const updatedItems = currentItems.map(item => {
+                    if (item.id === itemId) {
+                        return { ...item, tier: newTier };
+                    }
+                    return item;
+                });
+
+                window.Store.setState({ items: updatedItems });
+            });
+        });
+    };
+
+    return { render, onMount };
 })();

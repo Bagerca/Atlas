@@ -3,9 +3,8 @@
     margin-bottom: var(--spacing-xl);
     animation: fadeIn var(--transition-base);
     
-    /* СУПЕР-ОПТИМИЗАЦИЯ: Браузер не рендерит блоки вне экрана */
-    content-visibility: auto;
-    contain-intrinsic-size: auto 500px;
+    /* УДАЛЕНО: content-visibility и contain-intrinsic-size 
+       Они ломали расчет высоты динамических сеток и вызывали скачки скролла (scroll jittering) */
 }
 
 .collection-title {

@@ -1,4 +1,6 @@
 window.SearchComponent = (() => {
+    let debounceTimer = null; // Таймер для предотвращения DOM Thrashing
+
     const render = (state) => {
         return `
             <div class="search-wrapper" id="search-wrapper">
@@ -20,39 +22,45 @@ window.SearchComponent = (() => {
                 const val = e.target.value.toLowerCase().trim();
                 const dropdown = document.getElementById('search-dropdown');
                 
-                // Обновляем фильтр каталога (через Store) без ререндера хедера
-                window.Store.setState({ searchQuery: val });
-
+                // 1. МГНОВЕННОЕ ОБНОВЛЕНИЕ ДРОПДАУНА (Берем данные из текущего стейта, не перерисовывая каталог)
                 if (!val) {
                     dropdown.innerHTML = '';
                     dropdown.classList.remove('active');
-                    return;
-                }
-
-                const state = window.Store.getState();
-                const matches = state.items
-                    .filter(i => i.title.toLowerCase().includes(val))
-                    .slice(0, 5); // Топ 5 совпадений
-
-                if (matches.length > 0) {
-                    dropdown.innerHTML = matches.map(item => `
-                        <div class="search-dropdown-item" data-id="${item.id}">
-                            <img src="${window.Helpers.escapeHtml(item.poster)}" class="search-dropdown-poster" onerror="this.style.display='none'">
-                            <div class="search-dropdown-info">
-                                <span class="search-dropdown-title">${window.Helpers.escapeHtml(item.title)}</span>
-                                <span class="search-dropdown-type">${item.type}</span>
-                            </div>
-                        </div>
-                    `).join('');
                 } else {
-                    dropdown.innerHTML = `
-                        <div class="search-dropdown-item">
-                            <span style="color: var(--text-muted); font-size: 0.85rem;">Ничего не найдено</span>
-                        </div>
-                    `;
+                    const state = window.Store.getState();
+                    const matches = state.items
+                        .filter(i => i.title.toLowerCase().includes(val))
+                        .slice(0, 5); // Топ 5 совпадений
+
+                    if (matches.length > 0) {
+                        dropdown.innerHTML = matches.map(item => `
+                            <div class="search-dropdown-item" data-id="${item.id}">
+                                <img src="${window.Helpers.escapeHtml(item.poster)}" class="search-dropdown-poster" onerror="this.style.display='none'">
+                                <div class="search-dropdown-info">
+                                    <span class="search-dropdown-title">${window.Helpers.escapeHtml(item.title)}</span>
+                                    <span class="search-dropdown-type">${item.type}</span>
+                                </div>
+                            </div>
+                        `).join('');
+                    } else {
+                        dropdown.innerHTML = `
+                            <div class="search-dropdown-item">
+                                <span style="color: var(--text-muted); font-size: 0.85rem;">Ничего не найдено</span>
+                            </div>
+                        `;
+                    }
+                    
+                    dropdown.classList.add('active');
                 }
+
+                // 2. ОТЛОЖЕННОЕ ОБНОВЛЕНИЕ КАТАЛОГА (Debounce 300ms)
+                // Сбрасываем старый таймер, если пользователь продолжает печатать
+                clearTimeout(debounceTimer);
                 
-                dropdown.classList.add('active');
+                debounceTimer = setTimeout(() => {
+                    // Обновляем фильтр каталога через Store (вызовет тяжелый ререндер 1 раз)
+                    window.Store.setState({ searchQuery: val });
+                }, 300);
             }
         });
 

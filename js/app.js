@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastAdminState = null;
     let lastSortConfig = null;
     let lastSearchQuery = null;
+    let lastItems = null; // Отслеживание изменения базы данных
     
     const scrollCache = {};
     let isScrolling = false;
@@ -89,12 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const adminChanged = lastAdminState !== state.isAdmin;
         const sortChanged = lastSortConfig !== currentSortConfig;
         const searchChanged = lastSearchQuery !== currentSearchQuery;
+        const itemsChanged = lastItems !== state.items; // Проверяем, изменились ли данные (Drag&Drop, Удаление)
 
         if (routeChanged || adminChanged) {
             headerContainer.innerHTML = window.HeaderView.render(state);
         }
 
-        if (routeChanged || adminChanged || sortChanged || searchChanged) {
+        // Если изменился роут, админ, сортировка, поиск ИЛИ САМА БАЗА ДАННЫХ - перерисовываем контент
+        if (routeChanged || adminChanged || sortChanged || searchChanged || itemsChanged) {
             
             let activeComponent = null;
 
@@ -119,15 +122,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 setTimeout(() => {
-                    const scrollPosition = (!routeChanged && (sortChanged || searchChanged)) 
-                        ? 0 
-                        : (scrollCache[currentRouteHash] || 0);
-                        
-                    window.scrollTo({
-                        top: scrollPosition,
-                        left: 0,
-                        behavior: 'auto'
-                    });
+                    // Если данные просто изменились в фоне (Drag&Drop), мы не должны сбрасывать скролл
+                    if (!routeChanged && itemsChanged && !sortChanged && !searchChanged) {
+                        // Оставляем скролл как есть
+                    } else {
+                        const scrollPosition = (!routeChanged && (sortChanged || searchChanged)) 
+                            ? 0 
+                            : (scrollCache[currentRouteHash] || 0);
+                            
+                        window.scrollTo({
+                            top: scrollPosition,
+                            left: 0,
+                            behavior: 'auto'
+                        });
+                    }
                     
                     // Снимаем блокировку записи скролла после успешного рендера и прокрутки
                     setTimeout(() => blockScrollCache = false, 50);
@@ -135,11 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 10);
             });
 
+            // Обновляем кэш состояния
             lastRouteHash = currentRouteHash;
             lastRoutePath = currentRoutePath;
             lastAdminState = state.isAdmin;
             lastSortConfig = currentSortConfig;
             lastSearchQuery = currentSearchQuery;
+            lastItems = state.items;
         }
     });
 
