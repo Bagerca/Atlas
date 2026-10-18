@@ -1,183 +1,136 @@
-window.TierlistView = (() => {
-    const tiers = ['S', 'A', 'B', 'C', 'D'];
-
+window.ItemView = (() => {
     const render = (state) => {
-        const { items, route, searchQuery, isAdmin } = state;
-        const filterType = route.params.filter || 'all'; 
+        const { items, isAdmin, route } = state;
+        const itemId = route.params.id;
+        const item = items.find(i => i.id === itemId);
+
+        if (!item) {
+            return `
+                <div class="empty-state" style="margin-top: 100px;">
+                    <div class="empty-state-icon">${window.Icons.emptyBox}</div>
+                    <h2>Запись не найдена</h2>
+                    <p>Возможно, она была удалена или ссылка неверна.</p>
+                    <a href="#/" class="btn btn-primary" style="margin-top: 20px;">Вернуться в каталог</a>
+                </div>
+            `;
+        }
+
+        const { escapeHtml, getStatusVisuals, getTypeLabel } = window.Helpers;
         
-        let targetItems = items.filter(i => {
-            const matchesType = filterType === 'all' || i.type === filterType;
-            const matchesSearch = searchQuery ? i.title.toLowerCase().includes(searchQuery) : true;
-            return matchesType && matchesSearch;
-        });
+        // Форматирование мета-данных
+        const typeLabel = getTypeLabel(item.type);
+        const completedText = item.completedAt ? `Завершено: ${new Date(item.completedAt).toLocaleDateString()}` : 'Нет даты завершения';
 
-        // Группируем по тирам. unassigned - для элементов без тира
-        const grouped = { S: [], A: [], B: [], C: [], D: [], unassigned: [] };
-        
-        targetItems.forEach(item => {
-            if (item.tier && tiers.includes(item.tier)) {
-                grouped[item.tier].push(item);
-            } else {
-                grouped.unassigned.push(item);
-            }
-        });
+        const statusesHtml = (item.statuses || []).map(st => {
+            const visual = getStatusVisuals(st, item.type);
+            if (!visual) return '';
+            return `
+                <div class="status-badge-detailed ${visual.colorClass}">
+                    ${visual.svg} ${window.Helpers.escapeHtml(visual.title)}
+                </div>
+            `;
+        }).join('');
 
-        return `
-            <div style="margin-bottom: var(--spacing-lg); display: flex; flex-wrap: wrap; gap: 10px;">
-                <a href="#/tierlist?filter=all" class="btn ${filterType === 'all' ? 'btn-primary' : 'btn-secondary'}">Все</a>
-                <a href="#/tierlist?filter=games" class="btn ${filterType === 'games' ? 'btn-primary' : 'btn-secondary'}">Игры</a>
-                <a href="#/tierlist?filter=features" class="btn ${filterType === 'features' ? 'btn-primary' : 'btn-secondary'}">Полнометражки</a>
-                <a href="#/tierlist?filter=series" class="btn ${filterType === 'series' ? 'btn-primary' : 'btn-secondary'}">Аниме/Сериалы</a>
-                <a href="#/tierlist?filter=literature" class="btn ${filterType === 'literature' ? 'btn-primary' : 'btn-secondary'}">Литература</a>
-            </div>
-
-            <div class="tier-board">
-                ${tiers.map(tier => `
-                    <div class="tier-row" data-tier="${tier}">
-                        <div class="tier-label tier-${tier}">${tier}</div>
-                        <div class="tier-items drop-zone">
-                            ${grouped[tier].map(item => `
-                                <a href="#/item?id=${item.id}" class="tier-item-card" data-id="${item.id}" draggable="${isAdmin}">
-                                    <img src="${window.Helpers.escapeHtml(item.poster)}" alt="${window.Helpers.escapeHtml(item.title)}" onerror="this.style.display='none'">
-                                    <div class="tier-item-tooltip">${window.Helpers.escapeHtml(item.title)}</div>
-                                </a>
-                            `).join('')}
-                        </div>
+        // Блок прогресса (для сериалов и книг)
+        let progressHtml = '';
+        if (item.meta && (item.meta.currentProgress !== null || item.meta.totalProgress !== null)) {
+            const current = item.meta.currentProgress || 0;
+            const total = item.meta.totalProgress || 0;
+            const percent = total > 0 ? Math.min(100, Math.round((current / total) * 100)) : 0;
+            
+            progressHtml = `
+                <div class="stat-card stat-card-progress">
+                    <div class="progress-header">
+                        <span class="stat-label">Прогресс</span>
+                        <span class="stat-value" style="font-size: 1.2rem;">${current} / ${total || '?'}</span>
                     </div>
-                `).join('')}
-            </div>
-
-            <!-- Пул нераспределенных (Только для Админа) -->
-            ${isAdmin ? `
-                <div class="tier-pool drop-zone" data-tier="unassigned">
-                    <div class="tier-pool-title">
-                        ${window.Icons.grid || ''} Нераспределенные произведения (${grouped.unassigned.length})
-                    </div>
-                    <div class="tier-items" style="min-height: 80px;">
-                        ${grouped.unassigned.map(item => `
-                            <a href="#/item?id=${item.id}" class="tier-item-card" data-id="${item.id}" draggable="true">
-                                <img src="${window.Helpers.escapeHtml(item.poster)}" alt="${window.Helpers.escapeHtml(item.title)}" onerror="this.style.display='none'">
-                                <div class="tier-item-tooltip">${window.Helpers.escapeHtml(item.title)}</div>
-                            </a>
-                        `).join('')}
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: ${percent}%;"></div>
                     </div>
                 </div>
-            ` : ''}
+            `;
+        }
+
+        let tierHtml = '';
+        if (item.tier) {
+            tierHtml = `<div class="item-tier-badge tier-${item.tier}">${item.tier}</div>`;
+        }
+
+        return `
+            <div class="item-page">
+                <!-- Плавающее левое меню -->
+                <div class="item-floating-nav">
+                    <button class="btn-icon" id="back-btn" title="Назад">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    ${isAdmin ? `
+                        <button class="btn-icon" onclick="window.Router.setQueryParams({modal: 'edit', id: '${item.id}'})" title="Редактировать">
+                            ${window.Icons.edit}
+                        </button>
+                    ` : ''}
+                </div>
+
+                <div class="item-container">
+                    <div class="item-poster-wrap">
+                        <img src="${escapeHtml(item.poster)}" alt="${escapeHtml(item.title)}" onerror="this.style.display='none'">
+                    </div>
+
+                    <div class="item-details">
+                        <div class="item-top-meta">
+                            <span class="item-type-pill">${escapeHtml(typeLabel)}</span>
+                            <div class="item-date-info">
+                                ${window.Icons.calendar} ${escapeHtml(completedText)}
+                            </div>
+                        </div>
+
+                        <div class="item-title-row">
+                            <h1 class="item-title">${escapeHtml(item.title)}</h1>
+                            ${tierHtml}
+                        </div>
+
+                        <div class="item-dashboard">
+                            <div class="stat-card">
+                                <div class="stat-icon">${window.Icons.star}</div>
+                                <div class="stat-info">
+                                    <span class="stat-label">Оценка</span>
+                                    <span class="stat-value">${item.score ? item.score + ' / 10' : '-'}</span>
+                                </div>
+                            </div>
+                            ${progressHtml}
+                        </div>
+
+                        ${statusesHtml ? `
+                            <div class="item-section-title">Статусы</div>
+                            <div class="item-status-list">
+                                ${statusesHtml}
+                            </div>
+                        ` : ''}
+
+                        ${item.collections && item.collections.length > 0 ? `
+                            <div class="item-section-title" style="margin-top: 10px;">Коллекции</div>
+                            <div class="item-status-list" style="gap: 6px;">
+                                ${item.collections.map(c => `
+                                    <span style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 4px 12px; border-radius: var(--radius-xl); font-size: 0.85rem; font-weight: 700; color: var(--text-secondary);">${escapeHtml(c)}</span>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+
+                        ${item.review ? `
+                            <div class="item-review-box">
+                                ${escapeHtml(item.review).replace(/\n/g, '<br>')}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
         `;
     };
 
-    // Логика перетаскивания инициализируется после вставки HTML
     const onMount = () => {
-        const state = window.Store.getState();
-        if (!state.isAdmin) return; // Обычным юзерам Drag&Drop не нужен
-
-        const draggables = document.querySelectorAll('.tier-item-card');
-        const dropZones = document.querySelectorAll('.drop-zone');
-        
-        let draggedItem = null;
-        let placeholder = document.createElement('div');
-        placeholder.classList.add('tier-placeholder');
-
-        // Вычисляет, после какого элемента вставлять placeholder
-        const getDragAfterElement = (container, x) => {
-            // Ищем все карточки в зоне, кроме той, что сейчас тащим, и кроме плейсхолдера
-            const draggableElements = [...container.querySelectorAll('.tier-item-card:not(.dragging)')];
-
-            return draggableElements.reduce((closest, child) => {
-                const box = child.getBoundingClientRect();
-                const offset = x - box.left - box.width / 2; // Смотрим по X (горизонтальная сетка)
-                
-                if (offset < 0 && offset > closest.offset) {
-                    return { offset: offset, element: child };
-                } else {
-                    return closest;
-                }
-            }, { offset: Number.NEGATIVE_INFINITY }).element;
-        };
-
-        draggables.forEach(draggable => {
-            draggable.addEventListener('dragstart', (e) => {
-                // Предотвращаем дефолтное перетаскивание ссылок (url) в браузере
-                e.dataTransfer.setData('text/plain', draggable.dataset.id);
-                e.dataTransfer.effectAllowed = 'move';
-                
-                draggedItem = draggable;
-                setTimeout(() => draggable.classList.add('dragging'), 0);
-            });
-
-            draggable.addEventListener('dragend', () => {
-                draggable.classList.remove('dragging');
-                if (placeholder.parentNode) {
-                    placeholder.parentNode.removeChild(placeholder);
-                }
-                
-                document.querySelectorAll('.drag-over').forEach(zone => {
-                    zone.classList.remove('drag-over');
-                });
-                draggedItem = null;
-            });
-            
-            // Блокируем переход по ссылке, если мы её тащим
-            draggable.addEventListener('click', (e) => {
-                if (draggable.classList.contains('dragging')) {
-                    e.preventDefault();
-                }
-            });
-        });
-
-        dropZones.forEach(zone => {
-            zone.addEventListener('dragover', (e) => {
-                e.preventDefault(); // Разрешаем drop
-                
-                // Добавляем класс для подсветки активной зоны
-                const row = zone.closest('.tier-row') || zone.closest('.tier-pool');
-                if (row) row.classList.add('drag-over');
-
-                const afterElement = getDragAfterElement(zone, e.clientX);
-                
-                // Находим реальный контейнер карточек (для пула это вложенный div.tier-items)
-                const itemsContainer = zone.classList.contains('tier-items') ? zone : zone.querySelector('.tier-items');
-
-                if (afterElement == null) {
-                    itemsContainer.appendChild(placeholder);
-                } else {
-                    itemsContainer.insertBefore(placeholder, afterElement);
-                }
-            });
-
-            zone.addEventListener('dragleave', (e) => {
-                // Убираем подсветку зоны
-                const row = zone.closest('.tier-row') || zone.closest('.tier-pool');
-                if (row && !row.contains(e.relatedTarget)) {
-                    row.classList.remove('drag-over');
-                }
-            });
-
-            zone.addEventListener('drop', (e) => {
-                e.preventDefault();
-                if (!draggedItem) return;
-
-                const itemId = draggedItem.dataset.id;
-                // Ищем data-tier либо у самой зоны, либо у родительской строки
-                const targetZone = zone.closest('[data-tier]');
-                if (!targetZone) return;
-
-                let newTier = targetZone.dataset.tier;
-                if (newTier === 'unassigned') newTier = ''; // Сбрасываем тир
-
-                // Обновляем данные в Store (Сохранится в localStorage и перерисует UI)
-                const currentItems = window.Store.getState().items;
-                const updatedItems = currentItems.map(item => {
-                    if (item.id === itemId) {
-                        return { ...item, tier: newTier };
-                    }
-                    return item;
-                });
-
-                window.Store.setState({ items: updatedItems });
-            });
-        });
+        // Анимации при монтировании обрабатываются в css (fadeIn)
     };
 
-    return { render, onMount };
+    const init = () => {};
+
+    return { render, init, onMount };
 })();

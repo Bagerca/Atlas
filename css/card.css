@@ -1,10 +1,96 @@
-/* ================= COLLECTIONS GROUPING ================= */
+/* ================= GLOBAL STATUS GROUPING (В процессе, Завершено и т.д.) ================= */
+.global-status-section {
+    margin-bottom: 80px;
+    animation: fadeIn var(--transition-base);
+}
+
+/* Баннер заголовка */
+.global-status-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: var(--spacing-xl);
+    padding: 16px 24px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid currentColor;
+    box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.global-status-header h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-primary);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.global-status-header h2 span {
+    font-size: 1rem;
+    font-weight: 800;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px 12px;
+    border-radius: var(--radius-xl);
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.global-status-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid currentColor;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4), inset 0 0 10px currentColor;
+}
+
+.global-status-icon svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* ================= COLLECTIONS GROUPING (Timeline Tree) ================= */
 .collection-group {
     margin-bottom: var(--spacing-xl);
     animation: fadeIn var(--transition-base);
-    
-    /* УДАЛЕНО: content-visibility и contain-intrinsic-size 
-       Они ломали расчет высоты динамических сеток и вызывали скачки скролла (scroll jittering) */
+}
+
+/* Подготовка контейнера под линии */
+.global-status-section .collection-group {
+    margin-left: 44px;
+    padding-left: 32px;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+/* Линия таймлайна (Идет строго от центра точки вниз до следующей коллекции) */
+.global-status-section .collection-group::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    bottom: -32px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 1;
+}
+
+/* У последней коллекции в статусе линия затухает и не тянется к пустоте */
+.global-status-section .collection-group:last-child::before {
+    bottom: 24px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 0%, transparent 100%);
 }
 
 .collection-title {
@@ -31,6 +117,37 @@
     border-radius: var(--radius-sm);
 }
 
+.global-status-section .collection-title {
+    font-size: 1.15rem;
+    border-bottom: none;
+    padding-bottom: 0;
+    position: relative;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Узел (Светящаяся точка) */
+.global-status-section .collection-title::after {
+    content: '';
+    position: absolute;
+    left: -31px;
+    top: 14px;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-base);
+    border: 3px solid var(--text-muted);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+    z-index: 2;
+    transition: var(--transition-fast);
+}
+
+.global-status-section .collection-group:hover .collection-title::after {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow), 0 0 0 2px rgba(62, 167, 255, 0.2);
+    background: #fff;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -38,7 +155,14 @@
     align-items: stretch;
 }
 
-/* ================= АНИМАЦИЯ ПОЯВЛЕНИЯ КАРТОЧЕК (LAZY STAGGERED) ================= */
+/* Плоский список карточек внутри статуса (когда подкатегории отключены) */
+.global-status-section > .status-flat-grid {
+    margin-top: var(--spacing-lg);
+    padding: 0;
+    margin-left: 0;
+}
+
+/* ================= АНИМАЦИЯ ПОЯВЛЕНИЯ КАРТОЧЕК ================= */
 .card-hidden {
     opacity: 0;
     transform: translateY(40px) scale(0.92);
@@ -49,14 +173,8 @@
 }
 
 @keyframes cardEnter {
-    0% {
-        opacity: 0;
-        transform: translateY(40px) scale(0.92);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    0% { opacity: 0; transform: translateY(40px) scale(0.92); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* ================= MEDIA CARD ================= */
@@ -83,7 +201,6 @@
     z-index: 10;
 }
 
-/* ЖЕЛЕЗОБЕТОННАЯ ФИКСАЦИЯ ПРОПОРЦИЙ ПОСТЕРА 2:3 */
 .card-poster-wrapper {
     position: relative;
     width: 100%;
@@ -93,7 +210,6 @@
     overflow: hidden;
 }
 
-/* СКЕЛЕТНАЯ АНИМАЦИЯ (Пока грузится картинка) */
 .skeleton-bg::before {
     content: "";
     position: absolute;
@@ -217,7 +333,6 @@
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-/* ================= STATUS ICONS ================= */
 .card-icons-row {
     display: flex;
     gap: 12px;
@@ -249,7 +364,7 @@
 .color-warning { color: var(--tier-s); }
 .color-info { color: var(--tier-b); }
 .color-muted { color: var(--text-muted); }
-.color-primary { color: var(--text-primary); }
+.color-primary { color: var(--accent-color); }
 .color-youtube { color: #ff0000; }
 
 /* ================= EMPTY STATE ================= */
@@ -294,11 +409,12 @@
     max-width: 400px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 @media (max-width: 768px) {
     .grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .global-status-section .collection-group { margin-left: 16px; padding-left: 20px; }
+    .global-status-section .collection-title::after { left: -19px; }
+    .global-status-header { padding: 12px 16px; gap: 12px; }
+    .global-status-header h2 { font-size: 1.4rem; }
+    .global-status-icon { width: 36px; height: 36px; }
+    .global-status-icon svg { width: 20px; height: 20px; }
 }

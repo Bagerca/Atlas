@@ -1,14 +1,73 @@
 window.ModalComponent = (() => {
     let currentItem = null;
 
-    const renderCheckboxes = (type, selectedStatuses = []) => {
-        const dict = window.Helpers.getStatusDict(type);
-        return Object.entries(dict).map(([val, label]) => `
-            <label class="checkbox-label">
-                <input type="checkbox" name="statuses" value="${val}" ${selectedStatuses.includes(val) ? 'checked' : ''}> 
-                ${window.Helpers.escapeHtml(label)}
-            </label>
-        `).join('');
+    // Рендер чипсов для трех осей статусов
+    const renderStatusAxes = (type, currentStatuses = []) => {
+        // Ось 1: Жизненный цикл (Только один выбор - Radio)
+        const lifecycleOptions = [
+            { val: 'planned', label: 'В планах', icon: window.Icons.bookmark },
+            { val: 'in_progress', label: 'В процессе', icon: window.Icons.clock },
+            { val: 'endless', label: 'Сессионка', icon: window.Icons.infinity || '♾️' },
+            { val: 'completed', label: 'Завершено', icon: window.Icons.checkCircle },
+            { val: 'dropped', label: 'Брошено', icon: window.Icons.xCircle }
+        ];
+
+        // Ось 2: Формат (Множественный выбор - Checkbox)
+        let formatOptions = [];
+        if (type === 'games') {
+            formatOptions = [
+                { val: 'played_self', label: 'Играл сам', icon: window.Icons.gamepad },
+                { val: 'watched_youtube', label: 'Смотрел на YouTube', icon: window.Icons.youtube }
+            ];
+        } else if (type === 'literature') {
+            formatOptions = [
+                { val: 'played_self', label: 'Читал текст', icon: window.Icons.book },
+                { val: 'listened_audio', label: 'Слушал аудиокнигу', icon: window.Icons.headphones || '🎧' }
+            ];
+        } else { // series, features
+            formatOptions = [
+                { val: 'played_self', label: 'Смотрел сам', icon: window.Icons.tv },
+                { val: 'watched_reaction', label: 'Смотрел реакцию', icon: window.Icons.users }
+            ];
+        }
+
+        // Ось 3: Экстра (Множественный выбор - Checkbox, Золотой цвет)
+        let extraOptions = [];
+        if (type === 'games') {
+            extraOptions.push({ val: 'platinum', label: 'Платина / 100%', icon: window.Icons.trophy || '🏆' });
+        } else if (type === 'series' || type === 'features') {
+            extraOptions.push({ val: 'watched_reaction_extra', label: 'Доп. реакция', icon: window.Icons.users });
+        }
+
+        // Универсальный генератор
+        const generateChips = (options, name, typeInput, customClass = 'primary') => {
+            if (options.length === 0) return '';
+            return `
+                <div class="status-chip-group ${customClass}">
+                    ${options.map(opt => `
+                        <label>
+                            <input type="${typeInput}" name="${name}" value="${opt.val}" ${currentStatuses.includes(opt.val) ? 'checked' : ''}>
+                            <div class="status-chip-label">
+                                ${opt.icon} ${opt.label}
+                            </div>
+                        </label>
+                    `).join('')}
+                </div>
+            `;
+        };
+
+        return `
+            <div class="form-section-title" style="margin-top: 0;">Этап прохождения</div>
+            ${generateChips(lifecycleOptions, 'status_lifecycle', 'radio', 'primary')}
+            
+            <div class="form-section-title">Формат погружения</div>
+            ${generateChips(formatOptions, 'status_format', 'checkbox', 'primary')}
+            
+            ${extraOptions.length > 0 ? `
+                <div class="form-section-title">Экстра / Ачивки</div>
+                ${generateChips(extraOptions, 'status_extra', 'checkbox', 'extra')}
+            ` : ''}
+        `;
     };
 
     const render = (item) => {
@@ -43,7 +102,7 @@ window.ModalComponent = (() => {
                     <form id="atlas-form" style="display: flex; flex-direction: column; flex: 1; overflow: hidden;">
                         <div class="modal-split-layout">
                             
-                            <!-- ЛЕВАЯ КОЛОНКА: Форма -->
+                            <!-- ЛЕВАЯ КОЛОНКА -->
                             <div class="modal-form-side">
                                 
                                 <div class="form-section-title">Основная информация</div>
@@ -103,11 +162,9 @@ window.ModalComponent = (() => {
                                     <input type="date" class="form-control" name="completedAt" value="${completedAt}">
                                 </div>
 
-                                <div class="form-section-title">Статусы</div>
-                                <div class="form-group full-width">
-                                    <div class="checkbox-grid" id="modal-checkbox-grid">
-                                        ${renderCheckboxes(type, statuses)}
-                                    </div>
+                                <!-- БЛОК СТАТУСОВ -->
+                                <div id="modal-status-axes" style="margin-top: 24px; padding-top: 16px; border-top: 1px dashed var(--glass-border);">
+                                    ${renderStatusAxes(type, statuses)}
                                 </div>
 
                                 <div class="form-section-title">Текст</div>
@@ -117,7 +174,7 @@ window.ModalComponent = (() => {
                                 </div>
                             </div>
 
-                            <!-- ПРАВАЯ КОЛОНКА: Постер -->
+                            <!-- ПРАВАЯ КОЛОНКА -->
                             <div class="modal-poster-side">
                                 <div class="poster-preview-card">
                                     ${window.Icons.emptyBox}
@@ -145,13 +202,10 @@ window.ModalComponent = (() => {
     };
 
     const close = () => {
-        // Умное закрытие: если мы на странице детального просмотра (ItemView),
-        // удаляем из URL только флаг модалки, чтобы не потерять саму страницу
         const currentPath = window.Router.parseUrl().path;
         if (currentPath === '/item') {
             window.Router.setQueryParams({ modal: null }); 
         } else {
-            // Если в каталоге, чистим всё
             window.Router.setQueryParams({ modal: null, id: null });
         }
     };
@@ -189,7 +243,21 @@ window.ModalComponent = (() => {
                 e.preventDefault();
                 const formData = new FormData(e.target);
                 
-                const selectedStatuses = formData.getAll('statuses');
+                // Сборка массива статусов из новых осей
+                const newStatuses = [];
+                
+                // 1. Этап прохождения (Radio)
+                const lf = formData.get('status_lifecycle');
+                if (lf) newStatuses.push(lf);
+                
+                // 2. Форматы (Checkbox)
+                const formats = formData.getAll('status_format');
+                formats.forEach(fmt => newStatuses.push(fmt));
+                
+                // 3. Экстра (Checkbox)
+                const extras = formData.getAll('status_extra');
+                extras.forEach(ex => newStatuses.push(ex));
+
                 const collectionsStr = formData.get('collections');
                 const parsedCollections = collectionsStr ? collectionsStr.split(',').map(c => c.trim()).filter(c => c.length > 0) : [];
 
@@ -207,7 +275,7 @@ window.ModalComponent = (() => {
                     id: currentItem?.id || Date.now().toString(),
                     title: formData.get('title'),
                     type: formData.get('type'),
-                    statuses: selectedStatuses,
+                    statuses: newStatuses,
                     score: Number(formData.get('score')) || null,
                     tier: formData.get('tier') || null,
                     poster: formData.get('poster'),
@@ -232,14 +300,14 @@ window.ModalComponent = (() => {
     const bindDynamicEvents = () => {
         const typeSelect = document.getElementById('type-select');
         const progressFields = document.getElementById('progress-fields');
-        const checkboxGrid = document.getElementById('modal-checkbox-grid');
+        const statusAxes = document.getElementById('modal-status-axes');
         const posterInput = document.getElementById('poster-input');
         const posterImg = document.getElementById('poster-preview-img');
         
         if (typeSelect) {
             typeSelect.addEventListener('change', (e) => {
                 const newType = e.target.value;
-                checkboxGrid.innerHTML = renderCheckboxes(newType, []);
+                statusAxes.innerHTML = renderStatusAxes(newType, []);
                 
                 if (newType === 'series' || newType === 'literature') {
                     progressFields.style.display = 'grid';

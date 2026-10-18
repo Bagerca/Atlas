@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.CatalogView.init(); 
     window.ModalComponent.init();
     window.IconsView.init();
+    window.AssignerView.init();
 
     const headerContainer = document.getElementById('app-header');
     const mainContainer = document.getElementById('app-main');
@@ -15,51 +16,43 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastAdminState = null;
     let lastSortConfig = null;
     let lastSearchQuery = null;
-    let lastItems = null; // Отслеживание изменения базы данных
+    let lastItems = null; 
+    let lastGroupByCollections = null;
     
     const scrollCache = {};
     let isScrolling = false;
-    let blockScrollCache = false; // Блокиратор для защиты кэша от системных сбросов скролла
+    let blockScrollCache = false; 
 
-    // 1. Блокируем ложные скроллы при навигации "Назад/Вперед" в браузере
     window.addEventListener('popstate', () => {
         blockScrollCache = true;
     });
 
-    // 2. Глобальный перехватчик кликов. 
-    // Спасает скролл ДО того, как браузер прыгнет по ссылке и сбросит scrollY в 0.
     document.addEventListener('click', (e) => {
         const link = e.target.closest('a');
         if (link && link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
             if (lastRouteHash && !document.body.classList.contains('no-scroll')) {
                 scrollCache[lastRouteHash] = window.scrollY;
             }
-            blockScrollCache = true; // Запрещаем писать в кэш, пока идет смена экрана
+            blockScrollCache = true; 
         }
         
-        // Обработка Умной кнопки "Назад" из карточки произведения
         const backBtn = e.target.closest('#back-btn');
         if (backBtn) {
             e.preventDefault();
-            blockScrollCache = true; // Защита кэша
+            blockScrollCache = true; 
             
-            // Используем нативный history API, чтобы не засорять стек переходов
-            // window.history.length > 2 гарантирует, что мы не вылетим за пределы сайта
             if (window.history.length > 2) {
                 window.history.back();
             } else {
-                // Если истории нет (открыли сразу по ссылке), переходим по сохраненному руту
                 window.location.hash = window.Store.getState().lastCatalogRoute || '#/';
             }
         }
-    }, { capture: true }); // capture: true - перехватываем клик самыми первыми!
+    }, { capture: true }); 
 
-    // ОПТИМИЗАЦИЯ СКОРОСТИ: Заменили setTimeout на requestAnimationFrame
     window.addEventListener('scroll', () => {
         if (!isScrolling && !blockScrollCache) {
             window.requestAnimationFrame(() => {
                 if (lastRouteHash && !document.body.classList.contains('no-scroll') && !blockScrollCache) {
-                    // Используем lastRouteHash, чтобы скролл запоминался раздельно для разных вкладок
                     scrollCache[lastRouteHash] = window.scrollY;
                 }
                 isScrolling = false;
@@ -74,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const isModalOpen = !!state.route.params.modal;
         const currentSortConfig = JSON.stringify(state.sortConfig);
         const currentSearchQuery = state.searchQuery;
+        const currentGroupByCollections = state.groupByCollections;
 
         if (isModalOpen) {
             if (!document.body.classList.contains('no-scroll')) {
@@ -90,14 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const adminChanged = lastAdminState !== state.isAdmin;
         const sortChanged = lastSortConfig !== currentSortConfig;
         const searchChanged = lastSearchQuery !== currentSearchQuery;
-        const itemsChanged = lastItems !== state.items; // Проверяем, изменились ли данные (Drag&Drop, Удаление)
+        const itemsChanged = lastItems !== state.items; 
+        const groupByChanged = lastGroupByCollections !== currentGroupByCollections;
 
-        if (routeChanged || adminChanged) {
+        if (routeChanged || adminChanged || groupByChanged) {
             headerContainer.innerHTML = window.HeaderView.render(state);
         }
 
-        // Если изменился роут, админ, сортировка, поиск ИЛИ САМА БАЗА ДАННЫХ - перерисовываем контент
-        if (routeChanged || adminChanged || sortChanged || searchChanged || itemsChanged) {
+        if (routeChanged || adminChanged || sortChanged || searchChanged || itemsChanged || groupByChanged) {
             
             let activeComponent = null;
 
@@ -110,23 +104,24 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (currentRoutePath === '/icons') {
                 mainContainer.innerHTML = window.IconsView.render(state);
                 activeComponent = window.IconsView;
+            } else if (currentRoutePath === '/assigner') {
+                mainContainer.innerHTML = window.AssignerView.render(state);
+                activeComponent = window.AssignerView;
             } else {
                 mainContainer.innerHTML = window.CatalogView.render(state);
                 activeComponent = window.CatalogView;
             }
 
-            // Вызываем жизненный цикл onMount и восстанавливаем скролл в следующем кадре (Paint Finish)
             requestAnimationFrame(() => {
                 if (activeComponent && activeComponent.onMount) {
                     activeComponent.onMount();
                 }
 
                 setTimeout(() => {
-                    // Если данные просто изменились в фоне (Drag&Drop), мы не должны сбрасывать скролл
-                    if (!routeChanged && itemsChanged && !sortChanged && !searchChanged) {
+                    if (!routeChanged && itemsChanged && !sortChanged && !searchChanged && !groupByChanged) {
                         // Оставляем скролл как есть
                     } else {
-                        const scrollPosition = (!routeChanged && (sortChanged || searchChanged)) 
+                        const scrollPosition = (!routeChanged && (sortChanged || searchChanged || groupByChanged)) 
                             ? 0 
                             : (scrollCache[currentRouteHash] || 0);
                             
@@ -137,19 +132,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         });
                     }
                     
-                    // Снимаем блокировку записи скролла после успешного рендера и прокрутки
                     setTimeout(() => blockScrollCache = false, 50);
                     
                 }, 10);
             });
 
-            // Обновляем кэш состояния
             lastRouteHash = currentRouteHash;
             lastRoutePath = currentRoutePath;
             lastAdminState = state.isAdmin;
             lastSortConfig = currentSortConfig;
             lastSearchQuery = currentSearchQuery;
             lastItems = state.items;
+            lastGroupByCollections = currentGroupByCollections;
         }
     });
 

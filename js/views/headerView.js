@@ -1,9 +1,12 @@
 window.HeaderView = (() => {
     const render = (state) => {
-        const { route, isAdmin } = state;
+        const { route, isAdmin, groupByCollections } = state;
         const currentType = route.params.type || 'all';
+        
         const isTierlist = route.path === '/tierlist';
         const isIconsPage = route.path === '/icons';
+        const isAssignerPage = route.path === '/assigner';
+        const isCatalogPage = route.path === '/' || (!isTierlist && !isIconsPage && !isAssignerPage && route.path !== '/item');
 
         return `
             <div class="brand">
@@ -17,27 +20,34 @@ window.HeaderView = (() => {
             </div>
             
             <nav class="nav-links">
-                <a href="#/" class="${currentType === 'all' && !isTierlist && !isIconsPage ? 'active' : ''}">Все</a>
-                <a href="#/?type=games" class="${currentType === 'games' ? 'active' : ''}">Игры</a>
-                <a href="#/?type=features" class="${currentType === 'features' ? 'active' : ''}">Полнометражки</a>
-                <a href="#/?type=series" class="${currentType === 'series' ? 'active' : ''}">Сериалы</a>
-                <a href="#/?type=literature" class="${currentType === 'literature' ? 'active' : ''}">Литература</a>
+                <a href="#/" class="${currentType === 'all' && isCatalogPage ? 'active' : ''}">Все</a>
+                <a href="#/?type=games" class="${currentType === 'games' && isCatalogPage ? 'active' : ''}">Игры</a>
+                <a href="#/?type=features" class="${currentType === 'features' && isCatalogPage ? 'active' : ''}">Полнометражки</a>
+                <a href="#/?type=series" class="${currentType === 'series' && isCatalogPage ? 'active' : ''}">Сериалы</a>
+                <a href="#/?type=literature" class="${currentType === 'literature' && isCatalogPage ? 'active' : ''}">Литература</a>
                 <a href="#/tierlist" class="${isTierlist ? 'active' : ''}">Тир-листы</a>
             </nav>
 
             <div class="header-controls">
                 
-                <!-- Внедряем Компонент Поиска -->
                 ${window.SearchComponent.render(state)}
-
-                <!-- Внедряем Компонент Сортировки -->
                 ${window.SortComponent.render(state)}
+
+                ${isCatalogPage ? `
+                    <button class="btn-icon ${groupByCollections ? 'active' : ''}" id="toggle-subgroups-btn" title="${groupByCollections ? 'Подкатегории: Включены (кликните, чтобы отключить)' : 'Подкатегории: Выключены (кликните, чтобы включить)'}">
+                        ${window.Icons.layers || '📚'}
+                    </button>
+                ` : ''}
                 
                 ${isAdmin ? `
                     <div class="admin-badge">
                         ${window.Icons.unlock || '🔓'} Админ
                     </div>
                     
+                    <a href="#/assigner" class="btn-icon ${isAssignerPage ? 'active' : ''}" title="Помогатор статусов">
+                        ${window.Icons.layers || '📚'}
+                    </a>
+
                     <a href="#/icons" class="btn-icon ${isIconsPage ? 'active' : ''}" title="Библиотека иконок">
                         ${window.Icons.grid || '🔠'}
                     </a>
@@ -66,9 +76,18 @@ window.HeaderView = (() => {
         header.addEventListener('click', (e) => {
             if (e.target.closest('#export-btn')) {
                 window.Store.exportData();
+                return;
             }
             if (e.target.closest('#add-btn')) {
                 window.Router.setQueryParams({ modal: 'add' });
+                return;
+            }
+            const subgroupsBtn = e.target.closest('#toggle-subgroups-btn');
+            if (subgroupsBtn) {
+                const currentStatus = window.Store.getState().groupByCollections;
+                console.log(`[HeaderView] Переключение режима подкатегорий: ${!currentStatus}`);
+                window.Store.setState({ groupByCollections: !currentStatus });
+                return;
             }
         });
     };

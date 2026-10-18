@@ -1,6 +1,6 @@
 window.CatalogView = (() => {
     const render = (state) => {
-        const { items, route, isAdmin, sortConfig, searchQuery } = state;
+        const { items, route, isAdmin, sortConfig, searchQuery, groupByCollections } = state;
         const currentType = route.params.type || 'all';
         
         let filteredItems = items.filter(item => {
@@ -19,46 +19,103 @@ window.CatalogView = (() => {
             `;
         }
 
-        // ЛОГИКА 1: Сортировка по алфавиту (Группировка по коллекциям сохраняется)
         if (sortConfig.by === 'title') {
-            const grouped = {};
+            const groupedByStatus = {
+                'in_progress': {},
+                'endless': {},
+                'completed': {},
+                'planned': {},
+                'dropped': {},
+                'unassigned': {}
+            };
+
             filteredItems.forEach(item => {
+                const lifecycle = window.Helpers.getLifecycleStatus(item.statuses);
                 const colls = (item.collections && item.collections.length > 0) ? item.collections : ['Без категории'];
+                
                 colls.forEach(c => {
-                    if (!grouped[c]) grouped[c] = [];
-                    grouped[c].push(item);
+                    if (!groupedByStatus[lifecycle][c]) groupedByStatus[lifecycle][c] = [];
+                    groupedByStatus[lifecycle][c].push(item);
                 });
             });
 
-            const sortedCategories = Object.keys(grouped).sort((a, b) => {
-                if (a === 'Без категории') return 1;
-                if (b === 'Без категории') return -1;
-                return a.localeCompare(b);
-            });
+            const statusOrder = ['in_progress', 'endless', 'completed', 'planned', 'dropped', 'unassigned'];
+            let html = '';
 
-            sortedCategories.forEach(category => {
-                grouped[category].sort((a, b) => {
-                    let valA = (a.title || '').toLowerCase();
-                    let valB = (b.title || '').toLowerCase();
-                    let compareResult = valA.localeCompare(valB);
-                    if (sortConfig.dir === 'desc') compareResult *= -1;
-                    return compareResult;
+            statusOrder.forEach(statusKey => {
+                const collectionsObj = groupedByStatus[statusKey];
+                const categories = Object.keys(collectionsObj);
+                
+                if (categories.length === 0) return; 
+
+                const statusDetails = window.Helpers.getLifecycleDetails(statusKey);
+                
+                const uniqueItemsMap = new Map();
+                categories.forEach(cat => {
+                    collectionsObj[cat].forEach(i => {
+                        if (!uniqueItemsMap.has(i.id)) {
+                            uniqueItemsMap.set(i.id, i);
+                        }
+                    });
                 });
+                
+                html += `
+                    <div class="global-status-section" data-status="${statusKey}">
+                        <div class="global-status-header ${statusDetails.colorClass}">
+                            <div class="global-status-icon">${statusDetails.icon}</div>
+                            <h2>${statusDetails.label} <span>${uniqueItemsMap.size}</span></h2>
+                        </div>
+                `;
+
+                if (!groupByCollections) {
+                    const flatItems = Array.from(uniqueItemsMap.values());
+                    flatItems.sort((a, b) => {
+                        let valA = (a.title || '').toLowerCase();
+                        let valB = (b.title || '').toLowerCase();
+                        let compareResult = valA.localeCompare(valB);
+                        if (sortConfig.dir === 'desc') compareResult *= -1;
+                        return compareResult;
+                    });
+
+                    html += `
+                        <div class="grid status-flat-grid">
+                            ${flatItems.map(item => window.CardComponent.render(item, isAdmin)).join('')}
+                        </div>
+                    `;
+                } else {
+                    const sortedCategories = categories.sort((a, b) => {
+                        if (a === 'Без категории') return 1;
+                        if (b === 'Без категории') return -1;
+                        return a.localeCompare(b);
+                    });
+
+                    sortedCategories.forEach(category => {
+                        collectionsObj[category].sort((a, b) => {
+                            let valA = (a.title || '').toLowerCase();
+                            let valB = (b.title || '').toLowerCase();
+                            let compareResult = valA.localeCompare(valB);
+                            if (sortConfig.dir === 'desc') compareResult *= -1;
+                            return compareResult;
+                        });
+
+                        html += `
+                            <section class="collection-group">
+                                <h3 class="collection-title">
+                                    ${window.Helpers.escapeHtml(category)} <span>${collectionsObj[category].length}</span>
+                                </h3>
+                                <div class="grid">
+                                    ${collectionsObj[category].map(item => window.CardComponent.render(item, isAdmin)).join('')}
+                                </div>
+                            </section>
+                        `;
+                    });
+                }
+
+                html += `</div>`; 
             });
 
-            return sortedCategories.map(category => `
-                <section class="collection-group">
-                    <h2 class="collection-title">
-                        ${window.Helpers.escapeHtml(category)} <span>${grouped[category].length}</span>
-                    </h2>
-                    <div class="grid">
-                        ${grouped[category].map(item => window.CardComponent.render(item, isAdmin)).join('')}
-                    </div>
-                </section>
-            `).join('');
+            return html;
         } 
-        
-        // ЛОГИКА 2: Сортировка по Оценке или Дате (Отключаем категории, выводим Flat Grid)
         else {
             filteredItems.sort((a, b) => {
                 let valA, valB;
@@ -79,7 +136,6 @@ window.CatalogView = (() => {
                 
                 if (sortConfig.dir === 'desc') compareResult *= -1;
 
-                // Вторичная сортировка по алфавиту, если основное значение одинаковое
                 if (compareResult === 0) {
                     return (a.title || '').localeCompare(b.title || '');
                 }
@@ -97,16 +153,13 @@ window.CatalogView = (() => {
         }
     };
 
-    // Вызывается из app.js сразу ПОСЛЕ вставки HTML в DOM
     const onMount = () => {
         const cards = document.querySelectorAll('.card-hidden');
         if (cards.length === 0) return;
 
-        // Внешнее состояние для "волновой" анимации
         let delayIndex = 0;
         let resetTimer = null;
 
-        // Настраиваем умный Observer, который не ломается при быстром скролле
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -118,17 +171,11 @@ window.CatalogView = (() => {
                     observer.unobserve(card);
                     delayIndex++;
 
-                    // Сбрасываем индекс анимации только когда батч-прокрутка остановилась
                     clearTimeout(resetTimer);
-                    resetTimer = setTimeout(() => {
-                        delayIndex = 0;
-                    }, 100);
+                    resetTimer = setTimeout(() => { delayIndex = 0; }, 100);
                 }
             });
-        }, { 
-            rootMargin: '100px', // Начинаем грузить заранее
-            threshold: 0.1
-        });
+        }, { rootMargin: '100px', threshold: 0.1 });
 
         cards.forEach(card => observer.observe(card));
     };

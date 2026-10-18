@@ -1,5 +1,4 @@
 window.CardComponent = (() => {
-    // Убрали delayIndex. Карточка рендерится скрытой (.card-hidden)
     const render = (item, isAdmin) => {
         const { escapeHtml, getStatusVisuals } = window.Helpers;
 
@@ -14,7 +13,11 @@ window.CardComponent = (() => {
                 </div>`;
         }
 
-        const statusesHtml = (item.statuses || []).map(st => {
+        // Фильтруем статусы: убираем иконки "Жизненного цикла" (галочки, часики), оставляем только Форматы и Экстра
+        const lifecycleTypes = ['in_progress', 'endless', 'completed', 'planned', 'dropped'];
+        const displayStatuses = (item.statuses || []).filter(st => !lifecycleTypes.includes(st));
+
+        const statusesHtml = displayStatuses.map(st => {
             const visual = getStatusVisuals(st, item.type);
             if (!visual) return '';
             return `

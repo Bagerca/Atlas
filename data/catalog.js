@@ -1,6 +1,6 @@
 window.__ATLAS_INITIAL_DATA__ = {
     "metadata": {
-        "lastUpdated": "2026-10-15T14:28:09.752Z",
+        "lastUpdated": "2026-10-18T13:01:23.521Z",
         "version": "1.5"
     },
     "items": [
@@ -8,7 +8,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130358",
             "title": "Genshin Impact",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "D",
             "poster": "assets/genshin_impact_games.jpg",
@@ -22,21 +26,25 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130359",
             "title": "Granny",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "D",
             "poster": "assets/granny_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792060130360",
             "title": "Baldi's Basics",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "D",
             "poster": "assets/baldis_basics_games.jpg",
@@ -49,7 +57,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "60 Seconds!",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/60_seconds_games.jpg",
@@ -62,7 +73,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Untitled Goose Game",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/untitled_goose_game_games.jpg",
@@ -74,7 +89,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130363",
             "title": "Plants vs. Zombies Fusion",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/plants_vs_zombies_fusion_games.jpg",
@@ -89,7 +108,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Alice: Madness Returns",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/alice_madness_returns_games.jpg",
@@ -101,7 +123,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130365",
             "title": "DOOM Eternal",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/doom_eternal_games.jpg",
@@ -115,7 +141,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130366",
             "title": "DOOM: The Dark Ages",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/doom_the_dark_ages_games.jpg",
@@ -129,21 +158,25 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130367",
             "title": "We Happy Few",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "watched_youtube"
+            ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/we_happy_few_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792060130368",
             "title": "Clea",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/clea_games.jpg",
@@ -155,7 +188,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130369",
             "title": "Marvel's Spider-Man",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/marvels_spider_man_games.jpg",
@@ -169,7 +205,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130370",
             "title": "Marvel's Spider-Man 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/marvels_spider_man_2_games.jpg",
@@ -183,7 +222,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130371",
             "title": "Marvel's Spider-Man: Miles Morales",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "C",
             "poster": "assets/marvels_spider_man_miles_morales_games.jpg",
@@ -198,7 +240,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Protocol",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/protocol_games.jpg",
@@ -210,7 +255,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130373",
             "title": "Phasmophobia",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/phasmophobia_games.jpg",
@@ -224,21 +272,26 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130374",
             "title": "Sky: Children of the Light",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/sky_children_of_the_light_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792060130375",
             "title": "Strinova",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/strinova_games.jpg",
@@ -251,7 +304,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "The Farmer Was Replaced",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/the_farmer_was_replaced_games.jpg",
@@ -263,7 +319,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792060130377",
             "title": "Zenless Zone Zero",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/zenless_zone_zero_games.jpg",
@@ -278,7 +338,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "VRChat",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/vrchat_games.jpg",
@@ -291,7 +354,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "The Baby In Yellow",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/the_baby_in_yellow_games.jpg",
@@ -303,7 +369,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342076",
             "title": "Коллекция «Разрушительных комиксов»",
             "type": "literature",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/crack_up_comics_collection_literature.jpg",
@@ -317,7 +386,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342077",
             "title": "Справочник сотрудников Студии Джоуи Дрю",
             "type": "literature",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/joey_drew_studios_employee_handbook_literature.jpg",
@@ -331,7 +403,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342078",
             "title": "Иллюзия жизни",
             "type": "literature",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/the_illusion_of_living_literature.jpg",
@@ -345,7 +419,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342079",
             "title": "Угаснуть в Черноте",
             "type": "literature",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/fade_to_black_literature.jpg",
@@ -359,7 +435,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342080",
             "title": "Crysis",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/crysis_games.jpg",
@@ -373,7 +453,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342081",
             "title": "Crysis 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/crysis_2_games.jpg",
@@ -387,7 +471,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342082",
             "title": "Crysis 3",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/crysis_3_games.jpg",
@@ -401,7 +488,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342083",
             "title": "Plants vs. Zombies",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/plants_vs_zombies_games.jpg",
@@ -415,7 +506,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342084",
             "title": "Plants vs. Zombies 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/plants_vs_zombies_2_games.jpg",
@@ -429,21 +524,26 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342085",
             "title": "Face The Abyss",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/face_the_abyss_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792055342086",
             "title": "Minecraft",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/minecraft_games.jpg",
@@ -456,7 +556,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "League of Legends",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "D",
             "poster": "assets/league_of_legends_games.jpg",
@@ -469,7 +572,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "PILGRIM",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "D",
             "poster": "assets/pilgrim_games.jpg",
@@ -481,7 +587,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342089",
             "title": "SpiderHeck",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/spiderheck_games.jpg",
@@ -495,7 +604,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342090",
             "title": "Unplagued",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "D",
             "poster": "assets/unplagued_games.jpg",
@@ -510,7 +622,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Overwatch",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/overwatch_games.jpg",
@@ -522,34 +638,40 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342092",
             "title": "Bloons TD 6",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/bloons_td_6_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792055342093",
             "title": "Cat Bait",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/cat_bait_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792055342094",
             "title": "Crossout",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/crossout_games.jpg",
@@ -562,7 +684,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Geometry Dash",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/geometry_dash_games.jpg",
@@ -575,7 +700,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Once Human",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/once_human_games.jpg",
@@ -588,7 +716,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Pumpkin Jack",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/pumpkin_jack_games.jpg",
@@ -601,7 +733,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Raft",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/raft_games.jpg",
@@ -614,7 +749,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "RoboCop: Rogue City",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/robocop_rogue_city_games.jpg",
@@ -627,7 +766,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Hytale",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/hytale_games.jpg",
@@ -639,20 +780,26 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342101",
             "title": "SIGame",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "C",
             "poster": "assets/sigame_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792055342102",
             "title": "Aperture Desk Job",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/aperture_desk_job_games.jpg",
@@ -667,7 +814,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Happy Game",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/happy_game_games.jpg",
@@ -680,7 +830,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Warhammer 40,000: Space Marine 2",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/warhammer_40000_space_marine_2_games.jpg",
@@ -693,7 +845,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Dead as Disco",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/dead_as_disco_games.jpg",
@@ -706,7 +860,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Baldur's Gate 3",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/baldurs_gate_3_games.jpg",
@@ -719,7 +875,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Scrap Mechanic",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/scrap_mechanic_games.jpg",
@@ -731,7 +890,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342108",
             "title": "Kindergarten",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/kindergarten_games.jpg",
@@ -745,7 +907,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342109",
             "title": "Kindergarten 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/kindergarten_2_games.jpg",
@@ -759,7 +924,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342110",
             "title": "Kindergarten 3",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/kindergarten_3_games.jpg",
@@ -774,7 +942,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Webbed",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/webbed_games.jpg",
@@ -787,7 +957,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "OneShot",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/oneshot_games.jpg",
@@ -799,21 +971,24 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342113",
             "title": "Subliminal",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "watched_youtube"
+            ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/subliminal_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792055342114",
             "title": "Swords & Souls Legacy Collection",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/swords_and_souls_legacy_collection_games.jpg",
@@ -826,7 +1001,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "That's not my Neighbor",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/thats_not_my_neighbor_games.jpg",
@@ -839,7 +1017,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Neighbours from Hell",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/neighbours_from_hell_games.jpg",
@@ -851,7 +1032,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342117",
             "title": "Великий Человек-паук",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/ultimate_spider_man_series.jpg",
@@ -862,26 +1046,13 @@ window.__ATLAS_INITIAL_DATA__ = {
             ]
         },
         {
-            "id": "1792055342118",
-            "title": "Призрак в доспехах",
-            "type": "series",
-            "collections": [],
-            "statuses": [],
-            "score": null,
-            "tier": "",
-            "poster": "assets/ghost_in_the_shell_series.jpg",
-            "review": "",
-            "completedAt": null,
-            "meta": {
-                "currentProgress": null,
-                "totalProgress": null
-            }
-        },
-        {
             "id": "1792055342119",
             "title": "Marvel Zombies",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/marvel_zombies_series.jpg",
@@ -909,7 +1080,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342121",
             "title": "Локи",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_reaction"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/loki_series.jpg",
@@ -923,24 +1097,24 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792055342122",
             "title": "Время приключений",
             "type": "series",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/adventure_time_series.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {
-                "currentProgress": null,
-                "totalProgress": null
-            }
+            "review": ""
         },
         {
             "id": "1792011002802",
             "title": "Megabonk",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/megabonk_games.jpg",
@@ -953,7 +1127,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "DEEEER Simulator",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/deeeer_simulator_games.jpg",
@@ -966,7 +1143,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Deadlock",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/deadlock_games.jpg",
@@ -978,7 +1157,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002799",
             "title": "Atomic Heart 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/atomic_heart_2_games.jpg",
@@ -993,7 +1174,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "ILL",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/ill_games.jpg",
@@ -1005,7 +1188,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002797",
             "title": "The CUBE",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/the_cube_games.jpg",
@@ -1020,7 +1205,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "PVKK",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/pvkk_games.jpg",
@@ -1033,7 +1220,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Swords & Slippers",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/swords_slippers_games.jpg",
@@ -1046,7 +1235,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "The Stanley Parable: Ultra Deluxe",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/the_stanley_parable_ultra_deluxe_games.jpg",
@@ -1059,7 +1251,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Mouthwashing",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/mouthwashing_games.jpg",
@@ -1071,21 +1266,26 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002792",
             "title": "IRON NEST: Heavy Turret Simulator",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "watched_youtube"
+            ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/iron_nest_heavy_turret_simulator_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792011002791",
             "title": "WorldBox - God Simulator",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/worldbox_god_simulator_games.jpg",
@@ -1097,21 +1297,24 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002790",
             "title": "ROUTINE",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "watched_youtube"
+            ],
             "score": null,
-            "tier": "",
+            "tier": null,
             "poster": "assets/routine_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792011002789",
             "title": "DELTARUNE",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/deltarune_games.jpg",
@@ -1124,7 +1327,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Mewgenics",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/mewgenics_games.jpg",
@@ -1137,7 +1342,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Dispatch",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/dispatch_games.jpg",
@@ -1150,7 +1358,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Mouse: P.I. For Hire",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/mouse_p_i_for_hire_games.jpg",
@@ -1163,7 +1373,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Bodycam",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/bodycam_games.jpg",
@@ -1176,7 +1388,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "The Alters",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/the_alters_games.jpg",
@@ -1188,7 +1403,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002782",
             "title": "Subnautica 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/subnautica_2_games.jpg",
@@ -1202,7 +1419,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002781",
             "title": "Ghostrunner 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/ghostrunner_2_games.jpg",
@@ -1216,7 +1435,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002780",
             "title": "Ghostrunner",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/ghostrunner_games.jpg",
@@ -1231,7 +1453,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "I'm not a Human",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/im_not_a_human_games.jpg",
@@ -1243,7 +1468,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002777",
             "title": "Stick Fight: The Game",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/stick_fight_the_game_games.jpg",
@@ -1257,7 +1485,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002776",
             "title": "Content Warning",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/content_warning_games.jpg",
@@ -1271,7 +1502,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002775",
             "title": "PROJECT: PLAYTIME",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/project_playtime_games.jpg",
@@ -1285,7 +1520,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002774",
             "title": "Lethal Company",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "C",
             "poster": "assets/lethal_company_games.jpg",
@@ -1299,7 +1537,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002773",
             "title": "Among Us",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/among_us_games.jpg",
@@ -1313,7 +1555,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002772",
             "title": "Broforce",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/broforce_games.jpg",
@@ -1327,7 +1572,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002771",
             "title": "Wall World 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/wall_world_2_games.jpg",
@@ -1342,7 +1590,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "THE FINALS",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/the_finals_games.jpg",
@@ -1355,7 +1606,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "ACE COMBAT™ 7: SKIES UNKNOWN",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/ace_combat_7_skies_unknown_games.jpg",
@@ -1368,7 +1622,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Dead Cells",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/dead_cells_games.jpg",
@@ -1381,7 +1639,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Heavy Rain",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/heavy_rain_games.jpg",
@@ -1394,7 +1654,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "MECCHA CHAMELEON",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "C",
             "poster": "assets/meccha_chameleon_games.jpg",
@@ -1407,7 +1670,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Maneater",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/maneater_games.jpg",
@@ -1420,7 +1687,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Plague Inc: Evolved",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/plague_inc_evolved_games.jpg",
@@ -1433,7 +1704,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "SCP: Secret Laboratory",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/scp_secret_laboratory_games.jpg",
@@ -1446,7 +1721,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Tiny Bunny",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/tiny_bunny_games.jpg",
@@ -1458,7 +1737,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002761",
             "title": "Despotism 3k",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/despotism_3k_games.jpg",
@@ -1472,7 +1755,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002760",
             "title": "Despot's Game: Dystopian Battle Simulator",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/despots_game_dystopian_battle_simulator_games.jpg",
@@ -1486,34 +1773,42 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002759",
             "title": "Battlefield 2042",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/battlefield_2042_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792011002758",
             "title": "CS2",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "platinum",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/cs2_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792011002757",
             "title": "FragPunk",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/fragpunk_games.jpg",
@@ -1525,21 +1820,26 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002756",
             "title": "Awaria",
             "type": "games",
-            "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "platinum",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/awaria_games.jpg",
-            "review": "",
             "completedAt": null,
-            "meta": {}
+            "review": ""
         },
         {
             "id": "1792011002755",
             "title": "KRAMPEN",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/krampen_games.jpg",
@@ -1551,7 +1851,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002754",
             "title": "R.E.P.O.",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/repo_games.jpg",
@@ -1566,7 +1870,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Farlight 84",
             "type": "games",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/farlight_84_games.jpg",
@@ -1578,7 +1886,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002752",
             "title": "Wuthering Waves",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/wuthering_waves_games.jpg",
@@ -1592,7 +1904,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002751",
             "title": "Abyssus",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/abyssus_games.jpg",
@@ -1606,7 +1921,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002750",
             "title": "Bendy and the Ink Factory",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/bendy_and_the_ink_factory_games.jpg",
@@ -1620,7 +1937,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002749",
             "title": "Bendy: The Cage",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/bendy_the_cage_games.jpg",
@@ -1634,7 +1953,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002748",
             "title": "Boris and the Dark Survival",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/boris_and_the_dark_survival_games.jpg",
@@ -1648,7 +1971,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1792011002747",
             "title": "Bendy: Lone Wolf",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/bendy_lone_wolf_games.jpg",
@@ -1663,7 +1990,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Геймовёрс",
             "type": "series",
             "statuses": [
-                "in_progress"
+                "completed",
+                "played_self",
+                "watched_reaction"
             ],
             "score": null,
             "tier": null,
@@ -1683,7 +2012,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Ослепительный район",
             "type": "series",
             "statuses": [
-                "in_progress"
+                "completed",
+                "played_self",
+                "watched_reaction"
             ],
             "score": null,
             "tier": null,
@@ -1703,7 +2034,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Рыцари Гвиневры",
             "type": "series",
             "statuses": [
-                "in_progress"
+                "completed",
+                "played_self",
+                "watched_reaction"
             ],
             "score": null,
             "tier": null,
@@ -1723,7 +2056,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Удивительный цифровой цирк",
             "type": "series",
             "statuses": [
-                "completed"
+                "completed",
+                "played_self",
+                "watched_reaction"
             ],
             "score": null,
             "tier": null,
@@ -1742,7 +2077,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000001",
             "title": "Beholder",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/beholder_games.jpg",
@@ -1756,7 +2095,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000002",
             "title": "Bendy and the Dark Revival",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/bendy_and_the_dark_revival_games.jpg",
@@ -1770,7 +2113,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000003",
             "title": "Valorant",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/valorant_games.jpg",
@@ -1781,7 +2128,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000004",
             "title": "Marvel Rivals",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/marvel_rivals_games.jpg",
@@ -1792,18 +2143,27 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000005",
             "title": "Helltaker",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_youtube",
+                "platinum"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/helltaker_games.jpg",
-            "collections": [],
-            "completedAt": null
+            "completedAt": null,
+            "review": ""
         },
         {
             "id": "1700000000006",
             "title": "Hello Neighbor",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/hello_neighbor_games.jpg",
@@ -1817,7 +2177,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000007",
             "title": "Atomic Heart",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/atomic_heart_games.jpg",
@@ -1831,7 +2195,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000014",
             "title": "Hyper Light Drifter",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/hyper_light_drifter_games.jpg",
@@ -1843,7 +2211,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000015",
             "title": "Cuphead",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/cuphead_games.jpg",
@@ -1855,7 +2227,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000016",
             "title": "Bendy and the Ink Machine",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/bendy_and_the_ink_machine_games.jpg",
@@ -1869,7 +2245,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000017",
             "title": "Bendy: Secrets of the Machine",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/bendy_secrets_of_the_machine_games.jpg",
@@ -1883,7 +2263,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000018",
             "title": "Detroit: Become Human",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/detroit_become_human_games.jpg",
@@ -1895,7 +2279,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000019",
             "title": "Undertale",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/undertale_games.jpg",
@@ -1907,7 +2295,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000020",
             "title": "Hello Neighbor 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "C",
             "poster": "assets/hello_neighbor_2_games.jpg",
@@ -1921,7 +2312,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000021",
             "title": "CARRION",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/carrion_games.jpg",
@@ -1933,7 +2328,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000022",
             "title": "BioShock Remastered",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/bioshock_remastered_games.jpg",
@@ -1947,7 +2346,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000023",
             "title": "BioShock 2 Remastered",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/bioshock_2_remastered_games.jpg",
@@ -1961,7 +2364,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000024",
             "title": "BioShock Infinite",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/bioshock_infinite_games.jpg",
@@ -1975,7 +2382,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000025",
             "title": "Choo-Choo Charles",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/choo_choo_charles_games.jpg",
@@ -1987,7 +2397,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000026",
             "title": "Subnautica",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/subnautica_games.jpg",
@@ -2001,7 +2415,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000027",
             "title": "Subnautica: Below Zero",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "D",
             "poster": "assets/subnautica_below_zero_games.jpg",
@@ -2015,19 +2433,24 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000028",
             "title": "SPORE",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/spore_games.jpg",
-            "review": "Смотрел(а) на YouTube: #EugeneSagaz #Папич",
-            "collections": [],
-            "completedAt": null
+            "completedAt": null,
+            "review": "Смотрел(а) на YouTube: #EugeneSagaz #Папич"
         },
         {
             "id": "1700000000029",
             "title": "MiSide",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/miside_games.jpg",
@@ -2039,7 +2462,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000030",
             "title": "Buckshot Roulette",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/buckshot_roulette_games.jpg",
@@ -2051,7 +2478,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000031",
             "title": "Fused 240",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/fused_240_games.jpg",
@@ -2063,7 +2493,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000032",
             "title": "Cyberpunk 2077",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/cyberpunk_2077_games.jpg",
@@ -2074,7 +2507,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000033",
             "title": "Deepest Sword",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/deepest_sword_games.jpg",
@@ -2085,7 +2521,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000034",
             "title": "Poppy Playtime",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/poppy_playtime_games.jpg",
@@ -2099,7 +2538,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000035",
             "title": "Альтушка для скуфа",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/altushka_dlya_skufa_games.jpg",
@@ -2110,7 +2552,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000036",
             "title": "Wall World",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/wall_world_games.jpg",
@@ -2124,7 +2570,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000037",
             "title": "Dome Keeper",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/dome_keeper_games.jpg",
@@ -2138,7 +2588,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000038",
             "title": "Garten of Banban",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "D",
             "poster": "assets/garten_of_banban_games.jpg",
@@ -2149,7 +2602,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000039",
             "title": "God of War",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/god_of_war_games.jpg",
@@ -2163,7 +2619,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000040",
             "title": "God of War: Ragnarök",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/god_of_war_ragnarok_games.jpg",
@@ -2177,19 +2636,27 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000041",
             "title": "The Henry Stickmin Collection",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "platinum",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/the_henry_stickmin_collection_games.jpg",
-            "review": "Смотрел(а) на YouTube: #ViteCPlay",
-            "collections": [],
-            "completedAt": null
+            "completedAt": null,
+            "review": "Смотрел(а) на YouTube: #ViteCPlay"
         },
         {
             "id": "1700000000042",
             "title": "Doki Doki Literature Club!",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/doki_doki_literature_club_games.jpg",
@@ -2200,7 +2667,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000043",
             "title": "Portal",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/portal_games.jpg",
@@ -2214,7 +2685,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000044",
             "title": "Portal 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/portal_2_games.jpg",
@@ -2228,7 +2703,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000045",
             "title": "Sally Face",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/sally_face_games.jpg",
@@ -2240,7 +2718,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000046",
             "title": "Beholder 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/beholder_2_games.jpg",
@@ -2254,7 +2735,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000047",
             "title": "Beholder 3",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/beholder_3_games.jpg",
@@ -2268,7 +2751,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000048",
             "title": "Beholder: Conductor",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/beholder_conductor_games.jpg",
@@ -2282,7 +2769,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000049",
             "title": "Five Nights at Freddy’s",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/five_nights_at_freddys_games.jpg",
@@ -2296,7 +2786,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000050",
             "title": "Five Nights at Freddy’s 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/five_nights_at_freddys_2_games.jpg",
@@ -2310,7 +2803,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000051",
             "title": "Five Nights at Freddy’s 3",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "C",
             "poster": "assets/five_nights_at_freddys_3_games.jpg",
@@ -2324,7 +2820,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000052",
             "title": "Five Nights at Freddy’s 4",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "A",
             "poster": "assets/five_nights_at_freddys_4_games.jpg",
@@ -2338,7 +2837,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000053",
             "title": "Five Nights at Freddy's: Sister Location",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/five_nights_at_freddys_sister_location_games.jpg",
@@ -2352,7 +2854,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000054",
             "title": "Freddy Fazbear’s Pizzeria Simulator",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/freddy_fazbears_pizzeria_simulator_games.jpg",
@@ -2380,7 +2885,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000056",
             "title": "Five Nights at Freddy’s World",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/five_nights_at_freddys_world_games.jpg",
@@ -2394,7 +2902,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000057",
             "title": "Five Nights at Freddy's: Help Wanted",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/five_nights_at_freddys_help_wanted_games.jpg",
@@ -2408,7 +2918,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000058",
             "title": "Five Nights at Freddy’s: Security Breach",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "D",
             "poster": "assets/five_nights_at_freddys_security_breach_games.jpg",
@@ -2422,7 +2935,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000059",
             "title": "Five Nights at Freddy's: Help Wanted 2",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/five_nights_at_freddys_help_wanted_2_games.jpg",
@@ -2436,7 +2951,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000060",
             "title": "Five Nights at Freddy's: Into the Pit",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/five_nights_at_freddys_into_the_pit_games.jpg",
@@ -2450,7 +2968,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000061",
             "title": "Five Nights at Freddy’s: Secret of the Mimic",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "C",
             "poster": "assets/five_nights_at_freddys_secret_of_the_mimic_games.jpg",
@@ -2464,7 +2985,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000062",
             "title": "Celeste",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "B",
             "poster": "assets/celeste_games.jpg",
@@ -2476,7 +3000,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000063",
             "title": "Hollow Knight",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
             "score": null,
             "tier": "S",
             "poster": "assets/hollow_knight_games.jpg",
@@ -2490,7 +3017,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000064",
             "title": "Hollow Knight: Silksong",
             "type": "games",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/hollow_knight_silksong_games.jpg",
@@ -2505,7 +3034,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Быть героем X",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/to_be_hero_x_series.jpg",
             "review": "Оригинальное название: Tu bian ying xiong X\nОзвучка: ТО дубляжная\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
@@ -2516,19 +3048,25 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000102",
             "title": "Реинкарнация безработного",
             "type": "series",
-            "collections": [],
-            "statuses": [],
-            "tier": "",
-            "poster": "assets/mushoku_tensei_series.jpg",
-            "review": "Оригинальное название: Mushoku Tensei\nОзвучка: Студийная Банда\nПросмотрено: Первый | Второй\nГод: 2023 - 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/mushoku_tensei_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Mushoku Tensei\nОзвучка: Студийная Банда\nПросмотрено: Первый | Второй\nГод: 2023 - 2024\n\nМой вердикт: Рекомендую к просмотру."
         },
         {
             "id": "1700000000103",
             "title": "Лунный рыцарь",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "watched_reaction"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/moon_knight_series.jpg",
@@ -2543,7 +3081,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Братья Гримм: Вариации",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "watched_reaction"
+            ],
             "tier": "",
             "poster": "assets/the_grimm_variations_series.jpg",
             "review": "Оригинальное название: The Grimm Variations\nПросмотрено: 1 - 3 серии\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
@@ -2554,20 +3095,25 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000105",
             "title": "Инди Кроссовер",
             "type": "series",
-            "collections": [],
-            "statuses": [],
-            "tier": "",
-            "poster": "assets/indie_cross_series.jpg",
-            "review": "Оригинальное название: Indie Cross\nОзвучка: BRAINDEAD PROJECT\nПросмотрено: 1 - 2 серии\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/indie_cross_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Indie Cross\nОзвучка: BRAINDEAD PROJECT\nПросмотрено: 1 - 2 серии\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру."
         },
         {
             "id": "1700000000106",
             "title": "Труська и чулка",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "tier": "",
             "poster": "assets/panty_and_stocking_series.jpg",
             "score": null,
@@ -2578,7 +3124,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Dead Cells: Неугасаемый",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/dead_cells_immortalis_series.jpg",
             "review": "Оригинальное название: Dead Cells: Immortalis\nОзвучка: BRAINDEAD PROJECT\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Не рекомендую к просмотру.",
@@ -2590,7 +3139,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Дни Сакамото",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/sakamoto_days_series.jpg",
             "review": "Оригинальное название: Sakamoto Days\nОзвучка: Дубляжная\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
@@ -2602,7 +3154,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Атака титанов",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/attack_on_titan_series.jpg",
             "review": "Оригинальное название: Attack on Titan\nОзвучка: Студийная Банда\nПросмотрено: Первый | Второй | Третий | Четвёртый\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: В начале не заходило, а потом как зашло.",
@@ -2614,7 +3169,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Комбатанты будут высланы",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/combatants_will_be_dispatched_series.jpg",
             "score": null,
@@ -2624,7 +3182,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000111",
             "title": "Непобедимый Человек-паук",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/spider_man_unlimited_series.jpg",
@@ -2639,7 +3200,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Стальной алхимик: Братство",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/fullmetal_alchemist_brotherhood_series.jpg",
             "review": "Оригинальное название: Fullmetal Alchemist: Brotherhood\nОзвучка: СВ-Дубль\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Бесят персонажи и их действия под конец.",
@@ -2650,7 +3214,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000113",
             "title": "Киберслав",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/cyberslav_series.jpg",
@@ -2664,7 +3231,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000114",
             "title": "Адский босс",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/helluva_boss_series.jpg",
@@ -2678,7 +3249,9 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000115",
             "title": "Триггер",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "planned"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/world_trigger_series.jpg",
@@ -2693,7 +3266,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Дандадан",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "tier": "",
             "poster": "assets/dandadan_series.jpg",
             "review": "Оригинальное название: Dandadan\nОзвучка: Студийная Банда\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Первое аниме просмотренное в 2025 году.",
@@ -2704,7 +3281,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000117",
             "title": "Дофус - Сокровища Керуба",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/dofus_aux_tresors_de_kerubim_series.jpg",
@@ -2718,7 +3298,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000118",
             "title": "Вакфу",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/wakfu_series.jpg",
@@ -2732,7 +3315,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000119",
             "title": "Мультерны",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/multerni_series.jpg",
@@ -2747,7 +3333,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Берсерк",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/berserk_series.jpg",
             "review": "Оригинальное название: Berserk\nПросмотрено: Первый (MC Entertainment) | Золотой век I, II, III (Reanimedia) | Второй, Третий (AniDub) | Ремейк первого\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
@@ -2758,7 +3347,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000121",
             "title": "Рыцари Нексо",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/nexo_knights_series.jpg",
@@ -2772,7 +3364,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000122",
             "title": "Ниндзяго: Восстание драконов",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/ninjago_dragons_rising_series.jpg",
@@ -2786,7 +3381,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000123",
             "title": "Герои Энвелла",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/heroes_of_envell_series.jpg",
@@ -2800,7 +3398,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000124",
             "title": "Кухня",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/kuhnya_series.jpg",
@@ -2814,7 +3415,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000125",
             "title": "Дроны-Убийцы",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/murder_drones_series.jpg",
@@ -2829,7 +3434,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Терминатор Зеро",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/terminator_zero_series.jpg",
             "review": "Оригинальное название: Terminator Zero\nОзвучка: HDRezka Studio\nПросмотрено: Первый не до конца\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Скучное, не интересное и повесточное аниме.",
@@ -2840,7 +3448,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000127",
             "title": "Колобанга",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/kolobanga_series.jpg",
@@ -2854,7 +3465,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000128",
             "title": "Ниндзяго: Мастера Кружитцу",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/ninjago_masters_of_spinjitzu_series.jpg",
@@ -2869,7 +3484,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Гравити Фолз",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "tier": "",
             "poster": "assets/gravity_falls_series.jpg",
             "review": "Оригинальное название: Gravity Falls\nОзвучка: Disney\nПросмотрено: Первый | Второй\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Посмотрел полностью летом, раньше видел по паре серий по телевизору.",
@@ -2881,7 +3500,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Кайдзю № 8",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/kaiju_no_8_series.jpg",
             "review": "Оригинальное название: Kaiju No. 8\nОзвучка: Студийная Банда\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Сначала круто, потом такое себе.",
@@ -2893,7 +3515,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Рик и Морти",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "tier": "",
             "poster": "assets/rick_and_morty_series.jpg",
             "review": "Оригинальное название: Rick and Morty\nОзвучка: Сыендук\nПросмотрено: С первого по седьмой сезон\nГод: 2022 - 2023\n\nМой вердикт: Рекомендую к просмотру.",
@@ -2904,7 +3530,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000132",
             "title": "Я есть Грут",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/i_am_groot_series.jpg",
@@ -2918,7 +3547,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000133",
             "title": "Смертоносный герцог и его чёрная горничная",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/shinigami_bocchan_to_kuro_maid_series.jpg",
@@ -2933,7 +3565,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Квартет из альтернативного мира",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/isekai_quartet_series.jpg",
             "review": "Оригинальное название: Isekai Quartet\nПросмотрено: Первый сезон\n\nМой вердикт: Рекомендую к просмотру.",
@@ -2945,7 +3580,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Дороро",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "tier": "",
             "poster": "assets/dororo_series.jpg",
             "review": "Оригинальное название: Dororo\nПросмотрено: Первый сезон\nГод: 201?\n\nМой вердикт: Рекомендую к просмотру.",
@@ -2957,7 +3596,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "НиеР: Автомата — Версия 1.1а",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/nier_automata_ver1_1a_series.jpg",
             "review": "Оригинальное название: NieR: Automata Ver1.1a\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон\nГод: 2023 - 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Начал с аниме, а не игры.",
@@ -2968,7 +3610,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000137",
             "title": "Фоллаут",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/fallout_series.jpg",
@@ -2982,7 +3627,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000138",
             "title": "Отель Хазбин (Отель Днища)",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/hazbin_hotel_series.jpg",
@@ -2996,7 +3645,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000139",
             "title": "Тихоокеанский рубеж: Тёмная зона",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/pacific_rim_the_black_series.jpg",
@@ -3011,7 +3663,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Нежить и Неудача",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/undead_unluck_series.jpg",
             "review": "Оригинальное название: Undead Unluck\nОзвучка: AniLibria\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
@@ -3023,7 +3678,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Семья шпиона",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/spy_x_family_series.jpg",
             "review": "Оригинальное название: SPYxFAMILY\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.",
@@ -3035,7 +3693,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Доктор Стоун",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/dr_stone_series.jpg",
             "review": "Оригинальное название: Dr. Stone\nОзвучка: AniDub\nПросмотрено: Первый | Второй | Третий\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Лишь жаль за развязку истории",
@@ -3046,19 +3707,24 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000143",
             "title": "Истребитель демонов",
             "type": "series",
-            "collections": [],
-            "statuses": [],
-            "tier": "",
-            "poster": "assets/demon_slayer_series.jpg",
-            "review": "Просмотрено в 20??",
+            "statuses": [
+                "planned"
+            ],
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/demon_slayer_series.jpg",
+            "completedAt": null,
+            "review": "Просмотрено в 20??"
         },
         {
             "id": "1700000000144",
             "title": "Аркейн",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/arcane_series.jpg",
@@ -3072,7 +3738,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000145",
             "title": "Что, если...?",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/what_if_series.jpg",
@@ -3086,7 +3755,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000146",
             "title": "Уэйн",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/wayne_series.jpg",
@@ -3100,7 +3772,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000147",
             "title": "Игра в кальмара",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/squid_game_series.jpg",
@@ -3115,7 +3790,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Неуязвимый",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/invincible_series.jpg",
             "review": "Оригинальное название: Invincible\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон, 1 Фильм\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
@@ -3126,20 +3804,27 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000149",
             "title": "Да благословят боги этот прекрасный мир!",
             "type": "series",
-            "collections": [],
-            "statuses": [],
-            "tier": "",
-            "poster": "assets/konosuba_series.jpg",
-            "review": "Оригинальное название: KonoSuba\nОзвучка: Dream Cast\nПросмотрено: Первый | Второй | Третий | OVA 1 | OVA 2 | 1 Фильм | Спин-офф Мегумин\nГод: 201? - 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Первое посмотренное аниме.",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
-            "completedAt": null
+            "tier": null,
+            "poster": "assets/konosuba_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: KonoSuba\nОзвучка: Dream Cast\nПросмотрено: Первый | Второй | Третий | OVA 1 | OVA 2 | 1 Фильм | Спин-офф Мегумин\nГод: 201? - 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Первое посмотренное аниме."
         },
         {
             "id": "1700000000150",
             "title": "Ванпанчмен",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "tier": "",
             "poster": "assets/one_punch_man_series.jpg",
             "review": "Оригинальное название: One-Punch Man\nПросмотрено: Первый | Второй | Спецвыпуски 1 - 6\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
@@ -3151,7 +3836,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Киллер Севен",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/scissor_seven_series.jpg",
             "review": "Оригинальное название: Scissor Seven\nОзвучка: NewStation\nПросмотрено: Первый | Второй | Третий | Четвёртый | Пятый\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Досмотрел в пути до санатория Решма (до 4с).",
@@ -3163,7 +3851,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Рыцарь-скелет вступает в параллельный мир",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/gaikotsu_kishi_sama_series.jpg",
             "review": "Оригинальное название: Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu\nПросмотрено: Первый сезон\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Посмотрел по ютубу так как не знал где можно было, по факту хрень.",
@@ -3175,7 +3866,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Киберпанк: Бегущие по краю",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "tier": "",
             "poster": "assets/cyberpunk_edgerunners_series.jpg",
             "review": "Оригинальное название: Cyberpunk: Edgerunners\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
@@ -3186,7 +3881,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000154",
             "title": "Трансформеры: Прайм",
             "type": "series",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/transformers_prime_series.jpg",
@@ -3201,7 +3900,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Повелитель",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "tier": "",
             "poster": "assets/overlord_series.jpg",
             "review": "Оригинальное название: Overlord\nПросмотрено: Первый | Второй | Третий | Четвертый\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Посмотрел в деревне на одном дыхании.",
@@ -3213,7 +3916,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Любимый во Франксе",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "tier": "",
             "poster": "assets/darling_in_the_franxx_series.jpg",
             "review": "Оригинальное название: Darling in the Franxx\nПросмотрено: Первый сезон\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Смотрел пока был в больнице на обследовании.",
@@ -3225,7 +3931,11 @@ window.__ATLAS_INITIAL_DATA__ = {
             "title": "Человек-бензопила",
             "type": "series",
             "collections": [],
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/chainsaw_man_series.jpg",
@@ -3236,7 +3946,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000201",
             "title": "Человек-Паук: Тень Паука",
             "type": "literature",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/spider_man_the_spiders_shadow_literature.jpg",
@@ -3248,7 +3961,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000008",
             "title": "Человек-бензопила",
             "type": "literature",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/chainsaw_man_manga_literature.jpg",
@@ -3260,7 +3976,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000010",
             "title": "Под дубом",
             "type": "literature",
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
             "score": null,
             "tier": "",
             "poster": "assets/under_the_oak_tree_literature.jpg",
@@ -3272,7 +3991,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000012",
             "title": "Потерянные",
             "type": "literature",
-            "statuses": [],
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/the_lost_ones_literature.jpg",
@@ -3286,7 +4008,10 @@ window.__ATLAS_INITIAL_DATA__ = {
             "id": "1700000000011",
             "title": "Мечты оживают",
             "type": "literature",
-            "statuses": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
             "score": null,
             "tier": null,
             "poster": "assets/dreams_come_to_life_literature.jpg",

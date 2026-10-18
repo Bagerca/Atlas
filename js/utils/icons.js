@@ -91,6 +91,19 @@ window.Icons = {
     <path opacity="0.5" d="M10 2C6.22876 2 4.34315 2 3.17157 3.17157C2 4.34315 2 6.22876 2 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
     <path opacity="0.5" d="M14 2C17.7712 2 19.6569 2 20.8284 3.17157C22 4.34315 22 6.22876 22 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
 </svg>`,
+    headphones: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 13V11C3 6.02944 7.02944 2 12 2C16.9706 2 21 6.02944 21 11V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="2" y="12" width="4" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="18" y="12" width="4" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/>
+</svg>`,
+    infinity: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14.3298 9.17646C15.228 8.44111 16.3687 8 17.6 8C20.0301 8 22 9.79086 22 12C22 14.2091 20.0301 16 17.6 16C16.3687 16 15.228 15.5589 14.3298 14.8235L9.6702 9.17646C8.772 8.44111 7.63133 8 6.4 8C3.96995 8 2 9.79086 2 12C2 14.2091 3.96995 16 6.4 16C7.63133 16 8.772 15.5589 9.6702 14.8235L11.5 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`,
+    layers: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path opacity="0.5" d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path opacity="0.5" d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`,
     lock: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M2 16C2 13.1716 2 11.7574 2.87868 10.8787C3.75736 10 5.17157 10 8 10H16C18.8284 10 20.2426 10 21.1213 10.8787C22 11.7574 22 13.1716 22 16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H8C5.17157 22 3.75736 22 2.87868 21.1213C2 20.2426 2 18.8284 2 16Z" stroke="currentColor" stroke-width="1.5"></path>
     <circle opacity="0.5" cx="12" cy="16" r="2" stroke="currentColor" stroke-width="1.5"></circle>
@@ -141,6 +154,13 @@ window.Icons = {
     <path d="M21 6H3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
     <path opacity="0.5" d="M8 6L3.5 11L11 19M14 6L4 16M20 6L7 19M13 19L20.5 11L16 6M10 6L20 16M4 6L17 19" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
     <path d="M19 19H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+</svg>`,
+    trophy: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 21H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 17V21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M7 3H17V8C17 10.7614 14.7614 13 12 13C9.23858 13 7 10.7614 7 8V3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M7 5H4C3.44772 5 3 5.44772 3 6V7C3 8.65685 4.34315 10 6 10H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M17 5H20C20.5523 5 21 5.44772 21 6V7C21 8.65685 19.6569 10 18 10H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`,
     tv: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z" stroke="currentColor" stroke-width="1.5"></path>

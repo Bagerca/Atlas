@@ -22,13 +22,12 @@
     pointer-events: auto;
 }
 
-/* Убрали тег dialog, используем div, чтобы не ломалось центрирование */
 .modal-container {
     background: rgba(25, 33, 48, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.05), 0 0 40px rgba(62, 167, 255, 0.15);
     width: 100%;
-    max-width: 850px; /* Сделали шире для 2 колонок */
+    max-width: 850px; 
     border-radius: var(--radius-xl);
     transform: translateY(30px) scale(0.95);
     transition: var(--transition-base);
@@ -60,7 +59,6 @@
     letter-spacing: 0.5px;
 }
 
-/* Двухколоночный Layout */
 .modal-split-layout {
     display: flex;
     flex-direction: row;
@@ -95,7 +93,6 @@
     background: rgba(0, 0, 0, 0.4);
 }
 
-/* Предпросмотр постера */
 .poster-preview-card {
     width: 100%;
     aspect-ratio: 2 / 3;
@@ -191,59 +188,58 @@ textarea.form-control {
     min-height: 120px;
 }
 
-/* Чекбоксы (Стеклянная сетка) */
-.checkbox-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--glass-border);
-}
-
-.checkbox-label {
+/* ================= СТАТУС-ЧИПСЫ ================= */
+.status-chip-group {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    transition: color var(--transition-fast);
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: var(--spacing-sm);
 }
 
-.checkbox-label:hover {
+.status-chip-group input {
+    display: none;
+}
+
+.status-chip-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    user-select: none;
+}
+
+.status-chip-label svg {
+    width: 18px;
+    height: 18px;
+}
+
+.status-chip-label:hover {
+    background: rgba(255, 255, 255, 0.05);
     color: var(--text-primary);
 }
 
-.checkbox-label input[type="checkbox"] {
-    appearance: none;
-    width: 22px;
-    height: 22px;
-    border: 2px solid var(--glass-border-highlight);
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-    position: relative;
-    transition: var(--transition-fast);
-    flex-shrink: 0;
-}
-
-.checkbox-label input[type="checkbox"]:checked {
+/* Стандартный активный цвет (Синий) для Этапа и Формата */
+.status-chip-group.primary input:checked + .status-chip-label {
     background: var(--accent-color);
     border-color: var(--accent-color);
-    box-shadow: 0 0 10px var(--accent-glow);
+    color: #fff;
+    box-shadow: 0 4px 15px var(--accent-glow);
 }
 
-.checkbox-label input[type="checkbox"]:checked::after {
-    content: "✔";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 900;
+/* Золотой активный цвет только для Экстра / Ачивок */
+.status-chip-group.extra input:checked + .status-chip-label {
+    background: rgba(255, 211, 42, 0.1);
+    border-color: var(--tier-s);
+    color: var(--tier-s);
+    box-shadow: inset 0 0 10px rgba(255, 211, 42, 0.2);
 }
 
 /* Кнопки */
@@ -285,5 +281,4 @@ textarea.form-control {
     .modal-form-side { overflow-y: visible; }
     .modal-poster-side { width: 100%; border-left: none; border-bottom: 1px solid var(--glass-border); flex-direction: row; align-items: center; }
     .poster-preview-card { width: 100px; height: 150px; }
-    .checkbox-grid { grid-template-columns: 1fr; }
 }

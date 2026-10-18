@@ -1,0 +1,186 @@
+/* ================= ASSIGNER VIEW (Помогатор) ================= */
+.assigner-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+    animation: fadeIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.assigner-stats {
+    color: var(--text-secondary);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 6px 16px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--glass-border);
+}
+
+.assigner-card {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 2/3;
+    border-radius: var(--radius-xl);
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.1), 0 0 40px rgba(62, 167, 255, 0.1);
+}
+
+.assigner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.assigner-card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 60px 24px 24px;
+    background: linear-gradient(to top, rgba(10, 15, 22, 0.95) 0%, rgba(10, 15, 22, 0.6) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.assigner-card-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-top: 8px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.assigner-controls {
+    display: flex;
+    gap: 12px;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.assigner-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--glass-border);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.assigner-btn svg {
+    width: 28px;
+    height: 28px;
+    transition: transform var(--transition-fast);
+}
+
+.assigner-btn-label {
+    font-size: 0.6rem;
+    margin-top: 6px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    opacity: 0.6;
+    transition: var(--transition-fast);
+}
+
+.assigner-btn:hover {
+    transform: translateY(-6px) scale(1.05);
+    background: var(--glass-surface-hover);
+}
+
+.assigner-btn:active {
+    transform: scale(0.9);
+}
+
+.assigner-btn:hover svg {
+    transform: scale(1.1);
+}
+
+.assigner-btn:hover .assigner-btn-label {
+    opacity: 1;
+}
+
+/* Цветные акценты при наведении (Режим: Этап) */
+.assigner-btn.in_progress:hover { border-color: var(--tier-b); color: var(--tier-b); box-shadow: 0 10px 30px rgba(52, 172, 224, 0.25); }
+.assigner-btn.endless:hover { border-color: var(--tier-s); color: var(--tier-s); box-shadow: 0 10px 30px rgba(255, 211, 42, 0.25); }
+.assigner-btn.completed:hover { border-color: var(--success-color); color: var(--success-color); box-shadow: 0 10px 30px rgba(29, 209, 161, 0.25); }
+.assigner-btn.planned:hover { border-color: #fff; color: #fff; box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15); }
+.assigner-btn.dropped:hover { border-color: var(--danger-color); color: var(--danger-color); box-shadow: 0 10px 30px rgba(255, 71, 87, 0.25); }
+
+/* Режим Тогглов (Формат, Экстра) */
+.assigner-btn.toggle-btn {
+    width: 85px;
+    height: 85px;
+    border-radius: 20px;
+}
+
+.assigner-btn.toggle-btn.selected {
+    border-color: var(--accent-color);
+    background: rgba(62, 167, 255, 0.2);
+    box-shadow: inset 0 0 15px rgba(62, 167, 255, 0.2), 0 10px 20px var(--accent-glow);
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+.assigner-btn.toggle-btn.selected .assigner-btn-label {
+    opacity: 1;
+    color: #fff;
+}
+
+/* Кнопка сохранения драфта (Галочка) */
+.assigner-btn.apply {
+    background: rgba(29, 209, 161, 0.1);
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+.assigner-btn.apply:hover {
+    background: var(--success-color);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(29, 209, 161, 0.3);
+}
+
+/* Разделитель между кнопками действий и пропуском */
+.assigner-actions-divider {
+    width: 2px;
+    height: 60px;
+    background: var(--glass-border);
+    margin: 0 6px;
+    border-radius: 2px;
+}
+
+.assigner-btn.skip {
+    width: 50px;
+    height: 50px;
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.15);
+    background: transparent;
+}
+.assigner-btn.skip svg { width: 20px; height: 20px; }
+.assigner-btn.skip:hover { border-color: var(--text-primary); color: var(--text-primary); background: rgba(255, 255, 255, 0.05); }
+
+@media (max-width: 768px) {
+    .assigner-controls { gap: 8px; }
+    .assigner-btn { width: 65px; height: 65px; }
+    .assigner-btn.toggle-btn { width: 75px; height: 75px; }
+    .assigner-btn svg { width: 24px; height: 24px; }
+    .assigner-btn-label { font-size: 0.55rem; }
+}
