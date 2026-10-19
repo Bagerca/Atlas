@@ -16,10 +16,16 @@
     display: flex;
     background: rgba(0, 0, 0, 0.25);
     border-radius: var(--radius-lg);
-    overflow: hidden;
     border: 1px solid var(--glass-border);
     min-height: 120px;
     transition: background var(--transition-fast);
+    position: relative;
+    z-index: 1;
+}
+
+/* Поднимаем всю строку при наведении, чтобы увеличенные карточки перекрывали соседние ряды */
+.tier-row:hover {
+    z-index: 5;
 }
 
 /* Подсветка строки при наведении карточки */
@@ -39,6 +45,9 @@
     text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
     border-right: 1px solid rgba(0, 0, 0, 0.3);
     flex-shrink: 0;
+    /* Имитируем скругления родителя, так как убрали overflow: hidden */
+    border-top-left-radius: calc(var(--radius-lg) - 1px);
+    border-bottom-left-radius: calc(var(--radius-lg) - 1px);
 }
 
 .tier-label.tier-S { background: var(--tier-s); box-shadow: inset 0 0 20px rgba(0,0,0,0.2); }
@@ -170,6 +179,15 @@
 
 @media (max-width: 768px) {
     .tier-row { flex-direction: column; min-height: auto; }
-    .tier-label { width: 100%; padding: 10px 0; font-size: 1.5rem; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.3); }
+    .tier-label { 
+        width: 100%; 
+        padding: 10px 0; 
+        font-size: 1.5rem; 
+        border-right: none; 
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+        /* Меняем скругления для вертикального режима */
+        border-bottom-left-radius: 0;
+        border-top-right-radius: calc(var(--radius-lg) - 1px);
+    }
     .tier-items { justify-content: center; }
 }

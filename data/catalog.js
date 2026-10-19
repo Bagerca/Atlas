@@ -1,9 +1,346 @@
 window.__ATLAS_INITIAL_DATA__ = {
     "metadata": {
-        "lastUpdated": "2026-10-18T13:01:23.521Z",
+        "lastUpdated": "2026-10-18T17:58:24.454Z",
         "version": "1.5"
     },
     "items": [
+        {
+            "id": "1792341494170",
+            "title": "Resident Evil 2",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/resident_evil_2_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Resident Evil"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494171",
+            "title": "Resident Evil 3",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/resident_evil_3_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Resident Evil"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494172",
+            "title": "Resident Evil 4",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/resident_evil_4_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Resident Evil"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494173",
+            "title": "Resident Evil 7: Biohazard",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/resident_evil_7_biohazard_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Resident Evil"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494174",
+            "title": "Resident Evil Village",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/resident_evil_village_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Resident Evil"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494175",
+            "title": "Resident Evil Requiem",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/resident_evil_requiem_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Resident Evil"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494179",
+            "title": "Satisfactory",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/satisfactory_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [],
+            "meta": {}
+        },
+        {
+            "id": "1792341494180",
+            "title": "Grand Theft Auto: San Andreas",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/grand_theft_auto_san_andreas_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Grand Theft Auto"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494181",
+            "title": "Grand Theft Auto: Vice City",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/grand_theft_auto_vice_city_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Grand Theft Auto"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494182",
+            "title": "Grand Theft Auto V",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/grand_theft_auto_v_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Grand Theft Auto"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494183",
+            "title": "Grand Theft Auto VI",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/grand_theft_auto_vi_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Grand Theft Auto"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494184",
+            "title": "Anomalous Coffee Machine",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/anomalous_coffee_machine_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [],
+            "meta": {}
+        },
+        {
+            "id": "1792341494185",
+            "title": "The Walking Trade",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/the_walking_trade_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [],
+            "meta": {}
+        },
+        {
+            "id": "1792341494187",
+            "title": "Hades",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/hades_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [],
+            "meta": {}
+        },
+        {
+            "id": "1792341494188",
+            "title": "Factorio",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/factorio_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [],
+            "meta": {}
+        },
+        {
+            "id": "1792341494190",
+            "title": "Little Nightmares",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/little_nightmares_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Little Nightmares"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494191",
+            "title": "Little Nightmares II",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/little_nightmares_ii_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Little Nightmares"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494192",
+            "title": "Little Nightmares III",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/little_nightmares_iii_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Little Nightmares"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494194",
+            "title": "Dark Deception",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/dark_deception_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [],
+            "meta": {}
+        },
+        {
+            "id": "1792341494195",
+            "title": "Team Fortress 2",
+            "type": "games",
+            "statuses": [
+                "planned"
+            ],
+            "score": null,
+            "tier": null,
+            "poster": "assets/team_fortress_2_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [],
+            "meta": {}
+        },
         {
             "id": "1792060130358",
             "title": "Genshin Impact",
@@ -364,40 +701,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             "review": "",
             "completedAt": null,
             "meta": {}
-        },
-        {
-            "id": "1792055342076",
-            "title": "Коллекция «Разрушительных комиксов»",
-            "type": "literature",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/crack_up_comics_collection_literature.jpg",
-            "completedAt": null,
-            "review": "",
-            "collections": [
-                "Bendy"
-            ]
-        },
-        {
-            "id": "1792055342077",
-            "title": "Справочник сотрудников Студии Джоуи Дрю",
-            "type": "literature",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/joey_drew_studios_employee_handbook_literature.jpg",
-            "completedAt": null,
-            "review": "",
-            "collections": [
-                "Bendy"
-            ]
         },
         {
             "id": "1792055342078",
@@ -1029,40 +1332,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             "meta": {}
         },
         {
-            "id": "1792055342117",
-            "title": "Великий Человек-паук",
-            "type": "series",
-            "statuses": [
-                "in_progress",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/ultimate_spider_man_series.jpg",
-            "completedAt": null,
-            "review": "",
-            "collections": [
-                "Marvel"
-            ]
-        },
-        {
-            "id": "1792055342119",
-            "title": "Marvel Zombies",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/marvel_zombies_series.jpg",
-            "completedAt": null,
-            "review": "",
-            "collections": [
-                "Marvel"
-            ]
-        },
-        {
             "id": "1792055342120",
             "title": "Гости из прошлого",
             "type": "series",
@@ -1075,37 +1344,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             "collections": [
                 "РА-СИ-Я"
             ]
-        },
-        {
-            "id": "1792055342121",
-            "title": "Локи",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/loki_series.jpg",
-            "completedAt": null,
-            "review": "",
-            "collections": [
-                "Marvel"
-            ]
-        },
-        {
-            "id": "1792055342122",
-            "title": "Время приключений",
-            "type": "series",
-            "statuses": [
-                "in_progress",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/adventure_time_series.jpg",
-            "completedAt": null,
-            "review": ""
         },
         {
             "id": "1792011002802",
@@ -1984,94 +2222,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             "collections": [
                 "Bendy"
             ]
-        },
-        {
-            "id": "1792011002746",
-            "title": "Геймовёрс",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/gameoverse_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Gameoverse",
-            "collections": [
-                "Glitch Productions"
-            ],
-            "meta": {
-                "currentProgress": 1,
-                "totalProgress": null
-            }
-        },
-        {
-            "id": "1792011002745",
-            "title": "Ослепительный район",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/the_gaslight_district_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: The Gaslight District",
-            "collections": [
-                "Glitch Productions"
-            ],
-            "meta": {
-                "currentProgress": 1,
-                "totalProgress": null
-            }
-        },
-        {
-            "id": "1792011002744",
-            "title": "Рыцари Гвиневры",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/knights_of_guinevere_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Knights of Guinevere\n\nВ процессе (вышло 2 серии)",
-            "collections": [
-                "Glitch Productions"
-            ],
-            "meta": {
-                "currentProgress": 2,
-                "totalProgress": null
-            }
-        },
-        {
-            "id": "1792011002743",
-            "title": "Удивительный цифровой цирк",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/the_amazing_digital_circus_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: The Amazing Digital Circus\n\nМой вердикт: 1 сезон (9 эпизодов)",
-            "collections": [
-                "Glitch Productions"
-            ],
-            "meta": {
-                "currentProgress": 9,
-                "totalProgress": 9
-            }
         },
         {
             "id": "1700000000001",
@@ -3030,53 +3180,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             ]
         },
         {
-            "id": "1700000000101",
-            "title": "Быть героем X",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/to_be_hero_x_series.jpg",
-            "review": "Оригинальное название: Tu bian ying xiong X\nОзвучка: ТО дубляжная\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000102",
-            "title": "Реинкарнация безработного",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/mushoku_tensei_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Mushoku Tensei\nОзвучка: Студийная Банда\nПросмотрено: Первый | Второй\nГод: 2023 - 2024\n\nМой вердикт: Рекомендую к просмотру."
-        },
-        {
-            "id": "1700000000103",
-            "title": "Лунный рыцарь",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/moon_knight_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Moon Knight\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "Marvel"
-            ]
-        },
-        {
             "id": "1700000000104",
             "title": "Братья Гримм: Вариации",
             "type": "series",
@@ -3092,21 +3195,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             "completedAt": null
         },
         {
-            "id": "1700000000105",
-            "title": "Инди Кроссовер",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/indie_cross_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Indie Cross\nОзвучка: BRAINDEAD PROJECT\nПросмотрено: 1 - 2 серии\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру."
-        },
-        {
             "id": "1700000000106",
             "title": "Труська и чулка",
             "type": "series",
@@ -3118,132 +3206,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             "poster": "assets/panty_and_stocking_series.jpg",
             "score": null,
             "completedAt": null
-        },
-        {
-            "id": "1700000000107",
-            "title": "Dead Cells: Неугасаемый",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/dead_cells_immortalis_series.jpg",
-            "review": "Оригинальное название: Dead Cells: Immortalis\nОзвучка: BRAINDEAD PROJECT\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Не рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000108",
-            "title": "Дни Сакамото",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/sakamoto_days_series.jpg",
-            "review": "Оригинальное название: Sakamoto Days\nОзвучка: Дубляжная\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000109",
-            "title": "Атака титанов",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/attack_on_titan_series.jpg",
-            "review": "Оригинальное название: Attack on Titan\nОзвучка: Студийная Банда\nПросмотрено: Первый | Второй | Третий | Четвёртый\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: В начале не заходило, а потом как зашло.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000110",
-            "title": "Комбатанты будут высланы",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/combatants_will_be_dispatched_series.jpg",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000111",
-            "title": "Непобедимый Человек-паук",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/spider_man_unlimited_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Spider-Man Unlimited\nОзвучка: РенТВ\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "Marvel"
-            ]
-        },
-        {
-            "id": "1700000000112",
-            "title": "Стальной алхимик: Братство",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/fullmetal_alchemist_brotherhood_series.jpg",
-            "review": "Оригинальное название: Fullmetal Alchemist: Brotherhood\nОзвучка: СВ-Дубль\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Бесят персонажи и их действия под конец.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000113",
-            "title": "Киберслав",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/cyberslav_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Киберслав\nОзвучка: Оригинал\nПросмотрено: Первая серия\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "РА-СИ-Я"
-            ]
-        },
-        {
-            "id": "1700000000114",
-            "title": "Адский босс",
-            "type": "series",
-            "statuses": [
-                "in_progress",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/helluva_boss_series.jpg",
-            "completedAt": null,
-            "review": "",
-            "collections": [
-                "Hellaverse"
-            ]
         },
         {
             "id": "1700000000115",
@@ -3262,240 +3224,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             ]
         },
         {
-            "id": "1700000000116",
-            "title": "Дандадан",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "tier": "",
-            "poster": "assets/dandadan_series.jpg",
-            "review": "Оригинальное название: Dandadan\nОзвучка: Студийная Банда\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Первое аниме просмотренное в 2025 году.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000117",
-            "title": "Дофус - Сокровища Керуба",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/dofus_aux_tresors_de_kerubim_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Dofus aux trésors de Kérubim\nОзвучка: Мультимания\nПросмотрено: Первый сезон, Фильм\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "Wakfu"
-            ]
-        },
-        {
-            "id": "1700000000118",
-            "title": "Вакфу",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/wakfu_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Wakfu\nОзвучка: Мультимания\nПросмотрено: Часовщик Ноксимилиан | Первый | Второй | Третий | Четвертый | Голтар | Легенда об Огресте | В поисках шести дофусов\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "Wakfu"
-            ]
-        },
-        {
-            "id": "1700000000119",
-            "title": "Мультерны",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/multerni_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Мультерны\nОзвучка: Оригинал\nПросмотрено: Первый сезон\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "РА-СИ-Я"
-            ]
-        },
-        {
-            "id": "1700000000120",
-            "title": "Берсерк",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/berserk_series.jpg",
-            "review": "Оригинальное название: Berserk\nПросмотрено: Первый (MC Entertainment) | Золотой век I, II, III (Reanimedia) | Второй, Третий (AniDub) | Ремейк первого\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000121",
-            "title": "Рыцари Нексо",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/nexo_knights_series.jpg",
-            "completedAt": null,
-            "review": "Просмотрено в 20??",
-            "collections": [
-                "LEGO"
-            ]
-        },
-        {
-            "id": "1700000000122",
-            "title": "Ниндзяго: Восстание драконов",
-            "type": "series",
-            "statuses": [
-                "in_progress",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/ninjago_dragons_rising_series.jpg",
-            "completedAt": null,
-            "review": "Просмотрено в 202?",
-            "collections": [
-                "LEGO"
-            ]
-        },
-        {
-            "id": "1700000000123",
-            "title": "Герои Энвелла",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/heroes_of_envell_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Герои Энвелла\nОзвучка: Оригинал\nПросмотрено: Первый | Второй\nГод: 2020-2022\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "РА-СИ-Я"
-            ]
-        },
-        {
-            "id": "1700000000124",
-            "title": "Кухня",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/kuhnya_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Кухня\nОзвучка: Оригинал\nПросмотрено: Первый и второй сезоны\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "РА-СИ-Я"
-            ]
-        },
-        {
-            "id": "1700000000125",
-            "title": "Дроны-Убийцы",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/murder_drones_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Murder Drones\nОзвучка: NDR Production\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Последняя серия лучшая.",
-            "collections": [
-                "Glitch Productions"
-            ]
-        },
-        {
-            "id": "1700000000126",
-            "title": "Терминатор Зеро",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "dropped",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/terminator_zero_series.jpg",
-            "review": "Оригинальное название: Terminator Zero\nОзвучка: HDRezka Studio\nПросмотрено: Первый не до конца\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Скучное, не интересное и повесточное аниме.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000127",
-            "title": "Колобанга",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/kolobanga_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Колобанга\nОзвучка: Оригинал\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "РА-СИ-Я"
-            ]
-        },
-        {
-            "id": "1700000000128",
-            "title": "Ниндзяго: Мастера Кружитцу",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/ninjago_masters_of_spinjitzu_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Ninjago: Masters of Spinjitzu\nОзвучка: Дубляж\nПросмотрено: 1 - 15 сезон, Спецвыпуски 1 - 2\nГод: 20??\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Мультик из детства",
-            "collections": [
-                "LEGO"
-            ]
-        },
-        {
-            "id": "1700000000129",
-            "title": "Гравити Фолз",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "tier": "",
-            "poster": "assets/gravity_falls_series.jpg",
-            "review": "Оригинальное название: Gravity Falls\nОзвучка: Disney\nПросмотрено: Первый | Второй\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Посмотрел полностью летом, раньше видел по паре серий по телевизору.",
-            "score": null,
-            "completedAt": null
-        },
-        {
             "id": "1700000000130",
             "title": "Кайдзю № 8",
             "type": "series",
@@ -3507,102 +3235,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             "tier": "",
             "poster": "assets/kaiju_no_8_series.jpg",
             "review": "Оригинальное название: Kaiju No. 8\nОзвучка: Студийная Банда\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Сначала круто, потом такое себе.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000131",
-            "title": "Рик и Морти",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "tier": "",
-            "poster": "assets/rick_and_morty_series.jpg",
-            "review": "Оригинальное название: Rick and Morty\nОзвучка: Сыендук\nПросмотрено: С первого по седьмой сезон\nГод: 2022 - 2023\n\nМой вердикт: Рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000132",
-            "title": "Я есть Грут",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/i_am_groot_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: I Am Groot\nОзвучка: FlarrowFilms\nПросмотрено: Первый | Второй\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "Marvel"
-            ]
-        },
-        {
-            "id": "1700000000133",
-            "title": "Смертоносный герцог и его чёрная горничная",
-            "type": "series",
-            "statuses": [
-                "dropped",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/shinigami_bocchan_to_kuro_maid_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Shinigami Bocchan to Kuro Maid\nПросмотрено: Пол сезона\nГод: 2023\n\nМой вердикт: Не рекомендую к просмотру.",
-            "collections": [
-                "3D-сериалы"
-            ]
-        },
-        {
-            "id": "1700000000134",
-            "title": "Квартет из альтернативного мира",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/isekai_quartet_series.jpg",
-            "review": "Оригинальное название: Isekai Quartet\nПросмотрено: Первый сезон\n\nМой вердикт: Рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000135",
-            "title": "Дороро",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "tier": "",
-            "poster": "assets/dororo_series.jpg",
-            "review": "Оригинальное название: Dororo\nПросмотрено: Первый сезон\nГод: 201?\n\nМой вердикт: Рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000136",
-            "title": "НиеР: Автомата — Версия 1.1а",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/nier_automata_ver1_1a_series.jpg",
-            "review": "Оригинальное название: NieR: Automata Ver1.1a\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон\nГод: 2023 - 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Начал с аниме, а не игры.",
             "score": null,
             "completedAt": null
         },
@@ -3624,86 +3256,6 @@ window.__ATLAS_INITIAL_DATA__ = {
             ]
         },
         {
-            "id": "1700000000138",
-            "title": "Отель Хазбин (Отель Днища)",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/hazbin_hotel_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Hazbin Hotel\nОзвучка: NDR Production\nПросмотрено: Пилот | Первый | Второй\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Ждал около 7 лет с выхода пилота",
-            "collections": [
-                "Hellaverse"
-            ]
-        },
-        {
-            "id": "1700000000139",
-            "title": "Тихоокеанский рубеж: Тёмная зона",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/pacific_rim_the_black_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Pacific Rim: The Black\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "3D-сериалы"
-            ]
-        },
-        {
-            "id": "1700000000140",
-            "title": "Нежить и Неудача",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/undead_unluck_series.jpg",
-            "review": "Оригинальное название: Undead Unluck\nОзвучка: AniLibria\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000141",
-            "title": "Семья шпиона",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "dropped",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/spy_x_family_series.jpg",
-            "review": "Оригинальное название: SPYxFAMILY\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000142",
-            "title": "Доктор Стоун",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/dr_stone_series.jpg",
-            "review": "Оригинальное название: Dr. Stone\nОзвучка: AniDub\nПросмотрено: Первый | Второй | Третий\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Лишь жаль за развязку истории",
-            "score": null,
-            "completedAt": null
-        },
-        {
             "id": "1700000000143",
             "title": "Истребитель демонов",
             "type": "series",
@@ -3717,6 +3269,559 @@ window.__ATLAS_INITIAL_DATA__ = {
             "review": "Просмотрено в 20??"
         },
         {
+            "id": "1792341494176",
+            "title": "Brawl Stars",
+            "type": "games",
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": "A",
+            "poster": "assets/brawl_stars_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Supercell"
+            ]
+        },
+        {
+            "id": "1792341494177",
+            "title": "Clash Royale",
+            "type": "games",
+            "statuses": [
+                "endless",
+                "played_self",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/clash_royale_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Supercell"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494178",
+            "title": "Clash of Clans",
+            "type": "games",
+            "statuses": [
+                "endless",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/clash_of_clans_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Supercell"
+            ],
+            "meta": {}
+        },
+        {
+            "id": "1792341494193",
+            "title": "Oxygen Not Included",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/oxygen_not_included_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [],
+            "meta": {}
+        },
+        {
+            "id": "1792341494186",
+            "title": "Don't Sleep With The Fishes",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/dont_sleep_with_the_fishes_games.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [],
+            "meta": {}
+        },
+        {
+            "id": "1792341494189",
+            "title": "Voices of the Void",
+            "type": "games",
+            "statuses": [
+                "completed",
+                "watched_youtube"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/voices_of_the_void_games.jpg",
+            "completedAt": null,
+            "review": ""
+        },
+        {
+            "id": "1700000000011",
+            "title": "Мечты оживают",
+            "type": "literature",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/dreams_come_to_life_literature.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Dreams Come to Life\nОт: Адрианна Кресс\nФормат: Бумажный\nГлава:\nДата прочтения: 2023\n\nМой вердикт: Рекомендую к прочтению.",
+            "collections": [
+                "Bendy"
+            ]
+        },
+        {
+            "id": "1700000000010",
+            "title": "Под дубом",
+            "type": "literature",
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/under_the_oak_tree_literature.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: 상수리나무 아래 (Under the Oak Tree)\nОт: Ким Су Джи\nФормат: Электронный, цветной\nЧасть I: \nЧасть II: \nДата прочтения: 2023 - 2024\n\nМой вердикт: Рекомендую к прочтению.",
+            "collections": []
+        },
+        {
+            "id": "1700000000008",
+            "title": "Человек-бензопила",
+            "type": "literature",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/chainsaw_man_manga_literature.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: チェンソーマン (Chainsaw Man)\nОт: Тацуки Фудзимото\nФормат: Электронный, цветной\nЧасть I: Том 1 — 11\nЧасть II: Том 12 — 23\nОценка: AA\nДата прочтения: 2024 - 2026\n\nМой вердикт: Рекомендую к прочтению.",
+            "collections": []
+        },
+        {
+            "id": "1700000000012",
+            "title": "Потерянные",
+            "type": "literature",
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "A",
+            "poster": "assets/the_lost_ones_literature.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: The Lost Ones\nОт: Адрианна Кресс\nФормат: Бумажный\nГлава:\nДата прочтения: 2023-2024+\n\nМой вердикт: Рекомендую к прочтению.",
+            "collections": [
+                "Bendy"
+            ]
+        },
+        {
+            "id": "1700000000201",
+            "title": "Человек-Паук: Тень Паука",
+            "type": "literature",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/spider_man_the_spiders_shadow_literature.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Spider-Man: The Spider's Shadow\nОт: Chip Zdarsky\nФормат: Электронный, цветной\nЧасть I: Том 1\nДата прочтения: 2025\n\nМой вердикт: Рекомендую к прочтению.",
+            "collections": []
+        },
+        {
+            "id": "1792055342076",
+            "title": "Коллекция «Разрушительных комиксов»",
+            "type": "literature",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/crack_up_comics_collection_literature.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Bendy"
+            ]
+        },
+        {
+            "id": "1792055342077",
+            "title": "Справочник сотрудников Студии Джоуи Дрю",
+            "type": "literature",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "A",
+            "poster": "assets/joey_drew_studios_employee_handbook_literature.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Bendy"
+            ]
+        },
+        {
+            "id": "1700000000157",
+            "title": "Человек-бензопила",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/chainsaw_man_series.jpg",
+            "review": "Оригинальное название: Chainsaw Man\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Посмотрел в новый год.",
+            "completedAt": null
+        },
+        {
+            "id": "1700000000120",
+            "title": "Берсерк",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "S",
+            "poster": "assets/berserk_series.jpg",
+            "review": "Оригинальное название: Berserk\nПросмотрено: Первый (MC Entertainment) | Золотой век I, II, III (Reanimedia) | Второй, Третий (AniDub) | Ремейк первого\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1792055342121",
+            "title": "Локи",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "A",
+            "poster": "assets/loki_series.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Marvel"
+            ]
+        },
+        {
+            "id": "1792011002743",
+            "title": "Удивительный цифровой цирк",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/the_amazing_digital_circus_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: The Amazing Digital Circus\n\nМой вердикт: 1 сезон (9 эпизодов)",
+            "collections": [
+                "Glitch Productions"
+            ],
+            "meta": {
+                "currentProgress": 9,
+                "totalProgress": 9
+            }
+        },
+        {
+            "id": "1792011002745",
+            "title": "Ослепительный район",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/the_gaslight_district_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: The Gaslight District",
+            "collections": [
+                "Glitch Productions"
+            ],
+            "meta": {
+                "currentProgress": 1,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1700000000107",
+            "title": "Dead Cells: Неугасаемый",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "C",
+            "poster": "assets/dead_cells_immortalis_series.jpg",
+            "review": "Оригинальное название: Dead Cells: Immortalis\nОзвучка: BRAINDEAD PROJECT\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Не рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000111",
+            "title": "Непобедимый Человек-паук",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/spider_man_unlimited_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Spider-Man Unlimited\nОзвучка: РенТВ\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "Marvel"
+            ]
+        },
+        {
+            "id": "1700000000112",
+            "title": "Стальной алхимик: Братство",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "C",
+            "poster": "assets/fullmetal_alchemist_brotherhood_series.jpg",
+            "review": "Оригинальное название: Fullmetal Alchemist: Brotherhood\nОзвучка: СВ-Дубль\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Бесят персонажи и их действия под конец.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000113",
+            "title": "Киберслав",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/cyberslav_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Киберслав\nОзвучка: Оригинал\nПросмотрено: Первая серия\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "РА-СИ-Я"
+            ]
+        },
+        {
+            "id": "1792055342119",
+            "title": "Marvel Zombies",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "D",
+            "poster": "assets/marvel_zombies_series.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Marvel"
+            ]
+        },
+        {
+            "id": "1792011002746",
+            "title": "Геймовёрс",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/gameoverse_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Gameoverse",
+            "collections": [
+                "Glitch Productions"
+            ],
+            "meta": {
+                "currentProgress": 1,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1700000000102",
+            "title": "Реинкарнация безработного",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/mushoku_tensei_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Mushoku Tensei\nОзвучка: Студийная Банда\nПросмотрено: Первый | Второй\nГод: 2023 - 2024\n\nМой вердикт: Рекомендую к просмотру."
+        },
+        {
+            "id": "1700000000126",
+            "title": "Терминатор Зеро",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
+            "tier": "D",
+            "poster": "assets/terminator_zero_series.jpg",
+            "review": "Оригинальное название: Terminator Zero\nОзвучка: HDRezka Studio\nПросмотрено: Первый не до конца\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Скучное, не интересное и повесточное аниме.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000127",
+            "title": "Колобанга",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/kolobanga_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Колобанга\nОзвучка: Оригинал\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "РА-СИ-Я"
+            ]
+        },
+        {
+            "id": "1700000000129",
+            "title": "Гравити Фолз",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "tier": "S",
+            "poster": "assets/gravity_falls_series.jpg",
+            "review": "Оригинальное название: Gravity Falls\nОзвучка: Disney\nПросмотрено: Первый | Второй\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Посмотрел полностью летом, раньше видел по паре серий по телевизору.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000119",
+            "title": "Мультерны",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/multerni_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Мультерны\nОзвучка: Оригинал\nПросмотрено: Первый сезон\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "РА-СИ-Я"
+            ]
+        },
+        {
+            "id": "1700000000123",
+            "title": "Герои Энвелла",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "A",
+            "poster": "assets/heroes_of_envell_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Герои Энвелла\nОзвучка: Оригинал\nПросмотрено: Первый | Второй\nГод: 2020-2022\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "РА-СИ-Я"
+            ]
+        },
+        {
+            "id": "1700000000135",
+            "title": "Дороро",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "tier": "A",
+            "poster": "assets/dororo_series.jpg",
+            "review": "Оригинальное название: Dororo\nПросмотрено: Первый сезон\nГод: 201?\n\nМой вердикт: Рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000105",
+            "title": "Инди Кроссовер",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/indie_cross_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Indie Cross\nОзвучка: BRAINDEAD PROJECT\nПросмотрено: 1 - 2 серии\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру."
+        },
+        {
+            "id": "1700000000142",
+            "title": "Доктор Стоун",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "S",
+            "poster": "assets/dr_stone_series.jpg",
+            "review": "Оригинальное название: Dr. Stone\nОзвучка: AniDub\nПросмотрено: Первый | Второй | Третий\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Лишь жаль за развязку истории",
+            "score": null,
+            "completedAt": null
+        },
+        {
             "id": "1700000000144",
             "title": "Аркейн",
             "type": "series",
@@ -3726,10 +3831,362 @@ window.__ATLAS_INITIAL_DATA__ = {
                 "watched_reaction"
             ],
             "score": null,
-            "tier": null,
+            "tier": "S",
             "poster": "assets/arcane_series.jpg",
             "completedAt": null,
             "review": "Оригинальное название: Arcane: League of Legends\nОзвучка: Дубляж\nПросмотрено: Первый | Второй\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Могло сильнее понравиться если бы не Лиза.",
+            "collections": [
+                "3D-сериалы"
+            ]
+        },
+        {
+            "id": "1700000000146",
+            "title": "Уэйн",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/wayne_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Wayne\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "Кино-сериалы"
+            ]
+        },
+        {
+            "id": "1700000000136",
+            "title": "НиеР: Автомата — Версия 1.1а",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "B",
+            "poster": "assets/nier_automata_ver1_1a_series.jpg",
+            "review": "Оригинальное название: NieR: Automata Ver1.1a\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон\nГод: 2023 - 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Начал с аниме, а не игры.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000125",
+            "title": "Дроны-Убийцы",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "D",
+            "poster": "assets/murder_drones_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Murder Drones\nОзвучка: NDR Production\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Последняя серия лучшая.",
+            "collections": [
+                "Glitch Productions"
+            ]
+        },
+        {
+            "id": "1700000000138",
+            "title": "Отель Хазбин (Отель Днища)",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "C",
+            "poster": "assets/hazbin_hotel_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Hazbin Hotel\nОзвучка: NDR Production\nПросмотрено: Пилот | Первый | Второй\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Ждал около 7 лет с выхода пилота",
+            "collections": [
+                "Hellaverse"
+            ]
+        },
+        {
+            "id": "1700000000132",
+            "title": "Я есть Грут",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/i_am_groot_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: I Am Groot\nОзвучка: FlarrowFilms\nПросмотрено: Первый | Второй\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "Marvel"
+            ]
+        },
+        {
+            "id": "1700000000114",
+            "title": "Адский босс",
+            "type": "series",
+            "statuses": [
+                "in_progress",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "C",
+            "poster": "assets/helluva_boss_series.jpg",
+            "completedAt": null,
+            "review": "",
+            "collections": [
+                "Hellaverse"
+            ]
+        },
+        {
+            "id": "1700000000117",
+            "title": "Дофус - Сокровища Керуба",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "C",
+            "poster": "assets/dofus_aux_tresors_de_kerubim_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Dofus aux trésors de Kérubim\nОзвучка: Мультимания\nПросмотрено: Первый сезон, Фильм\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "Wakfu"
+            ]
+        },
+        {
+            "id": "1700000000118",
+            "title": "Вакфу",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/wakfu_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Wakfu\nОзвучка: Мультимания\nПросмотрено: Часовщик Ноксимилиан | Первый | Второй | Третий | Четвертый | Голтар | Легенда об Огресте | В поисках шести дофусов\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "Wakfu"
+            ]
+        },
+        {
+            "id": "1700000000128",
+            "title": "Ниндзяго: Мастера Кружитцу",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/ninjago_masters_of_spinjitzu_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Ninjago: Masters of Spinjitzu\nОзвучка: Дубляж\nПросмотрено: 1 - 15 сезон, Спецвыпуски 1 - 2\nГод: 20??\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Мультик из детства",
+            "collections": [
+                "LEGO"
+            ]
+        },
+        {
+            "id": "1792011002744",
+            "title": "Рыцари Гвиневры",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "S",
+            "poster": "assets/knights_of_guinevere_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Knights of Guinevere\n\nВ процессе (вышло 2 серии)",
+            "collections": [
+                "Glitch Productions"
+            ],
+            "meta": {
+                "currentProgress": 2,
+                "totalProgress": null
+            }
+        },
+        {
+            "id": "1700000000110",
+            "title": "Комбатанты будут высланы",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "B",
+            "poster": "assets/combatants_will_be_dispatched_series.jpg",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000121",
+            "title": "Рыцари Нексо",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "A",
+            "poster": "assets/nexo_knights_series.jpg",
+            "completedAt": null,
+            "review": "Просмотрено в 20??",
+            "collections": [
+                "LEGO"
+            ]
+        },
+        {
+            "id": "1700000000122",
+            "title": "Ниндзяго: Восстание драконов",
+            "type": "series",
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/ninjago_dragons_rising_series.jpg",
+            "completedAt": null,
+            "review": "Просмотрено в 202?",
+            "collections": [
+                "LEGO"
+            ]
+        },
+        {
+            "id": "1700000000133",
+            "title": "Смертоносный герцог и его чёрная горничная",
+            "type": "series",
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "D",
+            "poster": "assets/shinigami_bocchan_to_kuro_maid_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Shinigami Bocchan to Kuro Maid\nПросмотрено: Пол сезона\nГод: 2023\n\nМой вердикт: Не рекомендую к просмотру.",
+            "collections": [
+                "3D-сериалы"
+            ]
+        },
+        {
+            "id": "1700000000134",
+            "title": "Квартет из альтернативного мира",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "B",
+            "poster": "assets/isekai_quartet_series.jpg",
+            "review": "Оригинальное название: Isekai Quartet\nПросмотрено: Первый сезон\n\nМой вердикт: Рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000148",
+            "title": "Неуязвимый",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
+            "tier": "B",
+            "poster": "assets/invincible_series.jpg",
+            "review": "Оригинальное название: Invincible\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон, 1 Фильм\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000147",
+            "title": "Игра в кальмара",
+            "type": "series",
+            "statuses": [
+                "in_progress",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "B",
+            "poster": "assets/squid_game_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Squid Game\nПросмотрено: Первый | Второй\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "Кино-сериалы"
+            ]
+        },
+        {
+            "id": "1700000000141",
+            "title": "Семья шпиона",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "dropped",
+                "played_self"
+            ],
+            "tier": "C",
+            "poster": "assets/spy_x_family_series.jpg",
+            "review": "Оригинальное название: SPYxFAMILY\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Не рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000151",
+            "title": "Киллер Севен",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "S",
+            "poster": "assets/scissor_seven_series.jpg",
+            "review": "Оригинальное название: Scissor Seven\nОзвучка: NewStation\nПросмотрено: Первый | Второй | Третий | Четвёртый | Пятый\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Досмотрел в пути до санатория Решма (до 4с).",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000116",
+            "title": "Дандадан",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "tier": "S",
+            "poster": "assets/dandadan_series.jpg",
+            "review": "Оригинальное название: Dandadan\nОзвучка: Студийная Банда\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Первое аниме просмотренное в 2025 году.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000139",
+            "title": "Тихоокеанский рубеж: Тёмная зона",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "A",
+            "poster": "assets/pacific_rim_the_black_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Pacific Rim: The Black\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
             "collections": [
                 "3D-сериалы"
             ]
@@ -3743,62 +4200,13 @@ window.__ATLAS_INITIAL_DATA__ = {
                 "played_self"
             ],
             "score": null,
-            "tier": null,
+            "tier": "C",
             "poster": "assets/what_if_series.jpg",
             "completedAt": null,
             "review": "Оригинальное название: What If...?\nОзвучка: FlarrowFilms\nПросмотрено: Первый | Второй\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
             "collections": [
                 "Marvel"
             ]
-        },
-        {
-            "id": "1700000000146",
-            "title": "Уэйн",
-            "type": "series",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/wayne_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Wayne\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "Кино-сериалы"
-            ]
-        },
-        {
-            "id": "1700000000147",
-            "title": "Игра в кальмара",
-            "type": "series",
-            "statuses": [
-                "in_progress",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/squid_game_series.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Squid Game\nПросмотрено: Первый | Второй\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
-            "collections": [
-                "Кино-сериалы"
-            ]
-        },
-        {
-            "id": "1700000000148",
-            "title": "Неуязвимый",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "dropped",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/invincible_series.jpg",
-            "review": "Оригинальное название: Invincible\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон, 1 Фильм\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
         },
         {
             "id": "1700000000149",
@@ -3810,56 +4218,10 @@ window.__ATLAS_INITIAL_DATA__ = {
                 "watched_reaction"
             ],
             "score": null,
-            "tier": null,
+            "tier": "S",
             "poster": "assets/konosuba_series.jpg",
             "completedAt": null,
             "review": "Оригинальное название: KonoSuba\nОзвучка: Dream Cast\nПросмотрено: Первый | Второй | Третий | OVA 1 | OVA 2 | 1 Фильм | Спин-офф Мегумин\nГод: 201? - 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Первое посмотренное аниме."
-        },
-        {
-            "id": "1700000000150",
-            "title": "Ванпанчмен",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "tier": "",
-            "poster": "assets/one_punch_man_series.jpg",
-            "review": "Оригинальное название: One-Punch Man\nПросмотрено: Первый | Второй | Спецвыпуски 1 - 6\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000151",
-            "title": "Киллер Севен",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/scissor_seven_series.jpg",
-            "review": "Оригинальное название: Scissor Seven\nОзвучка: NewStation\nПросмотрено: Первый | Второй | Третий | Четвёртый | Пятый\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Досмотрел в пути до санатория Решма (до 4с).",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000152",
-            "title": "Рыцарь-скелет вступает в параллельный мир",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/gaikotsu_kishi_sama_series.jpg",
-            "review": "Оригинальное название: Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu\nПросмотрено: Первый сезон\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Посмотрел по ютубу так как не знал где можно было, по факту хрень.",
-            "score": null,
-            "completedAt": null
         },
         {
             "id": "1700000000153",
@@ -3871,9 +4233,120 @@ window.__ATLAS_INITIAL_DATA__ = {
                 "played_self",
                 "watched_reaction"
             ],
-            "tier": "",
+            "tier": "S",
             "poster": "assets/cyberpunk_edgerunners_series.jpg",
             "review": "Оригинальное название: Cyberpunk: Edgerunners\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000103",
+            "title": "Лунный рыцарь",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "watched_reaction"
+            ],
+            "score": null,
+            "tier": "A",
+            "poster": "assets/moon_knight_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Moon Knight\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "Marvel"
+            ]
+        },
+        {
+            "id": "1700000000150",
+            "title": "Ванпанчмен",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "tier": "A",
+            "poster": "assets/one_punch_man_series.jpg",
+            "review": "Оригинальное название: One-Punch Man\nПросмотрено: Первый | Второй | Спецвыпуски 1 - 6\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000124",
+            "title": "Кухня",
+            "type": "series",
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "score": null,
+            "tier": "A",
+            "poster": "assets/kuhnya_series.jpg",
+            "completedAt": null,
+            "review": "Оригинальное название: Кухня\nОзвучка: Оригинал\nПросмотрено: Первый и второй сезоны\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.",
+            "collections": [
+                "РА-СИ-Я"
+            ]
+        },
+        {
+            "id": "1700000000156",
+            "title": "Любимый во Франксе",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "S",
+            "poster": "assets/darling_in_the_franxx_series.jpg",
+            "review": "Оригинальное название: Darling in the Franxx\nПросмотрено: Первый сезон\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Смотрел пока был в больнице на обследовании.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000140",
+            "title": "Нежить и Неудача",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "A",
+            "poster": "assets/undead_unluck_series.jpg",
+            "review": "Оригинальное название: Undead Unluck\nОзвучка: AniLibria\nПросмотрено: Первый сезон\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000155",
+            "title": "Повелитель",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self",
+                "watched_reaction"
+            ],
+            "tier": "S",
+            "poster": "assets/overlord_series.jpg",
+            "review": "Оригинальное название: Overlord\nПросмотрено: Первый | Второй | Третий | Четвертый\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Посмотрел в деревне на одном дыхании.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000101",
+            "title": "Быть героем X",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "A",
+            "poster": "assets/to_be_hero_x_series.jpg",
+            "review": "Оригинальное название: Tu bian ying xiong X\nОзвучка: ТО дубляжная\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
             "score": null,
             "completedAt": null
         },
@@ -3887,7 +4360,7 @@ window.__ATLAS_INITIAL_DATA__ = {
                 "watched_reaction"
             ],
             "score": null,
-            "tier": null,
+            "tier": "S",
             "poster": "assets/transformers_prime_series.jpg",
             "completedAt": null,
             "review": "Оригинальное название: Transformers: Prime\nОзвучка: Дубляж\nПросмотрено: Первый | Второй | Третий | 1 Мультфильм\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Мульт из детства.",
@@ -3896,8 +4369,53 @@ window.__ATLAS_INITIAL_DATA__ = {
             ]
         },
         {
-            "id": "1700000000155",
-            "title": "Повелитель",
+            "id": "1700000000152",
+            "title": "Рыцарь-скелет вступает в параллельный мир",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "C",
+            "poster": "assets/gaikotsu_kishi_sama_series.jpg",
+            "review": "Оригинальное название: Gaikotsu Kishi-sama, Tadaima Isekai e Odekakechuu\nПросмотрено: Первый сезон\n\nМой вердикт: Не рекомендую к просмотру.\n\nЗаметка: Посмотрел по ютубу так как не знал где можно было, по факту хрень.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000109",
+            "title": "Атака титанов",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "A",
+            "poster": "assets/attack_on_titan_series.jpg",
+            "review": "Оригинальное название: Attack on Titan\nОзвучка: Студийная Банда\nПросмотрено: Первый | Второй | Третий | Четвёртый\nГод: 2024\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: В начале не заходило, а потом как зашло.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000108",
+            "title": "Дни Сакамото",
+            "type": "series",
+            "collections": [],
+            "statuses": [
+                "completed",
+                "played_self"
+            ],
+            "tier": "A",
+            "poster": "assets/sakamoto_days_series.jpg",
+            "review": "Оригинальное название: Sakamoto Days\nОзвучка: Дубляжная\nПросмотрено: Первый сезон\nГод: 2025\n\nМой вердикт: Рекомендую к просмотру.",
+            "score": null,
+            "completedAt": null
+        },
+        {
+            "id": "1700000000131",
+            "title": "Рик и Морти",
             "type": "series",
             "collections": [],
             "statuses": [
@@ -3905,121 +4423,42 @@ window.__ATLAS_INITIAL_DATA__ = {
                 "played_self",
                 "watched_reaction"
             ],
-            "tier": "",
-            "poster": "assets/overlord_series.jpg",
-            "review": "Оригинальное название: Overlord\nПросмотрено: Первый | Второй | Третий | Четвертый\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Посмотрел в деревне на одном дыхании.",
+            "tier": "A",
+            "poster": "assets/rick_and_morty_series.jpg",
+            "review": "Оригинальное название: Rick and Morty\nОзвучка: Сыендук\nПросмотрено: С первого по седьмой сезон\nГод: 2022 - 2023\n\nМой вердикт: Рекомендую к просмотру.",
             "score": null,
             "completedAt": null
         },
         {
-            "id": "1700000000156",
-            "title": "Любимый во Франксе",
+            "id": "1792055342117",
+            "title": "Великий Человек-паук",
             "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "tier": "",
-            "poster": "assets/darling_in_the_franxx_series.jpg",
-            "review": "Оригинальное название: Darling in the Franxx\nПросмотрено: Первый сезон\nГод: 202?\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Смотрел пока был в больнице на обследовании.",
-            "score": null,
-            "completedAt": null
-        },
-        {
-            "id": "1700000000157",
-            "title": "Человек-бензопила",
-            "type": "series",
-            "collections": [],
-            "statuses": [
-                "completed",
-                "played_self",
-                "watched_reaction"
-            ],
-            "score": null,
-            "tier": "",
-            "poster": "assets/chainsaw_man_series.jpg",
-            "review": "Оригинальное название: Chainsaw Man\nОзвучка: FlarrowFilms\nПросмотрено: Первый сезон\nГод: 2023\n\nМой вердикт: Рекомендую к просмотру.\n\nЗаметка: Посмотрел в новый год.",
-            "completedAt": null
-        },
-        {
-            "id": "1700000000201",
-            "title": "Человек-Паук: Тень Паука",
-            "type": "literature",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": "",
-            "poster": "assets/spider_man_the_spiders_shadow_literature.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Spider-Man: The Spider's Shadow\nОт: Chip Zdarsky\nФормат: Электронный, цветной\nЧасть I: Том 1\nДата прочтения: 2025\n\nМой вердикт: Рекомендую к прочтению.",
-            "collections": []
-        },
-        {
-            "id": "1700000000008",
-            "title": "Человек-бензопила",
-            "type": "literature",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": "",
-            "poster": "assets/chainsaw_man_manga_literature.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: チェンソーマン (Chainsaw Man)\nОт: Тацуки Фудзимото\nФормат: Электронный, цветной\nЧасть I: Том 1 — 11\nЧасть II: Том 12 — 23\nОценка: AA\nДата прочтения: 2024 - 2026\n\nМой вердикт: Рекомендую к прочтению.",
-            "collections": []
-        },
-        {
-            "id": "1700000000010",
-            "title": "Под дубом",
-            "type": "literature",
             "statuses": [
                 "in_progress",
                 "played_self"
             ],
             "score": null,
-            "tier": "",
-            "poster": "assets/under_the_oak_tree_literature.jpg",
+            "tier": "B",
+            "poster": "assets/ultimate_spider_man_series.jpg",
             "completedAt": null,
-            "review": "Оригинальное название: 상수리나무 아래 (Under the Oak Tree)\nОт: Ким Су Джи\nФормат: Электронный, цветной\nЧасть I: \nЧасть II: \nДата прочтения: 2023 - 2024\n\nМой вердикт: Рекомендую к прочтению.",
-            "collections": []
+            "review": "",
+            "collections": [
+                "Marvel"
+            ]
         },
         {
-            "id": "1700000000012",
-            "title": "Потерянные",
-            "type": "literature",
+            "id": "1792055342122",
+            "title": "Время приключений",
+            "type": "series",
             "statuses": [
                 "in_progress",
                 "played_self"
             ],
             "score": null,
-            "tier": null,
-            "poster": "assets/the_lost_ones_literature.jpg",
+            "tier": "A",
+            "poster": "assets/adventure_time_series.jpg",
             "completedAt": null,
-            "review": "Оригинальное название: The Lost Ones\nОт: Адрианна Кресс\nФормат: Бумажный\nГлава:\nДата прочтения: 2023-2024+\n\nМой вердикт: Рекомендую к прочтению.",
-            "collections": [
-                "Bendy"
-            ]
-        },
-        {
-            "id": "1700000000011",
-            "title": "Мечты оживают",
-            "type": "literature",
-            "statuses": [
-                "completed",
-                "played_self"
-            ],
-            "score": null,
-            "tier": null,
-            "poster": "assets/dreams_come_to_life_literature.jpg",
-            "completedAt": null,
-            "review": "Оригинальное название: Dreams Come to Life\nОт: Адрианна Кресс\nФормат: Бумажный\nГлава:\nДата прочтения: 2023\n\nМой вердикт: Рекомендую к прочтению.",
-            "collections": [
-                "Bendy"
-            ]
+            "review": ""
         }
     ]
 };
